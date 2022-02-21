@@ -54,7 +54,7 @@
 
   <main class="px-3">
     <h1>About Us</h1>
-    <p class="lead">We are a group of Stanford Undergraduates who are passionate about sharing stories with others. With this project we aim to create a tool that helps social media users enhance the quality of their media posts. We help them by creating a one-of-a-kind capsule of their shared photo experiences.</p>
+    <p class="lead">Hi! :) We are a group of Stanford Undergraduates who are passionate about sharing stories with others. With this project we aim to create a tool that helps social media users enhance the quality of their media posts. We help them by creating a one-of-a-kind capsule of their shared photo experiences.</p>
     <p class="lead">
     </p>
   </main>
