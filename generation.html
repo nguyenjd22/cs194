@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="https://unpkg.com/d3@5"></script>
+<script src="https://unpkg.com/d3-gridding@0.1"></script>
+<script>
+
+var width = 800,
+    height = 800;
+
+var gridding = d3.gridding()
+  .size([width, height])
+  .padding(50)
+  .mode("grid");
+
+var data = d3.range(8);
+
+// TODO: populate this with the Instagram data from user
+var listOfPhotos = ["https://scontent-sjc3-1.cdninstagram.com/v/t51.29350-15/273885396_124667133428062_4592531571721431012_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=wPZhEB5BI6UAX8Iuzdk&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=ANQ71j8EAAAA&oh=00_AT8-7eeibZZehrOdZsyhyGLS9wQKtDLi6gACfTRFFPjtyg&oe=620F6B92", "https://scontent-sjc3-1.cdninstagram.com/v/t51.29350-15/273704810_940432870197838_3376417217455877912_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=P4UPyIUKbmsAX9Ju2F4&_nc_oc=AQkVZ6N5VbC3MExgQT8Uhi-afxU4IEkO07PVFlF4aeJ9cq5cXVS0zehdTUmLiY4J1hE&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=ANQ71j8EAAAA&oh=00_AT84MErnYvYYEXsSTAhsbhF8ZdeF0r2CRoCExbeWtI9q5Q&oe=620E2028", "https://scontent-sjc3-1.cdninstagram.com/v/t51.29350-15/273517576_205292898456646_4162846640394501540_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=qa0JPz0IyoMAX97Z2tD&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=ANQ71j8EAAAA&oh=00_AT8y56UUkC2AqyWJZFXGtnJIBZKtVqtfBYoiMERUsppuGw&oe=620F1DC9", "https://scontent-sjc3-1.cdninstagram.com/v/t51.29350-15/273731005_1622483398100351_9015346606797147524_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=SF866yaJ83cAX8Hop14&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=ANQ71j8EAAAA&oh=00_AT-9gdh6hSJczObXDVjLPYPp_2lhfO2508jlCT8UPsj1ww&oe=620EBD79", "https://scontent-sjc3-1.cdninstagram.com/v/t51.29350-15/273697721_466241501769309_877570938831552820_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=b8yxiyOFG2AAX8xaEAg&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=ANQ71j8EAAAA&oh=00_AT8vlzlA01gjW7r06PjiSky8bPZFedAHtGszAYDpJ9wcLA&oe=620F91A7", "https://static01.nyt.com/images/2021/09/14/science/07CAT-STRIPES/07CAT-STRIPES-mediumSquareAt3X-v2.jpg", "https://as1.ftcdn.net/v2/jpg/01/63/11/70/1000_F_163117064_syJkTuCddASYjvl4WqyRmnuy8cDXpoQY.jpg", "https://www.rover.com/blog/wp-content/uploads/2020/04/fluffy-orange-cat-pixabay.jpg"]
+
+var beach_bknd = "https://media.istockphoto.com/photos/tropical-beach-copy-space-scene-picture-id1144456717?k=20&m=1144456717&s=612x612&w=0&h=z6AXl5vv_YMupxWfJ-RMR9KjpSAcVIoV9TlUaVzqRKM="
+
+var griddingData = gridding(data);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.append('svg:image')
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", 1600)
+            .attr("height", 1600)
+            .attr("xlink:href", beach_bknd);
+
+svg.selectAll(".square")
+    .data(griddingData)
+  .enter().append("svg:image")
+    .style("fill", "none")
+    .style("stroke", "black")
+    .attr("xlink:href", function(d) {
+          return listOfPhotos[d["__index"]];
+      })
+    .attr("width", function(d) { return d.width; })
+    .attr("height", function(d) { return d.height; })
+    .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+
+  </script>
+</body>
