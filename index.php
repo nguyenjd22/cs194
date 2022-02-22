@@ -53,9 +53,8 @@
         </button>
         </form>
       </main>
-      <div id="svgdiv">
-      </div>
-      <button hidden=True class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="savebtn" onClick="window.location.href='https://www.roundabout-cs194.com/collageurl.html'">Share Collage</button>
+      <div id="cnvdiv"></div>
+      <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save Collage</button>
       <footer class="mt-auto text-white-50">
         <p>Stanford CS194 Project Round-About</p>
       </footer>
@@ -286,8 +285,7 @@
     }
     
     function displayCollage(listOfPhotos) {
-      var button = document.getElementById("savebtn");
-      button.removeAttribute("hidden");
+      document.getElementById("svbtn").removeAttribute("hidden");
       var width = 800,
           height = 800;
       var gridding = d3.gridding()
@@ -300,30 +298,58 @@
       
       var griddingData = gridding(data);
       
-      var svg = d3.select("#svgdiv").append("svg")
+      var cnv = d3.select("#cnvdiv").append("canvas")
+          .attr("id", "cnv")
           .attr("width", width)
-	  .attr("height", height);
-	  //.attr("align", "center");
-      
-      svg.append('svg:image')
-          .attr("x", 0)
-          .attr("y", 0)
-          .attr("width", 1600)
-          .attr("height", 1600)
-          .attr("xlink:href", beach_bknd);
-      
-      svg.selectAll(".square")
-          .data(griddingData)
-          .enter().append("svg:image")
-          .style("fill", "none")
-          .style("stroke", "black")
-          .attr("xlink:href", function(d) {
-            console.log(listOfPhotos[d["__index"]]);
-                return listOfPhotos[d["__index"]];
-          })
-          .attr("width", function(d) { return d.width; })
-          .attr("height", function(d) { return d.height; })
-          .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
-    }
+          .attr("height", height);
+
+      d3.select("body").append('img')
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", 1)
+            .attr("height", 1)
+            .attr("id", "bkd")
+            //.attr("hidden", "hidden")
+            .attr("crossorigin", "anonymous")
+            .attr("src", beach_bknd);
+
+      for (let x = 0; x < listOfPhotos.length; x++) {
+        d3.select("body").append('img')
+              .attr("id", x)
+              .attr("crossorigin", "anonymous")
+              .attr("src", listOfPhotos[x]);
+
+      }
+
+      var c = document.getElementById("cnv");
+      console.log(c);
+      var ctx = c.getContext("2d");
+      var img = document.getElementById("bkd");
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+        img.remove();
+      };
+      pic = new Array(9)
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          if (!(i===2 && j===2)){
+            pic[i*3 + j] = document.getElementById(i*3 + j);
+            console.log(pic[i*3+j]);
+            pic[i*3 + j].onload = function() {
+              ctx.drawImage(pic[i*3+j], (35*(j+1) + 150*j), (35*(i+1) + 150*i), 150, 150);
+              pic[i*3+j].remove();
+            };
+          }
+        }
+      }
+    };
+
+
+      function saveImg() {
+        var canvas = document.getElementById("cnv");
+        var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        window.location.href = img;
+        console.log(img);
+      };
   </script>
 </html>
