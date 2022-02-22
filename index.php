@@ -348,9 +348,10 @@
 
 
       function saveImg() {
+        var download = document.getElementById("download");
         var canvas = document.getElementById("cnv");
         var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        window.location.href = img;
+        download.setAttribute("href", img);
         console.log(img);
       };
   </script>
