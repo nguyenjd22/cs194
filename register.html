@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Login</title>
+    <title>Signup</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 
@@ -43,7 +43,7 @@
       <form>
       </form>
       <h1 class="Title">Round-About</h1>
-      <h2 class="h3 mb-3 fw-normal">Please sign in</h2>
+      <h2 class="h3 mb-3 fw-normal">Sign up</h2>
   
       <div class="form-floating">
         <input type="username" class="form-control" id="username" placeholder="Username">
@@ -51,14 +51,17 @@
       <div class="form-floating">
         <input type="password" class="form-control" id="password" placeholder="Password">
       </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="password1" placeholder="Confirm Password">
+      </div>
   
       <!-- <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div> -->
-      <button onclick="loginAjax()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-      <p>Don't have an account yet? <a href="register.html">Register</a>.</p>
+      <button onclick="loginAjax()" class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+      <p>Already have an account? <a href="login.html">Login</a>.</p>
       <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
     </form>
   </main>
@@ -79,7 +82,7 @@ function loginAjax() {
         .then(response => response.json())
         .then(data => {
           console.log(data);
-          window.location.href='index.php';
+          window.location.href='login.html';
         })
         .catch(err => console.error(err));
 }
@@ -88,4 +91,3 @@ function loginAjax() {
 
   </body>
 </html>
-
