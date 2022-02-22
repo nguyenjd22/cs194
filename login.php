@@ -157,8 +157,7 @@
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-      </div> -->
-      <p>Testing php <a href="test.php">Test</a>.</p>
+      </div> --> 
       <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
     </form>
   </main>
