@@ -155,30 +155,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="w-100 btn btn-lg btn-primary" value="Submit">
-                <!-- <input type="reset" class="btn btn-secondary ml-2" value="Reset"> -->
+                <input type="submit" class="w-100 btn btn-lg btn-primary" value="Register">
             </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+            <p>Already have an account? <a href="login.html">Login</a>.</p>
         </form>
-
-
-      <!-- <div class="form-floating">
-        <input type="username" class="form-control" id="username" placeholder="Username">
-      </div>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="password" placeholder="Password">
-      </div>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="password1" placeholder="Confirm Password">
-      </div> -->
-  
-      <!-- <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div> -->
-      <button onclick="registerAjax()" class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
-      <p>Already have an account? <a href="login.html">Login</a>.</p>
       <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
     </form>
   </main>
