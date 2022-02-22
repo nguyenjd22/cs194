@@ -7,7 +7,7 @@ define('DB_PASSWORD', 'password194');
 define('DB_NAME', 'Usersinfo');
  
 /* Attempt to connect to MySQL database */
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$link = mysqli_connect('3.130.151.29', 'bitnami', 'password194', 'User_Data');
  
 // Check connection
 if($link === false){
