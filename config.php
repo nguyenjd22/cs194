@@ -7,7 +7,7 @@ server with default setting (user 'root' with no password) */
 // define('DB_NAME', 'Usersinfo');
  
 /* Attempt to connect to MySQL database */
-$link = mysqli_connect('172.26.6.170', 'dbmasteruser', 'password194', 'User_Data');
+$link = mysqli_connect('172.26.6.170:3306', 'dbmasteruser', 'password194', 'User_Data');
  
 // Check connection
 if($link === false){
