@@ -186,29 +186,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
     </form>
   </main>
-
-<!-- <script>
-function registerAjax() {
-    const username = document.getElementById("username").value; 
-    const password = document.getElementById("password").value; 
-    const data = { username: username, password: password};
-    console.log(username);
-    console.log(password);
-
-    fetch("/login.php", {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: { 'content-type': 'application/json' }
-        })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-          window.location.href='login.html';
-        })
-        .catch(err => console.error(err));
-}
-
- </script> -->
-
   </body>
 </html>

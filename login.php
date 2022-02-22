@@ -1,33 +1,10 @@
 <?php
-  // session_start();
-  // header("Content-Type: application/json"); 
-
-  // try {
-  //   $json_str = file_get_contents('php://input');
-  //   $json_obj = json_decode($json_str, true);
-  //   $username = $json_obj['username'];
-  //   $password = $json_obj['password'];
-  // ;
-
-  //   // Storing session data
-  //   if (isset($_SESSION ['username'])) {
-  //   } else {
-  //     $_SESSION ['username'] = $username;
-  //   }
-  //   echo json_encode(array(
-  //     "success" => true
-  //   ));
-  // } catch (Exception $e) {
-  //   echo json_encode(array(
-  //     "Caught exception" => $e->getMessage()
-  //   ));
-  // }
   // Initialize the session
   session_start();
   
   // Check if the user is already logged in, if yes then redirect him to welcome page
   if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-      header("location: welcome.php");
+      header("location: index.php");
       exit;
   }
   
@@ -123,8 +100,6 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 
-
-    <!-- <img src="TR1020_WOM_Delta01.png" class="themephoto"/> -->
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -158,12 +133,6 @@
       <h1 class="Title">Round-About</h1>
       <h2 class="h3 mb-3 fw-normal">Please sign in</h2>
   
-      <!-- <div class="form-floating">
-        <input type="username" class="form-control" id="username" placeholder="Username">
-      </div>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="password" placeholder="Password">
-      </div> -->
       <?php 
         if(!empty($login_err)){
             echo '<div class="alert alert-danger">' . $login_err . '</div>';
@@ -171,13 +140,11 @@
         ?>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
-                <!-- <label>Username</label> -->
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <input type="text" placeholder="Username" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group">
-                <!-- <label>Password</label> -->
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                <input type="password" placeholder="Password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
@@ -191,35 +158,10 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div> -->
-      <!-- <button onclick="loginAjax()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button> -->
-      <!-- <p>Don't have an account yet? <a href="register.php">Register</a>.</p> -->
       <p>Testing php <a href="test.php">Test</a>.</p>
       <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
     </form>
   </main>
-
-<script>
-function loginAjax() {
-    const username = document.getElementById("username").value; 
-    const password = document.getElementById("password").value; 
-    const data = { username: username, password: password};
-    console.log(username);
-    console.log(password);
-
-    fetch("/login.php", {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: { 'content-type': 'application/json' }
-        })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-          window.location.href='index.php';
-        })
-        .catch(err => console.error(err));
-}
-
- </script>
 
   </body>
 </html>
