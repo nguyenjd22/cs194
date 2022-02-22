@@ -1,8 +1,8 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
+define('DB_SERVER', '172.26.6.170');
+define('DB_USERNAME', 'bitnami');
 define('DB_PASSWORD', 'password194');
 define('DB_NAME', 'Usersinfo');
  
