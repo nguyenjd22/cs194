@@ -7,7 +7,7 @@ server with default setting (user 'root' with no password) */
 // define('DB_NAME', 'Usersinfo');
  
 /* Attempt to connect to MySQL database */
-$link = mysqli_connect('localhost', 'bitnami', 'password194', 'User_Data');
+$link = mysqli_connect('3.130.151.29:3306', 'bitnami', 'password194', 'User_Data');
  
 // Check connection
 if($link === false){
