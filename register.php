@@ -1,6 +1,6 @@
 <?php
 // Include config file
-// require_once "config.php";
+require_once "config.php";
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -94,7 +94,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -136,42 +135,58 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <body class="text-center">
   <main class="form-signin">
     <img src="4.png" class="logo"/>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <form>
+      <form>
+      </form>
       <h1 class="Title">Round-About</h1>
       <h2 class="h3 mb-3 fw-normal">Sign up</h2>
-      <div class="form-floating form-group">
-        <!-- <input type="username" class="form-control" id="username" placeholder="Username"> -->
-        <input type="text" placeholder="Username" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-        <span class="invalid-feedback"><?php echo $username_err; ?></span>
+
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+            </div>    
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-secondary ml-2" value="Reset">
+            </div>
+            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+        </form>
+
+
+      <!-- <div class="form-floating">
+        <input type="username" class="form-control" id="username" placeholder="Username">
       </div>
-      <div class="form-floating form-group">
-        <!-- <input type="password" class="form-control" id="password" placeholder="Password"> -->
-        <input type="password" placeholder="Password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-        <span class="invalid-feedback"><?php echo $password_err; ?></span>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="password" placeholder="Password">
       </div>
-      <div class="form-floating form-group">
-        <!-- <input type="password" class="form-control" id="password1" placeholder="Confirm Password"> -->
-        <input type="password" placeholder="Confirm Password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
-        <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="password1" placeholder="Confirm Password">
+      </div> -->
   
       <!-- <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div> -->
-
-      <div class="form-group">
-        <input type="submit" class="w-100 btn-lg btn btn-primary" value="Register">
-                <!-- <input type="reset" class="w-100 btn-lg btn btn-primary" value="Reset"> -->
-      </div>
-      <!-- <button onclick="registerAjax()" class="w-100 btn btn-lg btn-primary" type="submit">Register</button> -->
+      <button onclick="registerAjax()" class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
       <p>Already have an account? <a href="login.html">Login</a>.</p>
       <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
     </form>
   </main>
 
-<!-- <script>
+<script>
 function registerAjax() {
     const username = document.getElementById("username").value; 
     const password = document.getElementById("password").value; 
@@ -192,7 +207,7 @@ function registerAjax() {
         .catch(err => console.error(err));
 }
 
- </script> -->
+ </script>
 
   </body>
 </html>
