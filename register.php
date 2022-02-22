@@ -84,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Redirect to login page
                 header("location: login.php");
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Oops! Something went wrong. Please try again later. SQL query.";
             }
 
             // Close statement
@@ -146,9 +146,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <input type="text" placeholder="First Name" name="first_name" class="form-control <?php echo (!empty($first_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $first_name; ?>">
+                <span class="invalid-feedback"><?php echo $first_name_err; ?></span>
             </div>    
             <div class="form-group">
                 <input type="text" placeholder="Last Name" name="last_name" class="form-control <?php echo (!empty($last_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $last_name; ?>">
+                <span class="invalid-feedback"><?php echo $last_name_err; ?></span>
             </div>    
             <div class="form-group">
                 <input type="text" placeholder="Username" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
