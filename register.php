@@ -1,3 +1,5 @@
+<!-- https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php -->
+
 <?php
 // Include config file
 require_once "config.php";
@@ -181,7 +183,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="w-100 btn btn-lg btn-primary" value="Register">
             </div>
-            <p>Already have an account? <a href="login.html">Login</a>.</p>
+            <p>Already have an account? <a href="login.php">Login</a>.</p>
         </form>
       <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
     </form>
