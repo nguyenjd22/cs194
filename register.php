@@ -3,7 +3,7 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$first_name=$last_name=$username = $password = $confirm_password = "";
+$first_name = $last_name = $username = $password = $confirm_password = "";
 $first_name_err=$last_name_err=$username_err = $password_err = $confirm_password_err = "";
  
 // Processing form data when form is submitted
@@ -64,14 +64,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
+    if(empty($first_name_err) && empty($last_name_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
         $sql = "INSERT INTO users (first_name, last_name, username, password) VALUES (?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+            mysqli_stmt_bind_param($stmt, "ss", $param_first_name, $param_last_name, $param_username, $param_password);
             
             // Set parameters
             $param_first_name = $first_name;
