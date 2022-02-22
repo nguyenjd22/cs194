@@ -9,6 +9,20 @@ $first_name_err=$last_name_err=$username_err = $password_err = $confirm_password
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
+    // Validate first name
+    if(empty(trim($_POST["first_name"]))){
+      $first_name_err = "Please enter your first name.";     
+    } else{
+        $first_name = trim($_POST["first_name"]);
+    }
+
+    // Validate last name
+    if(empty(trim($_POST["last_name"]))){
+      $first_name_err = "Please enter your last name.";     
+    } else{
+        $last_name = trim($_POST["last_name"]);
+    }
+
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
