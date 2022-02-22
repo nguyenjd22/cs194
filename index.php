@@ -54,7 +54,9 @@
         </form>
       </main>
       <div id="cnvdiv"></div>
-      <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save Collage</button>
+      <a id="download" download="collage.png">
+        <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save Collage</button>
+      </a>
       <footer class="mt-auto text-white-50">
         <p>Stanford CS194 Project Round-About</p>
       </footer>
