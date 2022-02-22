@@ -1,3 +1,7 @@
+CREATE DATABASE User_Data;
+
+USE User_Data;
+
 CREATE TABLE users (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
@@ -5,8 +9,15 @@ CREATE TABLE users (
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-)
+);
 
+desc users;
+
+INSERT INTO users (first_name, last_name, username, password) VALUES
+("John", "Nguyen", "njohn", "john1"),
+("Maia", "Nguyen", "nmaia", "maia1")
+
+SELECT * FROM users;
 -- CREATE TABLE photos (
 --     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 --     user_id INT NOT NULL,
