@@ -1,3 +1,13 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
@@ -39,6 +49,7 @@
           <nav class="nav nav-masthead justify-content-center float-md-end">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
             <a class="nav-link" href="AboutPage.php">About</a>
+            <a href="logout.php" class="btn btn-danger ml-3">Logout</a>
           </nav>
         </div>
       </header>
