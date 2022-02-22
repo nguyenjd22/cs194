@@ -49,7 +49,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <nav class="nav nav-masthead justify-content-center float-md-end">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
             <a class="nav-link" href="AboutPage.php">About</a>
-            <a href="logout.php" class="btn btn-danger ml-3">Logout</a>
+            <a href="logout.php" class="nav-link btn btn-danger ml-3">Logout</a>
           </nav>
         </div>
       </header>
