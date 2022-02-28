@@ -55,8 +55,8 @@
   </div>
   <script>
     function setDatesInCookie() {
-      start = getElementById('start').valueAsDate;
-      end = getElementById('end').valueAsDate;
+      start = document.getElementById('start').valueAsDate;
+      end = document.getElementById('end').valueAsDate;
 
       document.cookie = "start=" + getUnixTime(start);
       document.cookie = "end=" + getUnixTime(end);
