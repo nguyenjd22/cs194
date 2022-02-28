@@ -67,8 +67,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <script>
     arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
-    // startDate = arr[2].split('=')[1]
-    // endDate = arr[3].split('=')[1]
+    startDate = arr[2].split('=')[1]
+    endDate = arr[3].split('=')[1]
     getUserData(token)
 
     async function getMediaData(data, access_token) {
@@ -171,12 +171,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     
     function getUserData(access_token) {
           var data = [];
-          var startTime = new Date();
-          startTime.setMonth(startTime.getMonth() - 3);
-          startTime = getUnixTime(startTime);
-          var endTime = new Date();
-          endTime = getUnixTime(endTime);
-          var url = 'https://graph.instagram.com/me/media?access_token=' + access_token + '&since=' + startTime + '&until=' + endTime;
+          // var startTime = new Date();
+          // startTime.setMonth(startTime.getMonth() - 3);
+          // startTime = getUnixTime(startTime);
+          // var endTime = new Date();
+          // endTime = getUnixTime(endTime);
+          var url = 'https://graph.instagram.com/me/media?access_token=' + access_token + '&since=' + startDate + '&until=' + endDate;
           fetch(url)
           .then( response => response.json() )
           .then( response => {

@@ -42,14 +42,30 @@
           <h3 class="mb-5 text-center">End Date</h2>
           <form action="#">
             <div class="form-group">
-              <input type="date">
+              <input type="date" id="end">
             </div>
           </form>
         </div>
-        <button onclick="" class="btn btn-lg btn-secondary fw-bold" type="submit">
+        <button onclick="setDatesInCookie()" class="btn btn-lg btn-secondary fw-bold" type="submit">
           Generate Collage
         </button>
       </div>
 
     </div>
   </div>
+  <script>
+    function setDatesInCookie() {
+      start = getElementById('start').valueAsDate;
+      end = getElementById('end').valueAsDate;
+
+      document.cookie = "start=" + getUnixTime(start);
+      document.cookie = "end=" + getUnixTime(end);
+
+      location.href = "collage.php";
+    }
+
+    function getUnixTime(date) {
+      return Math.floor(date.getTime() / 1000);
+    }
+  </script>
+</body>
