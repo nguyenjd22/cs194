@@ -98,7 +98,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         client_secret: client_secret,
         code: code,
         grant_type: 'authorization_code',
-        redirect_uri: 'https://www.roundabout-cs194.com/',
+        redirect_uri: 'https://www.roundabout-cs194.com/landing/datepicker.html',
       };
       var access_token;
       const optionForToken = getOption(paramsToken);
