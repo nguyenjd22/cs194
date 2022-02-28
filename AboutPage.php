@@ -48,6 +48,7 @@
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link" href="index.php">Home</a>
         <a class="nav-link active" aria-current="page" href="#">About</a>
+        <a href="logout.php" class="nav-link">Logout</a>
       </nav>
     </div>
   </header>
