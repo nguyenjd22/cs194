@@ -107,7 +107,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       .then( response => {
           access_token = "token=" + response["access_token"];
           document.cookie = access_token; // Set access token as cookie
-          location.href = '/landing/datepicker.html'; // Redirect to date picker where we do the rest of the API calls
+          location.href = 'datepicker.html'; // Redirect to date picker where we do the rest of the API calls
           // getUserData(access_token);
       })
       .catch((error) => {
