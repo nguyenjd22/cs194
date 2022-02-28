@@ -154,6 +154,7 @@
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
             <p>Datepicker <a href="/calendar-12/datepicker.html">Sign up now</a>.</p>
+            <input type="date" value="2017-06-01">
         </form>
   
       <!-- <div class="checkbox mb-3">
