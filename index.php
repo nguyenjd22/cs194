@@ -237,7 +237,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //   });
     // }
     
-    // function getUserData(access_token, user_id) {
+    // function getUserData(access_token) {
     //       var data = [];
     //       var startTime = new Date();
     //       startTime.setMonth(startTime.getMonth() - 3);
