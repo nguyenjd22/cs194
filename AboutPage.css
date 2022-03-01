@@ -24,6 +24,9 @@ body {
   background-color: #cccccc;
 }
 
+.cover-container {
+  width: 100%;
+}
 .cover-container1 {
   max-width: 42em;
 }
