@@ -42,8 +42,10 @@
   <header class="mb-auto">
     <div>
       <?php
+      /*
         session_start();
         echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';
+        */
         ?>
       <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link" href="index.php">Home</a>
@@ -56,7 +58,7 @@
             <nav class="nav nav-masthead justify-content-center float-md-end">
               <a class="nav-link" href="index.php">Home</a>
               <a class="nav-link active" aria-current="page" href="#">About</a>
-              <a href="logout.php" class="nav-link navbar-right" margin-right="0px">Logout</a>
+              <!-- <a href="logout.php" class="nav-link navbar-right" margin-right="0px">Logout</a> -->
             </nav>
           </td>
           <td width="20%">
