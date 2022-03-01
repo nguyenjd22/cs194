@@ -24,9 +24,9 @@ body {
   background-color: #cccccc;
 }
 
-.cover-container {
+/* .cover-container {
   max-width: 42em;
-}
+} */
 
 
 /*
@@ -85,5 +85,4 @@ body {
       background-color: #5e5e5e;
       /* border-bottom-left-radius: %;
       border-bottom-right-radius: 5%; */
-      width:100%;
   }
