@@ -250,7 +250,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               .attr("src", listOfPhotos[x]);
 
       }
-
+      console.log(listOfPhotos);
       var c = document.getElementById("cnv");
       console.log(c);
       var ctx = c.getContext("2d");
