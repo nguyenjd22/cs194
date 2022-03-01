@@ -24,35 +24,103 @@
     <title>Generate Collage</title>
   </head>
   <body>
-  
+    <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
+      <a class="nav-link" href="index.php">Home</a>
+      <a class="nav-link active" aria-current="page" href="#">About</a>
+      <a href="logout.php" class="nav-link navbar-right" margin-right="0px">Logout</a>
+    </nav> -->
 
-  <div class="content datepickercontent">
+    <table class="nav nav-masthead justify-content-center float-md-end">
+      <tr>
+        <td width="80%">
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+            <!-- <a href="logout.php" class="nav-link navbar-right" margin-right="0px">Logout</a> -->
+          </nav>
+        </td>
+        <td width="20%">
+          <a href="logout.php" class="nav-link" margin-right="0px">Logout</a>
+        </td>
+      </tr>
+    </table>
     
-    <div class="container text-left containerbox">
-      <div class="row justify-content-center datepicking">
-        <div class="col-lg-3">
-          <h3 class="mb-5 text-center">Start Date</h2>
+
+    <table class="datepicking">
+      <tr class="headerRow" >
+        <th width="25%" class="tableCol header">
+         Start Date
+        </th>
+        <th width="25%" class="tableCol header">
+          End Date
+        </th>
+        <th width="25%" class="tableCol">
+        </th>
+        <th width="25%" class="tableCol">
+        </th>
+      </tr>
+      <tr class="dateRow">
+        <td class="tableCol">
           <form action="#">
             <div class="form-group">
               <input type="date" id="start">
             </div>
           </form>
-        </div>
-        <div class="col-lg-3">
-          <h3 class="mb-5 text-center">End Date</h2>
+        </td>
+        <td class="tableCol">
           <form action="#">
             <div class="form-group">
-              <input type="date" id="end">
+              <input type="date" id="end" width="100%">
             </div>
           </form>
-        </div>
-        <button onclick="setDatesInCookie()">
-          Generate Collage
-        </button>
-      </div>
+        </td>
+        <td class="tableCol">
+          <button onclick="setDatesInCookie()" class="buttonStyle">
+            Generate Collage
+          </button>
+        </td>
+        <td class="tableCol">
+          <button onclick="setDatesInCookie()" class="buttonStyle">
+            Generate GIF
+          </button>
+        </td>
 
-    </div>
-  </div>
+      </tr>
+    </table>
+
+
+
+    <!-- <div class="content datepickercontent">
+      <div class="container containerbox">
+        <div class="row justify-content-center datepicking">
+          <div class="col-lg-3">
+            <h3 class="mb-5 text-center">Start Date</h2>
+            <form action="#">
+              <div class="form-group">
+                <input type="date" id="start">
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-3">
+            <h3 class="mb-5 text-center">End Date</h2>
+            <form action="#">
+              <div class="form-group">
+                <input type="date" id="end">
+              </div>
+            </form>
+          </div>
+          <div class="buttonPair">
+            <button onclick="setDatesInCookie()" class="buttonStyle">
+              Generate Collage
+            </button>
+            <button onclick="setDatesInCookie()" class="buttonStyle">
+              Generate GIF
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div> -->
   <script>
     function setDatesInCookie() {
       start = document.getElementById('start').valueAsDate;

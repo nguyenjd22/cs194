@@ -153,15 +153,7 @@
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-            <p>Datepicker <a href="/calendar-12/datepicker.html">Sign up now</a>.</p>
-            <input type="date" value="2017-06-01">
         </form>
-  
-      <!-- <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div> --> 
       <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
     </form>
   </main>
