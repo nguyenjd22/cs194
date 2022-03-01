@@ -38,7 +38,7 @@
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<div width="100%" class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
       <?php
@@ -52,7 +52,7 @@
         <a class="nav-link active" aria-current="page" href="#">About</a>
         <a href="logout.php" class="nav-link">Logout</a>
       </nav> -->
-      <table class="nav nav-masthead justify-content-center float-md-end">
+      <table width="100%" class="nav nav-masthead justify-content-center float-md-end">
         <tr>
           <td width="80%">
             <nav class="nav nav-masthead justify-content-center float-md-end">
