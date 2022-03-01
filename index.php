@@ -1,7 +1,7 @@
 <?php
 // Initialize the session
 session_start();
- 
+
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
@@ -49,6 +49,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <nav class="nav nav-masthead justify-content-center float-md-end">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
             <a class="nav-link" href="AboutPage.php">About</a>
+            <a class="nav-link" href="datepicker.html">Create</a>
             <a href="logout.php" class="nav-link">Logout</a>
           </nav>
         </div>
@@ -77,13 +78,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     function authorizeInstagram() {
       window.location.href='https://www.instagram.com/oauth/authorize?client_id=978419269749571&redirect_uri=https://www.roundabout-cs194.com/&scope=user_profile,user_media&response_type=code';
     }
-    
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     var container = document.getElementById('imageContainer');
     var docFrag = document.createDocumentFragment();
     var code = urlParams.get('code');
-    
+
     if (code) {
       hideAuthorizeBottom();
       const client_secret = getClientSecret();
@@ -91,7 +92,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         function(client_secret) {getAccessToken(client_secret);}
       );
     }
-    
+
     function getAccessToken(client_secret){
       const paramsToken = {
         client_id: '978419269749571',
@@ -114,8 +115,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         console.error('Error:', error);
       });
     }
-    
-    
+
+
     async function getClientSecret() {
       var client_secret;
       await fetch('/secrets.php', {
@@ -133,14 +134,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       });
       return client_secret;
     }
-    
-    
+
+
     function hideAuthorizeBottom() {
       document.getElementById("authorizeBottom").remove();
     }
-    
+
     // async function getMediaData(data, access_token) {
-    //       var listOfMediaData = [];	
+    //       var listOfMediaData = [];
     //       var promises = [];
     //       data.forEach(function(item) {
     //           const mediaID = item["id"];
@@ -175,12 +176,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //                 }
     //             }));
     //       });
-    //       return Promise.all(promises).then(() => { 
-    //           return listOfMediaData; 
+    //       return Promise.all(promises).then(() => {
+    //           return listOfMediaData;
     //       });
     // }
-    
-    // // Utilize CAROUSEL_ALBUM fetch urls to get each CAROUSEL_ALBUM's data object. 
+
+    // // Utilize CAROUSEL_ALBUM fetch urls to get each CAROUSEL_ALBUM's data object.
     // function getIndividualCarouselDatas(car_urls) {
     //   var individual_datas = [];
     //   var promises = [];
@@ -192,16 +193,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //           individual_datas.push(data);
     //       }));
     //   });
-    //   return Promise.all(promises).then(() => { 
-    //       return individual_datas; 
+    //   return Promise.all(promises).then(() => {
+    //       return individual_datas;
     //   });
     // }
-    
+
     // // With each CAROUSEL_ALBUM's data object, we can loop over each item in it to get each photo URL.
     // function getIndividualCarouselPhotos(individual_datas, access_token) {
     //   var promises = [];
     //   var listOfPhotos = [];
-      
+
     //   individual_datas.forEach(function(data) {
     //     data.forEach(function(item) {
     //           const mediaID = item["id"];
@@ -231,12 +232,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //           );
     //     });
     //   });
-    
-    //   return Promise.all(promises).then(() => { 
-    //           return listOfPhotos; 
+
+    //   return Promise.all(promises).then(() => {
+    //           return listOfPhotos;
     //   });
     // }
-    
+
     // function getUserData(access_token) {
     //       var data = [];
     //       var startTime = new Date();
@@ -249,7 +250,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //       .then( response => response.json() )
     //       .then( response => {
     //           data = response["data"];
-    //           getMediaData(data, access_token).then((listOfMediaData) => { 
+    //           getMediaData(data, access_token).then((listOfMediaData) => {
     //                 var car_urls = [];
     //                 var temp = [];
 
@@ -261,8 +262,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //                       temp.push(item);
     //                     }
     //                 });
-                    
-    //                 // Utilize CAROUSEL_ALBUM fetch urls to get each CAROUSEL_ALBUM's data object. 
+
+    //                 // Utilize CAROUSEL_ALBUM fetch urls to get each CAROUSEL_ALBUM's data object.
     //                 getIndividualCarouselDatas(car_urls).then((individual_datas) => {
     //                     // With each CAROUSEL_ALBUM's data object, we can loop over each item in it to get each photo URL.
     //                     getIndividualCarouselPhotos(individual_datas, access_token).then((listOfPhotos) => {
@@ -271,16 +272,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //                     });
     //                 });
     //           });
-    //       }) 
+    //       })
     //       .catch((error) => {
     //         console.error('Error:', error);
     //       });
     // }
-    
+
     // function getUnixTime(date) {
     //   return Math.floor(date.getTime() / 1000);
     // }
-    
+
     function getOption(params) {
       var formBody = [];
       for (var property in params) {
@@ -289,7 +290,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         formBody.push(encodedKey + "=" + encodedValue);
       }
       formBody = formBody.join("&");
-    
+
       return {
           method: 'POST',
           headers: {
@@ -298,7 +299,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           body: formBody
         };
     }
-    
+
     // function displayCollage(listOfPhotos) {
     //   document.getElementById("svbtn").removeAttribute("hidden");
     //   var width = 800,
@@ -307,12 +308,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //     .size([width, height])
     //     .padding(50)
     //     .mode("grid");
-      
+
     //   var data = d3.range(8);
     //   var beach_bknd = "https://media.istockphoto.com/photos/tropical-beach-copy-space-scene-picture-id1144456717?k=20&m=1144456717&s=612x612&w=0&h=z6AXl5vv_YMupxWfJ-RMR9KjpSAcVIoV9TlUaVzqRKM="
-      
+
     //   var griddingData = gridding(data);
-      
+
     //   var cnv = d3.select("#cnvdiv").append("canvas")
     //       .attr("id", "cnv")
     //       .attr("width", width)
