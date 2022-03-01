@@ -64,7 +64,6 @@ body {
     background-color: transparent;
     border-bottom: .25rem solid transparent;
     margin:7px;
-    width:100%;
   }
 
   .nav-masthead .nav-link:hover,
@@ -86,5 +85,5 @@ body {
       background-color: #5e5e5e;
       /* border-bottom-left-radius: %;
       border-bottom-right-radius: 5%; */
-
+      width:100%;
   }
