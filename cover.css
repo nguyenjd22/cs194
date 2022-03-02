@@ -85,8 +85,8 @@ body {
 }
 
 .active {
-   color: black;
-   border-bottom-color: black;
+   color: white;
+   border-bottom-color: white;
  }
 
 .logoutButton {
