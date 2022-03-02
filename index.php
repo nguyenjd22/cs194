@@ -39,6 +39,26 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <body class="d-flex h-100 text-center text-white bg-dark">
     <script src="https://unpkg.com/d3@5"></script>
     <script src="https://unpkg.com/d3-gridding@0.1"></script>
+    <table class="toolBar">
+      <tr>
+        <td class="menuItems">
+            <a href="index.php" class="menuItem">Home</a>
+            <!-- <a aria-current="page" href="#">About</a> -->
+        <!-- </td>
+        <td> -->
+          <a  class="menuItem" href="AboutPage.php">About</a>
+        <!-- </td>
+        <td> -->
+          <a  class="menuItem active" aria-current="page" href="#">Create</a>
+        </td>
+        <td width="10%">
+          <button class="logoutButton">
+            <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+          </button>
+          <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
+        </td>
+      </tr>
+    </table>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
         <div>
@@ -52,26 +72,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <a class="nav-link" href="datepicker.html">Create</a>
             <a href="logout.php" class="nav-link">Logout</a>
           </nav> -->
-          <table class="toolBar">
-            <tr>
-              <td class="menuItems">
-                  <a href="index.php" class="menuItem">Home</a>
-                  <!-- <a aria-current="page" href="#">About</a> -->
-              <!-- </td>
-              <td> -->
-                <a  class="menuItem" href="AboutPage.php">About</a>
-              <!-- </td>
-              <td> -->
-                <a  class="menuItem active" aria-current="page" href="#">Create</a>
-              </td>
-              <td width="10%">
-                <button class="logoutButton">
-                  <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
-                </button>
-                <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
-              </td>
-            </tr>
-          </table>
         </div>
       </header>
       <main class="px-3" id="authorizeBottom">
