@@ -46,13 +46,34 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             session_start();
             /*echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';
             */?>
-          <nav class="nav nav-masthead justify-content-center float-md-end">
+          <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
             <a class="nav-link" href="index.php">Home</a>
             <a class="nav-link" href="AboutPage.php">About</a>
             <a class="nav-link" href="datepicker.html">Create</a>
             <a href="logout.php" class="nav-link">Logout</a>
-          </nav>
+          </nav> -->
+
         </div>
+        <table class="toolBar">
+          <tr>
+            <td class="menuItems">
+                <a href="index.php" class="menuItem">Home</a>
+                <!-- <a aria-current="page" href="#">About</a> -->
+            <!-- </td>
+            <td> -->
+              <a  class="menuItem" href="AboutPage.php">About</a>
+            <!-- </td>
+            <td> -->
+              <a  class="menuItem" href="datepicker.html">Create</a>
+            </td>
+            <td width="10%">
+              <button class="logoutButton">
+                <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+              </button>
+              <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
+            </td>
+          </tr>
+        </table>
       </header>
       <main class="px-3" id="authorizeBottom">
       </main>
