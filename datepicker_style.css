@@ -114,7 +114,6 @@ body {
 
  .menuItem:hover,
  .menuItem:focus {
-     color: rgba(255, 255, 255, .25);
      border-bottom-color: rgba(255, 255, 255, .25);
  }
 

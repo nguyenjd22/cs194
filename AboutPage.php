@@ -52,22 +52,41 @@
         <a class="nav-link active" aria-current="page" href="#">About</a>
         <a href="logout.php" class="nav-link">Logout</a>
       </nav> -->
-      <table class="nav nav-masthead justify-content-center float-md-end">
+      <!-- <table class="nav nav-masthead justify-content-center float-md-end">
         <tr>
           <td width="80%">
             <nav class="nav nav-masthead justify-content-center float-md-end">
               <a class="nav-link" href="index.php">Home</a>
               <a class="nav-link active" aria-current="page" href="#">About</a>
               <a class="nav-link" href="datepicker.html">Create</a>
-              <!-- <a href="logout.php" class="nav-link navbar-right" margin-right="0px">Logout</a> -->
             </nav>
           </td>
           <td width="20%">
             <a href="logout.php" class="nav-link" margin-right="0px">Logout</a>
           </td>
         </tr>
-      </table>
+      </table> -->
     </div>
+    <table class="toolBar">
+      <tr>
+        <td class="menuItems">
+            <a href="index.php" class="menuItem">Home</a>
+            <!-- <a aria-current="page" href="#">About</a> -->
+        <!-- </td>
+        <td> -->
+          <a  class="menuItem" href="AboutPage.php">About</a>
+        <!-- </td>
+        <td> -->
+          <a  class="menuItem active" aria-current="page" href="#">Create</a>
+        </td>
+        <td width="10%">
+          <button class="logoutButton">
+            <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+          </button>
+          <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
+        </td>
+      </tr>
+    </table>
   </header>
   <main class="px-3">
     <h1>About Us</h1>
