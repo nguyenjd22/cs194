@@ -280,6 +280,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       var img = document.getElementById("bkd");
       img.onload = function() {
         ctx.drawImage(img, 0, 0);
+        console.log("bckd");
         var pic = new Array(9)
         for (let i = 0; i < 3; i++) {
           for (let j = 0; j < 3; j++) {
