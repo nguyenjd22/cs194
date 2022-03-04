@@ -198,6 +198,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           // startTime = getUnixTime(startTime);
           // var endTime = new Date();
           // endTime = getUnixTime(endTime);
+          console.log(startDate);
+          console.log(endDate);
           var url = 'https://graph.instagram.com/me/media?access_token=' + access_token + '&since=' + startDate + '&until=' + endDate;
           fetch(url)
           .then( response => response.json() )
