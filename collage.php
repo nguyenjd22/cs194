@@ -266,13 +266,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             .attr("crossorigin", "anonymous")
             .attr("src", beach_bknd);
 
-      for (let x = 0; x < listOfPhotos.length; x++) {
-        d3.select("body").append('img')
-              .attr("id", x)
-              .attr("crossorigin", "anonymous")
-              .attr("src", listOfPhotos[x]);
+      //for (let x = 0; x < listOfPhotos.length; x++) {
+      //  d3.select("body").append('img')
+      //        .attr("id", x)
+      //        .attr("crossorigin", "anonymous")
+      //        .attr("src", listOfPhotos[x]);
 
-      }
+//      }
       console.log(listOfPhotos);
       var c = document.getElementById("cnv");
       console.log(c);
