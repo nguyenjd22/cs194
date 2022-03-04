@@ -285,7 +285,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           for (let j = 0; j < 3; j++) {
             if (!(i===2 && j===2)){
               pic[i*3 + j] = document.getElementById(i*3 + j);
-              console.log(pic[i*3+j]);
+              console.log(i*3+j);
               pic[i*3 + j].onload = function() {
                 ctx.drawImage(pic[i*3+j], (35*(j+1) + 150*j), (35*(i+1) + 150*i), 150, 150);
                 pic[i*3+j].remove();
