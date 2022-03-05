@@ -1,4 +1,14 @@
-<!doctype html>
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -8,15 +18,15 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
 
-    
+
     <link rel="stylesheet" href="fonts/icomoon/style.css">
-    
+
     <link rel="stylesheet" href="css/classic.css">
     <link rel="stylesheet" href="css/classic.date.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    
+
     <!-- Style -->
     <link rel="stylesheet" href="datepicker_style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -64,7 +74,7 @@
         </td>
       </tr>
     </table>
-    
+
 
     <table class="datepicking">
       <tr class="headerRow" >
@@ -157,3 +167,4 @@
     }
   </script>
 </body>
+</html>
