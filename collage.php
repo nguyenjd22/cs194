@@ -64,7 +64,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               <a  class="menuItem" href="AboutPage.php">About</a>
             <!-- </td>
             <td> -->
-              <a  class="menuItem" href="datepicker.html">Create</a>
+              <a  class="menuItem" href="datepicker.php">Create</a>
             </td>
             <td width="10%">
               <button class="logoutButton">
