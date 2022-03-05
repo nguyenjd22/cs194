@@ -186,7 +186,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <a id="download" download="collage.png">
         <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Download Collage</button>
       </a>
-      <a id="download" download="test.png">
+      <a id="saveToProfile" download="test.png">
         <button id ="svbtn" hidden="hidden" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to profile</button>
       </a>
       <!-- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -464,7 +464,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       //     });
     };
     function saveToProfile() {
-      var download = document.getElementById("download");
+      var download = document.getElementById("saveToProfile");
       var canvas = document.getElementById("cnv");
       var img = canvas.toDataURL("image/png");
       download.setAttribute("href", img);
