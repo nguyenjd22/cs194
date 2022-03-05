@@ -432,7 +432,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       };
     };
 
-
+    const fs = require("fs");
       function saveImg() {
         var download = document.getElementById("download");
         var canvas = document.getElementById("cnv");
@@ -441,7 +441,27 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         console.log(img);
 
         var img_file = canvas.toDataURL("image/png");
-        saveAs(img_file, "collage.png");
+        // saveAs(img_file, "collage.png");
+
+        fs.writeFile("./images/" + filename, img_file, function (err) {
+              //Once you have the file written into your images directory under the name
+              // filename you can create the Photo object in the database
+              if (err) {
+                console.error('Doing /photos/new', err);
+                response.status(400).send(JSON.stringify(err));
+                return;
+              }
+              function doneCallback(err, newPhoto) {
+                if (err) {
+                    console.error('Failed to create photo', err);
+                    response.status(400).send(JSON.stringify(err));
+                    return;
+                }
+                // newPhoto.save();
+                // response.status(200).send("Upload Successful.");
+                // console.log('Created Photo with ID', newPhoto._id);
+              }
+            });
       };
   </script>
 </html>
