@@ -247,7 +247,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         .mode("grid");
 
       var data = d3.range(8);
-      var beach_bknd = "https://media.istockphoto.com/photos/tropical-beach-copy-space-scene-picture-id1144456717?k=20&m=1144456717&s=612x612&w=0&h=z6AXl5vv_YMupxWfJ-RMR9KjpSAcVIoV9TlUaVzqRKM="
+      var beach_bknd = "https://media.istockphoto.com/photos/tropical-beach-copy-space-scene-picture-id1144456717?k=20&m=1144456717&s=612x612&w=0&h=z6AXl5vv_YMupxWfJ-RMR9KjpSAcVIoV9TlUaVzqRKM=";
+      var mtn_bknd = "https://www.roundabout-cs194.com/pictures/copyrightInfringe.jpg";
 
       var griddingData = gridding(data);
 
@@ -264,7 +265,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             .attr("id", "bkd")
             //.attr("hidden", "hidden")
             .attr("crossorigin", "anonymous")
-            .attr("src", beach_bknd);
+            .attr("src", mtn_bknd);
 
       //for (let x = 0; x < listOfPhotos.length; x++) {
       //  d3.select("body").append('img')
