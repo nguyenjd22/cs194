@@ -186,6 +186,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <a id="download" download="collage.png">
         <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Download Collage</button>
       </a>
+      <a id="download" download="test.png">
+        <button id ="svbtn" hidden="hidden" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to profile</button>
+      </a>
       <!-- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <input type="text" placeholder="First Name" name="first_name" class="form-control <?php echo (!empty($first_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $first_name; ?>">
@@ -432,54 +435,64 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       };
     };
 
-    const fs = require("fs");
-      function saveImg() {
-        var download = document.getElementById("download");
-        var canvas = document.getElementById("cnv");
-        var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        download.setAttribute("href", img);
-        console.log(img);
+    // const fs = require("fs");
+    function saveImg() {
+      var download = document.getElementById("download");
+      var canvas = document.getElementById("cnv");
+      var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+      download.setAttribute("href", img);
+      console.log(img);
 
-        var img_file = canvas.toDataURL("image/png");
-        saveAs(img_file, "collage.png");
+      // fs.writeFile("./images/" + filename, img_file, function (err) {
+      //       //Once you have the file written into your images directory under the name
+      //       // filename you can create the Photo object in the database
+      //       if (err) {
+      //         console.error('Doing /photos/new', err);
+      //         response.status(400).send(JSON.stringify(err));
+      //         return;
+      //       }
+      //       function doneCallback(err, newPhoto) {
+      //         if (err) {
+      //             console.error('Failed to create photo', err);
+      //             response.status(400).send(JSON.stringify(err));
+      //             return;
+      //         }
+      //         // newPhoto.save();
+      //         // response.status(200).send("Upload Successful.");
+      //         // console.log('Created Photo with ID', newPhoto._id);
+      //       }
+      //     });
+    };
+    function saveToProfile() {
+      var download = document.getElementById("download");
+      var canvas = document.getElementById("cnv");
+      var img = canvas.toDataURL("image/png");
+      download.setAttribute("href", img);
+      console.log(img);
 
-        function saveAs(uri, filename){
-            var link = document.createElement('a');
+      console.log("test");
+      saveAs(canvas.toDataURL(), 'file-name.png')
 
-            if (typeof link.download === 'string'){
-                link.href = uri;
-                link.download = filename;
+      function saveAs(uri, filename){
+          var link = document.createElement('a');
 
-                document.body.appendChild(link);
+          if (typeof link.download === 'string'){
+              link.href = uri;
+              link.download = filename;
 
-                link.click();
+              document.body.appendChild(link);
 
-                document.body.removeChild(link);
-            } else {
-              window.open(uri);
-            }
+              link.click();
 
-        };
+              document.body.removeChild(link);
+          } else {
+            window.open(uri);
+          }
 
-        // fs.writeFile("./images/" + filename, img_file, function (err) {
-        //       //Once you have the file written into your images directory under the name
-        //       // filename you can create the Photo object in the database
-        //       if (err) {
-        //         console.error('Doing /photos/new', err);
-        //         response.status(400).send(JSON.stringify(err));
-        //         return;
-        //       }
-        //       function doneCallback(err, newPhoto) {
-        //         if (err) {
-        //             console.error('Failed to create photo', err);
-        //             response.status(400).send(JSON.stringify(err));
-        //             return;
-        //         }
-        //         // newPhoto.save();
-        //         // response.status(200).send("Upload Successful.");
-        //         // console.log('Created Photo with ID', newPhoto._id);
-        //       }
-        //     });
       };
+      }
+
+
+
   </script>
 </html>
