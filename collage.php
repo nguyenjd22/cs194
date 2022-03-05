@@ -443,6 +443,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
       download.setAttribute("href", img);
       console.log(img);
+      
+      var img_file = canvas.toDataURL("image/png")
+      var FileSaver = require('file-saver');
+      // var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
+      FileSaver.saveAs(img_file, "collage.png");
 
       // fs.writeFile("./images/" + filename, img_file, function (err) {
       //       //Once you have the file written into your images directory under the name
