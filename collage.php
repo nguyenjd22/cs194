@@ -220,7 +220,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
   </body>
   <script>
-  import { saveAs } from 'file-saver';
+  import { saveAs } from 'node_modules/file-saver';
     arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
     startDate = arr[2].split('=')[1]
