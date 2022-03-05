@@ -220,6 +220,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
   </body>
   <script>
+  import { saveAs } from 'file-saver';
     arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
     startDate = arr[2].split('=')[1]
@@ -463,36 +464,34 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       //       }
       //     });
     };
-    function saveToProfile() {
-      var download = document.getElementById("saveToProfile");
-      var canvas = document.getElementById("cnv");
-      var img = canvas.toDataURL("image/png");
-      download.setAttribute("href", img);
-      console.log(img);
-
-      console.log("test");
-      saveAs(canvas.toDataURL(), 'file-name.png')
-
-      function saveAs(uri, filename){
-          var link = document.createElement('a');
-
-          if (typeof link.download === 'string'){
-              link.href = uri;
-              link.download = filename;
-
-              document.body.appendChild(link);
-
-              link.click();
-
-              document.body.removeChild(link);
-          } else {
-            window.open(uri);
-          }
-
-      };
-      }
-
-
+    // function saveToProfile() {
+    //   var download = document.getElementById("saveToProfile");
+    //   var canvas = document.getElementById("cnv");
+    //   var img = canvas.toDataURL("image/png");
+    //   download.setAttribute("href", img);
+    //   console.log(img);
+    //
+    //   console.log("test");
+    //   saveAs(canvas.toDataURL(), 'file-name.png')
+    //
+    //   function saveAs(uri, filename){
+    //       var link = document.createElement('a');
+    //
+    //       if (typeof link.download === 'string'){
+    //           link.href = uri;
+    //           link.download = filename;
+    //
+    //           document.body.appendChild(link);
+    //
+    //           link.click();
+    //
+    //           document.body.removeChild(link);
+    //       } else {
+    //         window.open(uri);
+    //       }
+    //
+    //   };
+    //   }
 
   </script>
 </html>
