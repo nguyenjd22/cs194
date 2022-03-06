@@ -157,7 +157,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
   </body>
   <script>
-  import { saveAs } from './node_modules/file-saver';
     arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
     startDate = arr[2].split('=')[1]
