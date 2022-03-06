@@ -147,9 +147,9 @@ require_once "config.php";
       <!-- <a id="saveToProfile" download="test.png">
         <button id ="svbtn" hidden="hidden" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to profile</button>
       </a> -->
-      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+      <!-- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <button id="saveButton" name="saveToProfile" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to Profile</button>
-      </form>
+      </form> -->
       <footer class="mt-auto text-white-50">
         <p>Stanford CS194 Project Round-About</p>
       </footer>
@@ -381,14 +381,14 @@ require_once "config.php";
     };
 
 
-    function saveToProfile() {
-      // var download = document.getElementById("saveButton");
-      var canvas = document.getElementById("cnv");
-      var img = canvas.toDataURL("image/png");
-      // download.setAttribute("href", img);
-      console.log(img);
-      return image;
-    };
+    // function saveToProfile() {
+    //   // var download = document.getElementById("saveButton");
+    //   var canvas = document.getElementById("cnv");
+    //   var img = canvas.toDataURL("image/png");
+    //   // download.setAttribute("href", img);
+    //   console.log(img);
+    //   return image;
+    // };
 
     // function saveToProfile() {
     //   var download = document.getElementById("saveToProfile");
