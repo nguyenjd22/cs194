@@ -3,15 +3,15 @@
 session_start();
 
 
-function generateRandomString($length = 10) {
-  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  $charactersLength = strlen($characters);
-  $randomString = '';
-  for ($i = 0; $i < $length; $i++) {
-      $randomString .= $characters[rand(0, $charactersLength - 1)];
-  }
-  return $randomString;
-}
+// function generateRandomString($length = 10) {
+//   $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//   $charactersLength = strlen($characters);
+//   $randomString = '';
+//   for ($i = 0; $i < $length; $i++) {
+//       $randomString .= $characters[rand(0, $charactersLength - 1)];
+//   }
+//   return $randomString;
+// }
 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
@@ -23,7 +23,7 @@ require_once "config.php";
 // $profile_collage_image = "";
 // $user_id_err = $file_name_err = $photo_type_err = $image_err;
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+// if($_SERVER["REQUEST_METHOD"] == "POST"){
   // // Validate first name
   // if(empty(trim($_POST["first_name"]))){
   //   $first_name_err = "Please enter your first name.";
@@ -42,33 +42,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   // if(empty($user_id_err) && empty($file_name_err) && empty($photo_type_err) && empty($image_err)){
 
       // Prepare an insert statement
-      $sql = "INSERT INTO users (user_id, file_name, photo_type, image) VALUES (?, ?, ?, ?)";
-
-      if($stmt = mysqli_prepare($link, $sql)){
-          // Bind variables to the prepared statement as parameters
-          mysqli_stmt_bind_param($stmt, "issb", $param_user_id, $param_file_name, $param_photo_type, $param_image);
-
-          // Set parameters
-          $param_user_id = $_SESSION ['username'];
-          $param_file_name = generateRandomString();
-          $param_photo_type = "collage";
-          $param_image = "<script>saveToProfile();</script>";
-
-          // Attempt to execute the prepared statement
-          if(mysqli_stmt_execute($stmt)){
-              // Redirect to login page
-              header("location: index.php");
-          } else{
-              echo "Oops! Something went wrong. Please try again later. SQL query.";
-          }
-
-          // Close statement
-          mysqli_stmt_close($stmt);
+      // $sql = "INSERT INTO users (user_id, file_name, photo_type, image) VALUES (?, ?, ?, ?)";
+      //
+      // if($stmt = mysqli_prepare($link, $sql)){
+      //     // Bind variables to the prepared statement as parameters
+      //     mysqli_stmt_bind_param($stmt, "issb", $param_user_id, $param_file_name, $param_photo_type, $param_image);
+      //
+      //     // Set parameters
+      //     $param_user_id = $_SESSION ['username'];
+      //     $param_file_name = generateRandomString();
+      //     $param_photo_type = "collage";
+      //     $param_image = "<script>saveToProfile();</script>";
+      //
+      //     // Attempt to execute the prepared statement
+      //     if(mysqli_stmt_execute($stmt)){
+      //         // Redirect to login page
+      //         header("location: index.php");
+      //     } else{
+      //         echo "Oops! Something went wrong. Please try again later. SQL query.";
+      //     }
+      //
+      //     // Close statement
+      //     mysqli_stmt_close($stmt);
+      // // }
       // }
-  }
 
   // Close connection
-  mysqli_close($link);
+  // mysqli_close($link);
 }
 
 ?>
