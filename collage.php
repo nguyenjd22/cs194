@@ -69,8 +69,7 @@ require_once "config.php";
 
   // Close connection
   // mysqli_close($link);
-}
-
+// }
 ?>
 <html lang="en" class="h-100">
   <head>
