@@ -2,115 +2,74 @@
 // Initialize the session
 session_start();
 
+
+function generateRandomString($length = 10) {
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $charactersLength = strlen($characters);
+  $randomString = '';
+  for ($i = 0; $i < $length; $i++) {
+      $randomString .= $characters[rand(0, $charactersLength - 1)];
+  }
+  return $randomString;
+}
+
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
-// require_once "config.php";
-// // Processing form data when form is submitted
-// if($_SERVER["REQUEST_METHOD"] == "POST"){
+require_once "config.php";
 
-//   // Validate first name
-//   if(empty(trim($_POST["first_name"]))){
-//     $first_name_err = "Please enter your first name.";
-//   } else{
-//       $first_name = trim($_POST["first_name"]);
-//   }
+// $profile_collage_image = "";
+// $user_id_err = $file_name_err = $photo_type_err = $image_err;
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  // // Validate first name
+  // if(empty(trim($_POST["first_name"]))){
+  //   $first_name_err = "Please enter your first name.";
+  // } else{
+  //     $first_name = trim($_POST["first_name"]);
+  // }
 
-//   // Validate last name
-//   if(empty(trim($_POST["last_name"]))){
-//     $first_name_err = "Please enter your last name.";
-//   } else{
-//       $last_name = trim($_POST["last_name"]);
-//   }
+  // // Validate last name
+  // if(empty(trim($_POST["last_name"]))){
+  //   $first_name_err = "Please enter your last name.";
+  // } else{
+  //     $last_name = trim($_POST["last_name"]);
+  // }
 
-//   // Validate username
-//   if(empty(trim($_POST["username"]))){
-//       $username_err = "Please enter a username.";
-//   } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
-//       $username_err = "Username can only contain letters, numbers, and underscores.";
-//   } else{
-//       // Prepare a select statement
-//       $sql = "SELECT id FROM users WHERE username = ?";
+  // Check input errors before inserting in database
+  // if(empty($user_id_err) && empty($file_name_err) && empty($photo_type_err) && empty($image_err)){
 
-//       if($stmt = mysqli_prepare($link, $sql)){
-//           // Bind variables to the prepared statement as parameters
-//           mysqli_stmt_bind_param($stmt, "s", $param_username);
+      // Prepare an insert statement
+      $sql = "INSERT INTO users (user_id, file_name, photo_type, image) VALUES (?, ?, ?, ?)";
 
-//           // Set parameters
-//           $param_username = trim($_POST["username"]);
+      if($stmt = mysqli_prepare($link, $sql)){
+          // Bind variables to the prepared statement as parameters
+          mysqli_stmt_bind_param($stmt, "issb", $param_user_id, $param_file_name, $param_photo_type, $param_image);
 
-//           // Attempt to execute the prepared statement
-//           if(mysqli_stmt_execute($stmt)){
-//               /* store result */
-//               mysqli_stmt_store_result($stmt);
+          // Set parameters
+          $param_user_id = $_SESSION ['username'];
+          $param_file_name = generateRandomString();
+          $param_photo_type = "collage";
+          $param_image = "<script>saveToProfile();</script>";
 
-//               if(mysqli_stmt_num_rows($stmt) == 1){
-//                   $username_err = "This username is already taken.";
-//               } else{
-//                   $username = trim($_POST["username"]);
-//               }
-//           } else{
-//               echo "Oops! Something went wrong. Please try again later. Validate Username.";
-//           }
+          // Attempt to execute the prepared statement
+          if(mysqli_stmt_execute($stmt)){
+              // Redirect to login page
+              header("location: index.php");
+          } else{
+              echo "Oops! Something went wrong. Please try again later. SQL query.";
+          }
 
-//           // Close statement
-//           mysqli_stmt_close($stmt);
-//       }
-//   }
+          // Close statement
+          mysqli_stmt_close($stmt);
+      // }
+  }
 
-//   // Validate password
-//   if(empty(trim($_POST["password"]))){
-//       $password_err = "Please enter a password.";
-//   } elseif(strlen(trim($_POST["password"])) < 6){
-//       $password_err = "Password must have atleast 6 characters.";
-//   } else{
-//       $password = trim($_POST["password"]);
-//   }
-
-//   // Validate confirm password
-//   if(empty(trim($_POST["confirm_password"]))){
-//       $confirm_password_err = "Please confirm password.";
-//   } else{
-//       $confirm_password = trim($_POST["confirm_password"]);
-//       if(empty($password_err) && ($password != $confirm_password)){
-//           $confirm_password_err = "Password did not match.";
-//       }
-//   }
-
-//   // Check input errors before inserting in database
-//   if(empty($first_name_err) && empty($last_name_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err)){
-
-//       // Prepare an insert statement
-//       $sql = "INSERT INTO users (first_name, last_name, username, password) VALUES (?, ?, ?, ?)";
-
-//       if($stmt = mysqli_prepare($link, $sql)){
-//           // Bind variables to the prepared statement as parameters
-//           mysqli_stmt_bind_param($stmt, "ssss", $param_first_name, $param_last_name, $param_username, $param_password);
-
-//           // Set parameters
-//           $param_first_name = $first_name;
-//           $param_last_name = $last_name;
-//           $param_username = $username;
-//           $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-
-//           // Attempt to execute the prepared statement
-//           if(mysqli_stmt_execute($stmt)){
-//               // Redirect to login page
-//               header("location: login.php");
-//           } else{
-//               echo "Oops! Something went wrong. Please try again later. SQL query.";
-//           }
-
-//           // Close statement
-//           mysqli_stmt_close($stmt);
-//       }
-//   }
-
-//   // Close connection
-//   mysqli_close($link);
-// }
+  // Close connection
+  mysqli_close($link);
+}
 
 ?>
 <html lang="en" class="h-100">
@@ -189,31 +148,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <!-- <a id="saveToProfile" download="test.png">
         <button id ="svbtn" hidden="hidden" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to profile</button>
       </a> -->
-      <!-- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <input type="text" placeholder="First Name" name="first_name" class="form-control <?php echo (!empty($first_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $first_name; ?>">
-                <span class="invalid-feedback"><?php echo $first_name_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Last Name" name="last_name" class="form-control <?php echo (!empty($last_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $last_name; ?>">
-                <span class="invalid-feedback"><?php echo $last_name_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Username" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="Password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="Confirm Password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
-                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-lg btn-secondary fw-bold border-white big-white" value="Save to profile">
-            </div>
-        </form> -->
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <button id="saveButton" name="saveToProfile" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to Profile</button>
+      </form>
       <footer class="mt-auto text-white-50">
         <p>Stanford CS194 Project Round-About</p>
       </footer>
@@ -443,32 +380,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
       download.setAttribute("href", img);
       console.log(img);
-      
-      var img_file = canvas.toDataURL("image/png")
-      var FileSaver = require('file-saver');
-      // var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
-      FileSaver.saveAs(img_file, "collage.png");
-
-      // fs.writeFile("./images/" + filename, img_file, function (err) {
-      //       //Once you have the file written into your images directory under the name
-      //       // filename you can create the Photo object in the database
-      //       if (err) {
-      //         console.error('Doing /photos/new', err);
-      //         response.status(400).send(JSON.stringify(err));
-      //         return;
-      //       }
-      //       function doneCallback(err, newPhoto) {
-      //         if (err) {
-      //             console.error('Failed to create photo', err);
-      //             response.status(400).send(JSON.stringify(err));
-      //             return;
-      //         }
-      //         // newPhoto.save();
-      //         // response.status(200).send("Upload Successful.");
-      //         // console.log('Created Photo with ID', newPhoto._id);
-      //       }
-      //     });
     };
+
+
+    function saveToProfile() {
+      // var download = document.getElementById("saveButton");
+      var canvas = document.getElementById("cnv");
+      var img = canvas.toDataURL("image/png");
+      // download.setAttribute("href", img);
+      console.log(img);
+      return image;
+    };
+
     // function saveToProfile() {
     //   var download = document.getElementById("saveToProfile");
     //   var canvas = document.getElementById("cnv");
