@@ -38,7 +38,7 @@
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
 
-<div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+<div class="cover-container d-flex w-100 h-100 flex-column">
   <table class="toolBar">
       <tr>
         <td class="menuItems">
