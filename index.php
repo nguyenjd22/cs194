@@ -36,14 +36,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <!-- Custom styles for this template -->
     <link href="authorization.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-white">
+  <body class="d-flex h-100 text-center text-white bg-dark">
     <script src="https://unpkg.com/d3@5"></script>
     <script src="https://unpkg.com/d3-gridding@0.1"></script>
     <div class="cover-container d-flex w-100 h-100 flex-column">
       <table class="toolBar">
       <tr>
         <td class="menuItems">
-          <a style="text-decoration: none;" href="homepage.html" class="menuItem">Home</a>
+          <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
           <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
         </td>
         <td width="10%">
@@ -60,7 +60,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             ?>
         </div>
       </header>
-      <main class="mainBox" id="authorizeBottom">
+      <main class="px-3 w-80" id="authorizeBottom">
         <h1>Welcome To Round-About</h1>
         <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
         <form>
