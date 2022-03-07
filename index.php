@@ -84,6 +84,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <h1>Welcome To Round-About</h1>
         <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
         <form>
+        <form>
+        </form>
         <button onclick="authorizeInstagram()" class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit">
         Authorize Instagram
         </button>
