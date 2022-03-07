@@ -40,19 +40,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <script src="https://unpkg.com/d3@5"></script>
     <script src="https://unpkg.com/d3-gridding@0.1"></script>
     <div class="cover-container d-flex w-100 h-100 flex-column">
-      <!-- <table class="toolBar">
-        <tr>
-          <td class="menuItems">
-              <a  class="menuItem active" aria-current="page" href="#">Home</a>
-            <a  class="menuItem" href="AboutPage.php">About</a>
-          </td>
-          <td width="10%">
-            <button class="logoutButton">
-              <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
-            </button>
-          </td>
-        </tr>
-      </table> -->
       <table class="toolBar">
       <tr>
         <td class="menuItems">
@@ -70,17 +57,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div>
           <?php
             session_start();
-            /*echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';*/
             ?>
-          <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="AboutPage.php">About</a>
-            <a class="nav-link" href="datepicker.html">Create</a>
-            <a href="logout.php" class="nav-link">Logout</a>
-          </nav> -->
         </div>
       </header>
-      <main class="px-3" id="authorizeBottom">
+      <main class="px-3" id="authorizeBottom" class="mainBox">
         <h1>Welcome To Round-About</h1>
         <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
         <form>
@@ -89,7 +69,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <button onclick="authorizeInstagram()" class="w-10 btn btn-lg btn-primary" type="submit">
         Authorize Instagram
         </button>
-        <!-- <button class="w-100 btn btn-lg btn-primary" onclick="authorizeInstagram()" type="submit">Authorize Instagram </button> -->
         </form>
       </main>
       <!-- <div id="cnvdiv"></div>

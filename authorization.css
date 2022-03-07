@@ -6,9 +6,9 @@ body {
 body {
   display: flex;
   align-items: center;
-  /* padding-top: 40px; */
+  padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .5);
 }
 
 .form-signin {
@@ -16,6 +16,13 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: auto;
+}
+
+.mainBox {
+  background-color: white;
+  border-radius: 10px;
+  max-width: 500px;
+  max-height: 300px;
 }
 
 .logo {
