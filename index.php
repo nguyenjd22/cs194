@@ -15,8 +15,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Cover Template · Bootstrap v5.1</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+    <title>Authorize</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
@@ -34,51 +34,39 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <link href="authorization.css" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
     <script src="https://unpkg.com/d3@5"></script>
     <script src="https://unpkg.com/d3-gridding@0.1"></script>
-    <div class="cover-container d-flex w-100 h-100 p-3 flex-column">
+    <div class="cover-container d-flex w-100 h-100 flex-column">
       <table class="toolBar">
-        <tr>
-          <td class="menuItems">
-              <a  class="menuItem active" aria-current="page" href="#">Home</a>
-          <!-- </td>
-          <td> -->
-            <a  class="menuItem" href="AboutPage.php">About</a>
-          <!-- </td>
-          <td> -->
-          </td>
-          <td width="10%">
-            <button class="logoutButton">
-              <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
-            </button>
-            <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
-          </td>
-        </tr>
-      </table>
+      <tr>
+        <td class="menuItems">
+          <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
+          <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
+        </td>
+        <td width="10%">
+          <button class="logoutButton">
+            <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+          </button>
+        </td>
+      </tr>
+    </table>
       <header class="mb-auto">
         <div>
           <?php
             session_start();
-            /*echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';*/
             ?>
-          <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="AboutPage.php">About</a>
-            <a class="nav-link" href="datepicker.html">Create</a>
-            <a href="logout.php" class="nav-link">Logout</a>
-          </nav> -->
         </div>
       </header>
-      <main class="px-3" id="authorizeBottom">
+      <main class="px-3 w-80" id="authorizeBottom">
         <h1>Welcome To Round-About</h1>
         <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
         <form>
         <form>
         </form>
-        <button onclick="authorizeInstagram()" class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit">
+        <button onclick="authorizeInstagram()" class="w-10 btn btn-lg btn-primary" type="submit">
         Authorize Instagram
         </button>
         </form>

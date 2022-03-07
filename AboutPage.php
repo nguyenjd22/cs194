@@ -37,71 +37,38 @@
     <link href="AboutPage.css" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
-
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <?php
-      /*
-        session_start();
-        echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';
-        */
-        ?>
-      <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link" href="index.php">Home</a>
-        <a class="nav-link active" aria-current="page" href="#">About</a>
-        <a href="logout.php" class="nav-link">Logout</a>
-      </nav> -->
-      <!-- <table class="nav nav-masthead justify-content-center float-md-end">
+    <script src="https://unpkg.com/d3@5"></script>
+    <script src="https://unpkg.com/d3-gridding@0.1"></script>
+    <div class="cover-container d-flex w-100 h-100 flex-column">
+      <table class="toolBar">
         <tr>
-          <td width="80%">
-            <nav class="nav nav-masthead justify-content-center float-md-end">
-              <a class="nav-link" href="index.php">Home</a>
-              <a class="nav-link active" aria-current="page" href="#">About</a>
-              <a class="nav-link" href="datepicker.html">Create</a>
-            </nav>
+          <td class="menuItems">
+            <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
+            <a style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">About</a>
+            <!-- GATING SYSTEM - AUTHORIZATION PAGE IF NOT AUTHORIZED; OTHERWISE - DATEPICKER -->
+            <a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>
           </td>
-          <td width="20%">
-            <a href="logout.php" class="nav-link" margin-right="0px">Logout</a>
+          <td width="10%">
+            <button class="logoutButton">
+              <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+            </button>
           </td>
         </tr>
-      </table> -->
+      </table>
+      <header class="mb-auto">
+        <div>
+          <?php
+            session_start();
+            ?>
+        </div>
+      </header>
+      <main class="px-3" id="authorizeBottom">
+        <h1>About Us</h1>
+        <p class="lead">We are a group of Stanford Undergraduates who are passionate about sharing stories with others. With this project we aim to create a tool that helps social media users enhance the quality of their media posts. We help them by creating a one-of-a-kind capsule of their shared photo experiences.</p>
+      </main>
+      <footer class="mt-auto text-white-50">
+        <p>Stanford CS194 Project Round-About</p>
+      </footer>
     </div>
-    <table class="toolBar">
-      <tr>
-        <td class="menuItems">
-            <a href="index.php" class="menuItem">Home</a>
-            <!-- <a aria-current="page" href="#">About</a> -->
-        <!-- </td>
-        <td> -->
-          <a  class="menuItem active" aria-current="page" href="#">About</a>
-        <!-- </td>
-        <td> -->
-        <a  class="menuItem" href="datepicker.php">Create</a>
-
-        </td>
-        <td width="10%">
-          <button class="logoutButton">
-            <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
-          </button>
-          <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
-        </td>
-      </tr>
-    </table>
-  </header>
-  <main class="px-3">
-    <h1>About Us</h1>
-    <p class="lead">We are a group of Stanford Undergraduates who are passionate about sharing stories with others. With this project we aim to create a tool that helps social media users enhance the quality of their media posts. We help them by creating a one-of-a-kind capsule of their shared photo experiences.</p>
-    <p class="lead">
-    </p>
-  </main>
-
-  <footer class="mt-auto text-white-50">
-    <p>Stanford CS194 Project Round-About</p>
-  </footer>
-</div>
-
-
-
   </body>
 </html>
