@@ -310,6 +310,7 @@ require_once "config.php";
     var height = 800;
     var isLarge = false;
     function displayCollage(listOfPhotos) {
+      console.log(listOfPhotos);
       document.getElementById("svbtn").removeAttribute("hidden");
       //var width = 800,
       //      height = 800;
@@ -333,7 +334,6 @@ require_once "config.php";
       bigBkd["mountain"] = "https://wallpaperset.com/2/full/d/b/5/232927.jpg";
       smallBkd["mountain"] = mtn_bknd;
       var currentBkd = isLarge ? bigBkd["beach"] : smallBkd["beach"];
-      console.log(currentBkd);
       var bkdType = currentBkd;
 
       var griddingData = gridding(data);
@@ -394,14 +394,11 @@ require_once "config.php";
       });
       document.body.appendChild(brick);
 
-      console.log(listOfPhotos);
       var c = document.getElementById("cnv");
-      console.log(c);
       var ctx = c.getContext("2d");
       var img = document.getElementById("bkd");
       img.onload = function() {
         ctx.drawImage(img, 0, 0, width, height);
-        console.log("bckd");
         img.remove();
       };
     };
@@ -429,7 +426,7 @@ require_once "config.php";
 			    pic[i*loopLen+j] = new Image();
 			    pic[i*loopLen+j].src = listOfPhotos[i*loopLen+j];
 			    pic[i*loopLen+j].crossOrigin = "anonymous";
-			    ctx.drawImage(pic[i*loopLen+j], (35*x*(j-1) + 150*y*j), (35*x*(i-1) + 150*y*i), 150*x, 150*x);
+			    ctx.drawImage(pic[i*loopLen+j], (35*x*(j+1) + 150*y*j), (35*x*(i+1) + 150*y*i), 150*x, 150*x);
 		    }
 	    }
     };
@@ -489,7 +486,6 @@ require_once "config.php";
     function drawCascade(listOfPhotos, bkdType) {
 	    var ctx = initCollage(listOfPhotos, bkdType);
 	    var loopLen = isLarge ? 10:7;
-	    console.log(loopLen);
 	    pic = new Array(loopLen+1);
 	    for (let x = 0; x < loopLen; x++) {
 		    pic[x] = new Image();
@@ -514,7 +510,6 @@ require_once "config.php";
       var canvas = document.getElementById("cnv");
       var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
       download.setAttribute("href", img);
-      console.log(img);
     };
 
 
