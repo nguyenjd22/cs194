@@ -406,8 +406,12 @@ require_once "config.php";
     // Returns a fresh collage context with the background drawn on top of it
     function initCollage(listOfPhotos, bkdType) {
 	    shuffleArray(listOfPhotos);
+	    console.log("Photos Shuffled");
+	    console.log(listOfPhotos);
 	    var c = document.getElementById("cnv");
 	    var ctx = c.getContext("2d");
+	    console.log(ctx);
+	    console.log("context");
 	    var img = new Image();
 	    img.src = bkdType
 	    img.crossOrigin = "anonymous";
@@ -421,15 +425,36 @@ require_once "config.php";
 	    pic = new Array(loopLen * loopLen);
 	    var x = isLarge ? 1.25 : 1.15;
 	    var y = isLarge ? 1.25 : 1.5;
+	    var loaded = 0;
 	    for (let i = 0; i < loopLen; i++) {
 		    for (let j = 0; j < loopLen; j++) {
-			    pic[i*loopLen+j] = new Image();
-			    pic[i*loopLen+j].src = listOfPhotos[i*loopLen+j];
-			    pic[i*loopLen+j].crossOrigin = "anonymous";
-			    ctx.drawImage(pic[i*loopLen+j], (35*x*(j+1) + 150*y*j), (35*x*(i+1) + 150*y*i), 150*x, 150*x);
+			    if (listOfPhotos[i*loopLen+j] !== undefined) {
+				    pic[i*loopLen+j] = new Image();
+				    pic[i*loopLen+j].onload = function () {
+					    loaded++;
+					    console.log(loaded);
+					    if (loaded === listOfPhotos.length) {
+						    gridDraw(pic, ctx, x, y);
+					    }
+				    };
+				    pic[i*loopLen+j].crossOrigin = "anonymous";
+			    	    pic[i*loopLen+j].src = listOfPhotos[i*loopLen+j];
+		    	    }
 		    }
 	    }
     };
+
+    function gridDraw(pic, ctx, x, y) {
+	    var loopLen = getGridSize(isLarge);
+	    for (let i  = 0; i < loopLen; i++) {
+		    for (let j = 0; j < loopLen; j++) {
+			    if (i*loopLen+j < pic.length) {
+				    ctx.drawImage(pic[i*loopLen+j], (35*x*(j+1)+150*y*j), (35*x*(i+1)+150*y*i), 150*x, 150*x)
+			    }
+		    }
+	    }
+    };
+
 
     function getGridSize(isLarge) {
 	    var converted = isLarge ? 1:0;
