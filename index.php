@@ -36,7 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <!-- Custom styles for this template -->
     <link href="authorization.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
+  <body class="d-flex h-100 text-center text-white">
     <script src="https://unpkg.com/d3@5"></script>
     <script src="https://unpkg.com/d3-gridding@0.1"></script>
     <div class="cover-container d-flex w-100 h-100 flex-column">
@@ -60,7 +60,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             ?>
         </div>
       </header>
-      <main class="px-3" id="authorizeBottom" class="mainBox">
+      <main class="px-10 py-10 mainBox" id="authorizeBottom">
         <h1>Welcome To Round-About</h1>
         <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
         <form>
