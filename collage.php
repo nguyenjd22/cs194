@@ -306,10 +306,18 @@ require_once "config.php";
       return Math.floor(date.getTime() / 1000);
     }
 
+    var width = 800;
+    var height = 800;
+    var isLarge = false;
     function displayCollage(listOfPhotos) {
       document.getElementById("svbtn").removeAttribute("hidden");
-      var width = 800,
-          height = 800;
+      //var width = 800,
+      //      height = 800;
+      isLarge = listOfPhotos.length > 9;
+      if(isLarge) {
+	width = 1000;
+	height = 1000;
+      }
       var gridding = d3.gridding()
         .size([width, height])
         .padding(50)
@@ -318,6 +326,15 @@ require_once "config.php";
       var data = d3.range(8);
       var beach_bknd = "https://media.istockphoto.com/photos/tropical-beach-copy-space-scene-picture-id1144456717?k=20&m=1144456717&s=612x612&w=0&h=z6AXl5vv_YMupxWfJ-RMR9KjpSAcVIoV9TlUaVzqRKM=";
       var mtn_bknd = "https://www.roundabout-cs194.com/pictures/copyrightInfringe.jpg";
+      var bigBkd = {};
+      var smallBkd = {};
+      bigBkd["beach"] = "https://live.staticflickr.com/3872/15095543979_7f3a2814b5_b.jpg";
+      smallBkd["beach"] = beach_bknd;
+      bigBkd["mountain"] = "https://wallpaperset.com/2/full/d/b/5/232927.jpg";
+      smallBkd["mountain"] = mtn_bknd;
+      var currentBkd = isLarge ? bigBkd["beach"] : smallBkd["beach"];
+      console.log(currentBkd);
+      var bkdType = currentBkd;
 
       var griddingData = gridding(data);
 
@@ -334,7 +351,7 @@ require_once "config.php";
             .attr("id", "bkd")
             //.attr("hidden", "hidden")
             .attr("crossorigin", "anonymous")
-            .attr("src", mtn_bknd);
+            .attr("src", currentBkd);
 
       //for (let x = 0; x < listOfPhotos.length; x++) {
       //  d3.select("body").append('img')
@@ -342,33 +359,153 @@ require_once "config.php";
       //        .attr("crossorigin", "anonymous")
       //        .attr("src", listOfPhotos[x]);
 
-//      }
+      //      }
+      
+
+      var cascade = document.createElement('input');
+      cascade.type = 'button';
+      cascade.value = "Draw Cascade";
+      cascade.addEventListener('click', function () {
+	      drawCascade(listOfPhotos, bkdType);
+      });
+      document.body.appendChild(cascade);
+
+      var grid = document.createElement('input');
+      grid.type = 'button';
+      grid.value = "Draw Grid";
+      grid.addEventListener('click', function () {
+	      drawGrid(listOfPhotos, bkdType);
+      });
+      document.body.appendChild(grid);
+
+      var layer = document.createElement('input');
+      layer.type = 'button';
+      layer.value = "Draw Layered";
+      layer.addEventListener('click', function () {
+	      drawLayer(listOfPhotos, bkdType);
+      });
+      document.body.appendChild(layer);
+
+      var brick = document.createElement('input');
+      brick.type = 'button';
+      brick.value = "Draw Brick";
+      brick.addEventListener('click', function () {
+	      drawBrick(listOfPhotos, bkdType);
+      });
+      document.body.appendChild(brick);
+
       console.log(listOfPhotos);
       var c = document.getElementById("cnv");
       console.log(c);
       var ctx = c.getContext("2d");
       var img = document.getElementById("bkd");
       img.onload = function() {
-        ctx.drawImage(img, 0, 0);
+        ctx.drawImage(img, 0, 0, width, height);
         console.log("bckd");
-        var pic = new Array(9)
-        for (let i = 0; i < 3; i++) {
-          for (let j = 0; j < 3; j++) {
-            if (!(i===2 && j===2)){
-              //pic[i*3 + j] = document.getElementById(i*3 + j);
-              console.log(i*3+j);
-              pic[i*3 + j] = new Image()
-              pic[i*3+j].src = listOfPhotos[i*3+j]
-              pic[i*3+j].crossOrigin = "Anonymous";
-              pic[i*3 + j].onload = function() {
-                ctx.drawImage(pic[i*3+j], (35*(j+1) + 150*j), (35*(i+1) + 150*i), 150, 150);
-                //pic[i*3+j].remove();
-              };
-            }
-          }
-        }
         img.remove();
       };
+    };
+    
+    // Returns a fresh collage context with the background drawn on top of it
+    function initCollage(listOfPhotos, bkdType) {
+	    shuffleArray(listOfPhotos);
+	    var c = document.getElementById("cnv");
+	    var ctx = c.getContext("2d");
+	    var img = new Image();
+	    img.src = bkdType
+	    img.crossOrigin = "anonymous";
+	    ctx.drawImage(img, 0, 0, width, height);
+	    return ctx;
+    }
+
+    function drawGrid(listOfPhotos, bkdType) {
+	    var loopLen = getGridSize(isLarge);
+	    var ctx = initCollage(listOfPhotos, bkdType);
+	    pic = new Array(loopLen * loopLen);
+	    var x = isLarge ? 1.25 : 1.15;
+	    var y = isLarge ? 1.25 : 1.5;
+	    for (let i = 0; i < loopLen; i++) {
+		    for (let j = 0; j < loopLen; j++) {
+			    pic[i*loopLen+j] = new Image();
+			    pic[i*loopLen+j].src = listOfPhotos[i*loopLen+j];
+			    pic[i*loopLen+j].crossOrigin = "anonymous";
+			    ctx.drawImage(pic[i*loopLen+j], (35*x*(j-1) + 150*y*j), (35*x*(i-1) + 150*y*i), 150*x, 150*x);
+		    }
+	    }
+    };
+
+    function getGridSize(isLarge) {
+	    var converted = isLarge ? 1:0;
+	    return converted+3;
+    };
+
+    function drawLayer(listOfPhotos, bkdType) {
+	    shuffleArray(listOfPhotos);
+	    var ctx = document.getElementById("cnv").getContext("2d");
+	    var len = isLarge ? 10:8;
+	    pic = new Array(len);
+	    for (let x = 0; x < len; x++) {
+		    pic[x] = new Image();
+		    pic[x].src = listOfPhotos[x];
+		    pic[x].crossOrigin = "anonymous";
+		    ctx.drawImage(pic[x], (50*x), (100*x), (width-2*50*x), (height-100*x));
+	    }
+    };
+
+    function getBrickSize(isLarge) {
+	    var converted = isLarge ? 2:0;
+	    return converted+3;
+    };
+
+    function drawBrick(listOfPhotos, bkdType) {
+	    var ctx = initCollage(listOfPhotos, bkdType);
+	    var loopLen = getBrickSize(isLarge);
+	    pic = new Array(listOfPhotos.length + 1);
+	    for (let i = 0; i < loopLen; i++) {
+		    for (let j = 0; j < loopLen; j++) {
+			    pic[i*3+j] = new Image();
+			    pic[i*3+j].src = listOfPhotos[i*3+j];
+			    pic[i*3+j].crossOrigin = "anonymous";
+			    if ((j%2) === 0) {
+				    if (isLarge) {
+					    ctx.drawImage(pic[i*3+j], (35*(j+1) + 150*j), (50 + 35*(i+1) + 150*i), 150, 150);
+				    }
+				    else {
+					    ctx.drawImage(pic[i*3+j], (85*(j+1)+150*j), (100*(i+1)+150*i), 150, 150);
+				    }
+			    }
+			    else {
+				    if (isLarge) {
+					    ctx.drawImage(pic[i*3+j], (35*(j+1) + 150*j), (35*(i+1)+150*i), 150, 150);
+				    }
+			    	    else {
+					    ctx.drawImage(pic[i*3+j], (85*(j+1)+150*j), (50*(i+1)+150*i), 150, 150);
+				    }
+			    }
+		    }
+	    }
+    };
+
+    function drawCascade(listOfPhotos, bkdType) {
+	    var ctx = initCollage(listOfPhotos, bkdType);
+	    var loopLen = isLarge ? 10:7;
+	    console.log(loopLen);
+	    pic = new Array(loopLen+1);
+	    for (let x = 0; x < loopLen; x++) {
+		    pic[x] = new Image();
+		    pic[x].src = listOfPhotos[x];
+		    pic[x].crossOrigin = "anonymous";
+		    ctx.drawImage(pic[x], (75*(x+1)), (75*(x+1)), 175, 175);
+	    }
+    };
+
+    function shuffleArray(arr) {
+	    for (var i = arr.length - 1; i > 0; i--) {
+		    var j = Math.floor(Math.random()*(i+1));
+		    var temp = arr[i];
+		    arr[i] = arr[j];
+		    arr[j] = temp;
+	    }
     };
 
     // const fs = require("fs");
@@ -418,6 +555,18 @@ require_once "config.php";
     //
     //   };
     //   }
+
+    function setBeach() {
+      bkd_type = "bkdtype=beach";
+      document.cookie = bkd_type;
+      cnosole.log(bkd_type); 
+    }
+
+    function setMtn() {
+      bkd_type = "bkdtype=mountain";
+      document.cookie = bkd_type;
+      console.log(bkd_type);
+    }
 
   </script>
 </html>
