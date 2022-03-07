@@ -86,7 +86,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <form>
         <form>
         </form>
-        <button onclick="authorizeInstagram()" class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit">
+        <button onclick="authorizeInstagram()" class="w-100 btn btn-lg btn-primary" type="submit">
         Authorize Instagram
         </button>
         <!-- <button class="w-100 btn btn-lg btn-primary" onclick="authorizeInstagram()" type="submit">Authorize Instagram </button> -->
