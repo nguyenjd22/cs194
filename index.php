@@ -36,7 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <!-- Custom styles for this template -->
     <link href="authorization.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
+  <body class="d-flex h-100 text-center text-black bg-dark">
     <script src="https://unpkg.com/d3@5"></script>
     <script src="https://unpkg.com/d3-gridding@0.1"></script>
     <div class="cover-container d-flex w-100 h-100 flex-column">
@@ -60,17 +60,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             ?>
         </div>
       </header>
+    <div class="mainBox">
       <main class="px-3 w-80" id="authorizeBottom">
         <h1>Welcome To Round-About</h1>
         <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
         <form>
         <form>
         </form>
-        <button onclick="authorizeInstagram()" class="w-10 btn btn-lg btn-primary" type="submit">
+        <button onclick="authorizeInstagram()" class="w-10 btn btn-lg btn-primary" color="white" type="submit">
         Authorize Instagram
         </button>
         </form>
       </main>
+    </div>
       <!-- <div id="cnvdiv"></div>
       <a id="download" download="collage.png">
         <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save Collage</button>
