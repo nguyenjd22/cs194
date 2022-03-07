@@ -39,16 +39,7 @@
   <body class="d-flex h-100 text-center text-white bg-dark">
 
 <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <?php
-      /*
-        session_start();
-        echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';
-        */
-        ?>
-    </div>
-    <table class="toolBar">
+  <table class="toolBar">
       <tr>
         <td class="menuItems">
           <a style="text-decoration: none;" href="index.php" class="menuItem">Home</a>
@@ -65,6 +56,15 @@
         </td>
       </tr>
     </table>
+  <header class="mb-auto">
+    <div>
+      <?php
+      /*
+        session_start();
+        echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';
+        */
+        ?>
+    </div>
   </header>
   <main class="px-3">
     <h1>About Us</h1>
