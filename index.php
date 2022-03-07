@@ -84,10 +84,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <h1>Welcome To Round-About</h1>
         <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
         <form>
-        <!-- <button onclick="authorizeInstagram()" class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit">
+        <button onclick="authorizeInstagram()" class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit">
         Authorize Instagram
-        </button> -->
-        <button class="w-100 btn btn-lg btn-primary" onclick="authorizeInstagram()" type="submit">Authorize Instagram </button>
+        </button>
+        <!-- <button class="w-100 btn btn-lg btn-primary" onclick="authorizeInstagram()" type="submit">Authorize Instagram </button> -->
         </form>
       </main>
       <!-- <div id="cnvdiv"></div>
