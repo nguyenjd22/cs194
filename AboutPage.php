@@ -38,7 +38,7 @@
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
   <header class="mb-auto">
     <div>
       <?php
@@ -47,37 +47,14 @@
         echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';
         */
         ?>
-      <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link" href="index.php">Home</a>
-        <a class="nav-link active" aria-current="page" href="#">About</a>
-        <a href="logout.php" class="nav-link">Logout</a>
-      </nav> -->
-      <!-- <table class="nav nav-masthead justify-content-center float-md-end">
-        <tr>
-          <td width="80%">
-            <nav class="nav nav-masthead justify-content-center float-md-end">
-              <a class="nav-link" href="index.php">Home</a>
-              <a class="nav-link active" aria-current="page" href="#">About</a>
-              <a class="nav-link" href="datepicker.html">Create</a>
-            </nav>
-          </td>
-          <td width="20%">
-            <a href="logout.php" class="nav-link" margin-right="0px">Logout</a>
-          </td>
-        </tr>
-      </table> -->
     </div>
     <table class="toolBar">
       <tr>
         <td class="menuItems">
-            <a href="index.php" class="menuItem">Home</a>
-            <!-- <a aria-current="page" href="#">About</a> -->
-        <!-- </td>
-        <td> -->
-          <a  class="menuItem active" aria-current="page" href="#">About</a>
-        <!-- </td>
-        <td> -->
-        <a  class="menuItem" href="datepicker.php">Create</a>
+          <a style="text-decoration: none;" href="index.php" class="menuItem">Home</a>
+          <a style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">About</a>
+          <!-- GATING SYSTEM - AUTHORIZATION PAGE IF NOT AUTHORIZED; OTHERWISE - DATEPICKER -->
+          <a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>
 
         </td>
         <td width="10%">
