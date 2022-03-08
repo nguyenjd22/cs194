@@ -384,7 +384,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </style>
 </head>
 <body>
-  <header class="cover-container d-flex h-100 p-3 mx-auto gap-5 justify-content-center">
+  <header class="cover-container d-flex h-100 p-3 gap-5 justify-content-center">
     <!-- <div>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#">Map</a>
