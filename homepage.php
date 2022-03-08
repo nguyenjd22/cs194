@@ -43,9 +43,9 @@
           <?php
             session_start();
             if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-              echo '<a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>';
-            } else {
               echo '';
+            } else {
+              echo '<a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>';
             }
           ?>
           <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
