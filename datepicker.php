@@ -104,7 +104,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </td>
         <td class="tableCol">
           <button onclick="goToMap()" class="buttonStyle">
-            Generate GIF
+            Generate Map
           </button>
         </td>
 
