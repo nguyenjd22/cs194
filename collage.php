@@ -362,8 +362,7 @@ require_once "config.php";
       //      }
 
 
-      var cascade = document.createElement('input');
-      cascade.type = 'button';
+      var cascade = document.createElement('button');
       cascade.class = 'btn btn-lg btn-primary';
       cascade.value = "Draw Cascade";
       cascade.addEventListener('click', function () {
@@ -371,8 +370,7 @@ require_once "config.php";
       });
       document.body.appendChild(cascade);
 
-      var grid = document.createElement('input');
-      grid.type = 'button';
+      var grid = document.createElement('button');
       grid.class = 'btn btn-lg btn-primary';
       grid.value = "Draw Grid";
       grid.addEventListener('click', function () {
@@ -380,8 +378,7 @@ require_once "config.php";
       });
       document.body.appendChild(grid);
 
-      var layer = document.createElement('input');
-      layer.type = 'button';
+      var layer = document.createElement('button');
       layer.class = 'btn btn-lg btn-primary';
       layer.value = "Draw Layered";
       layer.addEventListener('click', function () {
