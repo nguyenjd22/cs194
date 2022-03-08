@@ -346,8 +346,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <div class="headerpart">
     <div class="header-text1">
       <h1>Interactive Map</h1>
-<!--       <h2>Interactive Map</h2>
- -->    </div>
+      <h2>The earth map interacts with your photos.</h2>
+    </div>
   </div>
   <section class="body-text">
     <h2>Mac User Only</h2>
