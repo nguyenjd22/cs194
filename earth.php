@@ -350,7 +350,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
  -->    </div>
   </div>
   <section class="body-text">
-    <p>Mac users only: to get a video, click the search icon on the top right corner on your screen, then type Quicktime Play. Open the Quicktime Play, and then select File -> New Screen Recording. Click the red icon on Screen Recording popover, and then select the map area that you like, then hit Start Recording. After you finish recording, click the icon on the upper right on your screen to end the recording. Then save the file to your destination.</p>
+    <h2>Mac User Only</h2>
+    <p>To get a video, click the search icon on the top right corner on your screen, then type Quicktime Play. Open the Quicktime Play, and then select File -> New Screen Recording. Click the red icon on Screen Recording popover, and then select the map area that you like, then hit Start Recording. After you finish recording, click the icon on the upper right on your screen to end the recording. Then save the file to your destination.</p>
   </section>
   <section class="maps">
     <div class="map">
@@ -562,7 +563,7 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
               .text(time + ", in " +data[i].country);
               tip.html(image)
                .style("left", c2[0]+700 + "px")     
-               .style("top", c2[1]+800 + "px");
+               .style("top", c2[1]+1000 + "px");
             };
         })
       .transition()
