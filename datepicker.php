@@ -145,7 +145,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <button onclick="setDatesInCookie()" class="buttonStyle">
               Generate Collage
             </button>
-            <button onclick="setDatesInCookie()" class="buttonStyle">
+            <button onclick="goToMap()" class="buttonStyle">
               Generate GIF
             </button>
           </div>
@@ -167,6 +167,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     function getUnixTime(date) {
       return Math.floor(date.getTime() / 1000);
     }
+      
+    function goToMap() {
+      start = document.getElementById('start').valueAsDate;
+      end = document.getElementById('end').valueAsDate;
+
+      document.cookie = "start=" + getUnixTime(start);
+      document.cookie = "end=" + getUnixTime(end);
+
+      location.href = "countryPicker.php";
+    }
+
   </script>
 </body>
 </html>
