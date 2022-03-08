@@ -52,6 +52,14 @@
         </td>
         <td width="20%">
           <h3>Hello, ____</h3>
+          <?php
+          session_start();
+          if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+            echo '';
+          } else {
+            echo '<h3>'.$_SESSION ['first_name'].$_SESSION ['last_name'].'</h3>';
+          }
+          ?>
         </td>
         <td width="10%">
           <!-- echo '<h1>Hello, '.$_SESSION ['first_name'].'</h1>'; -->
