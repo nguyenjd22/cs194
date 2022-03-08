@@ -56,7 +56,7 @@
           if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             echo '';
           } else {
-            echo '<h4>'.$_SESSION ['first_name'].' '.$_SESSION ['last_name']'</h4>';
+            echo '<h4>'$_SESSION ['first_name']." ".$_SESSION ['last_name']'</h4>';
           }
           ?>
         </td>
