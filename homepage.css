@@ -147,5 +147,18 @@ body {
 .firstCarousel {
     /* flip horizontally */
     transform: scaleX(-1);
-    background-color: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));;
 }
+
+/* .img-gradient {
+  position:relative;
+} */
+
+
+.img-gradient::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.12));
+}
+
