@@ -384,36 +384,37 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </style>
 </head>
 <body>
-  <header class="cover-container d-flex h-100 p-3 gap-5 justify-content-center">
-    <!-- <div>
+  <table class="toolBar">
+    <tr>
+      <td class="menuItems">
+          <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
+          <!-- <a aria-current="page" href="#">About</a> -->
+      <!-- </td>
+      <td> -->
+        <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
+      <!-- </td>
+      <td> -->
+        <a  style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">Create</a>
+        <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
+      </td>
+      <td width="10%">
+        <button class="logoutButton">
+          <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+        </button>
+        <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
+      </td>
+    </tr>
+  </table>
+  <!-- <header class="cover-container d-flex h-100 p-3 gap-5 justify-content-center">
+    <div>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#">Map</a>
         <a class="nav-link" href="AboutPage.php">About</a>
         <a class="nav-link" href="homepage.html">Home</a>
       </nav>
-    </div> -->
-    <table class="toolBar">
-      <tr>
-        <td class="menuItems">
-            <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
-            <!-- <a aria-current="page" href="#">About</a> -->
-        <!-- </td>
-        <td> -->
-          <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
-        <!-- </td>
-        <td> -->
-          <a  style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">Create</a>
-          <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
-        </td>
-        <td width="10%">
-          <button class="logoutButton">
-            <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
-          </button>
-          <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
-        </td>
-      </tr>
-    </table>
-  </header>
+    </div>
+
+  </header> -->
 
   <div class="headerpart">
     <div class="header-text1">
