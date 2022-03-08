@@ -364,6 +364,7 @@ require_once "config.php";
 
       var cascade = document.createElement('input');
       cascade.type = 'button';
+      cascade.class = 'btn btn-lg btn-primary';
       cascade.value = "Draw Cascade";
       cascade.addEventListener('click', function () {
 	      drawCascade(listOfPhotos, bkdType);
@@ -372,6 +373,7 @@ require_once "config.php";
 
       var grid = document.createElement('input');
       grid.type = 'button';
+      grid.class = 'btn btn-lg btn-primary';
       grid.value = "Draw Grid";
       grid.addEventListener('click', function () {
 	      drawGrid(listOfPhotos, bkdType);
@@ -380,6 +382,7 @@ require_once "config.php";
 
       var layer = document.createElement('input');
       layer.type = 'button';
+      layer.class = 'btn btn-lg btn-primary';
       layer.value = "Draw Layered";
       layer.addEventListener('click', function () {
 	      drawLayer(listOfPhotos, bkdType);
@@ -388,6 +391,7 @@ require_once "config.php";
 
       var brick = document.createElement('input');
       brick.type = 'button';
+      brick.class = 'btn btn-lg btn-primary';
       brick.value = "Draw Brick";
       brick.addEventListener('click', function () {
 	      drawBrick(listOfPhotos, bkdType);
