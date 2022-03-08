@@ -39,7 +39,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <table class="toolBar">
       <tr>
         <td class="menuItems">
-            <a href="index.php" class="menuItem">Home</a>
+            <a href="homepage.html" class="menuItem">Home</a>
             <!-- <a aria-current="page" href="#">About</a> -->
         <!-- </td>
         <td> -->
