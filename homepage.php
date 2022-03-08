@@ -51,7 +51,7 @@
           <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
         <td width="20%">
-          <h3>Hello, ____</h3>
+          <!-- <h3>Hello, ____</h3> -->
           <?php
           session_start();
           if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
