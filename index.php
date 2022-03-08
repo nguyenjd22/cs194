@@ -36,52 +36,50 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <!-- Custom styles for this template -->
     <link href="authorization.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-black">
-    <div class="background">
-      <script src="https://unpkg.com/d3@5"></script>
-      <script src="https://unpkg.com/d3-gridding@0.1"></script>
-      <div class="cover-container d-flex w-100 h-100 flex-column">
-        <table class="toolBar">
-        <tr>
-          <td class="menuItems">
-            <a style="text-decoration: none;" href="homepage.html" class="menuItem">Home</a>
-            <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
-          </td>
-          <td width="10%">
-            <button class="logoutButton">
-              <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
-            </button>
-          </td>
-        </tr>
-      </table>
-        <header class="mb-auto">
-          <div>
-            <?php
-              session_start();
-              ?>
-          </div>
-        </header>
-      <div class="mainBox">
-        <main class="px-3 w-80" id="authorizeBottom">
-          <h1>Welcome To Round-About</h1>
-          <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
-          <form>
-          <form>
-          </form>
-          <button onclick="authorizeInstagram()" class="w-10 btn btn-lg btn-primary" color="white" type="submit">
-          Authorize Instagram
+  <body class="d-flex h-100 text-center text-black bg-dark">
+    <script src="https://unpkg.com/d3@5"></script>
+    <script src="https://unpkg.com/d3-gridding@0.1"></script>
+    <div class="cover-container d-flex w-100 h-100 flex-column">
+      <table class="toolBar">
+      <tr>
+        <td class="menuItems">
+          <a style="text-decoration: none;" href="homepage.html" class="menuItem">Home</a>
+          <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
+        </td>
+        <td width="10%">
+          <button class="logoutButton">
+            <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
           </button>
-          </form>
-        </main>
-      </div>
-        <!-- <div id="cnvdiv"></div>
-        <a id="download" download="collage.png">
-          <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save Collage</button>
-        </a> -->
-        <footer class="mt-auto text-white-50">
-          <p>Stanford CS194 Project Round-About</p>
-        </footer>
-      </div>
+        </td>
+      </tr>
+    </table>
+      <header class="mb-auto">
+        <div>
+          <?php
+            session_start();
+            ?>
+        </div>
+      </header>
+    <div class="mainBox">
+      <main class="px-3 w-80" id="authorizeBottom">
+        <h1>Welcome To Round-About</h1>
+        <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
+        <form>
+        <form>
+        </form>
+        <button onclick="authorizeInstagram()" class="w-10 btn btn-lg btn-primary" color="white" type="submit">
+        Authorize Instagram
+        </button>
+        </form>
+      </main>
+    </div>
+      <!-- <div id="cnvdiv"></div>
+      <a id="download" download="collage.png">
+        <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save Collage</button>
+      </a> -->
+      <footer class="mt-auto text-white-50">
+        <p>Stanford CS194 Project Round-About</p>
+      </footer>
     </div>
   </body>
   <script>
