@@ -394,19 +394,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <table class="toolBar">
       <tr>
         <td class="menuItems">
-            <a href="homepage.php" class="menuItem">Home</a>
+            <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
             <!-- <a aria-current="page" href="#">About</a> -->
         <!-- </td>
         <td> -->
-          <a  class="menuItem" href="AboutPage.php">About</a>
+          <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
         <!-- </td>
         <td> -->
-          <a  class="menuItem active" aria-current="page" href="#">Create</a>
+          <a  style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">Create</a>
           <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
         <td width="10%">
           <button class="logoutButton">
-            <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+            <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
           </button>
           <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
         </td>
