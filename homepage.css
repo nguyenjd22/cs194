@@ -143,3 +143,9 @@ body {
 .instaLogo {
   margin-left:50px;
 }
+
+.firstCarousel {
+    /* flip horizontally */
+    transform: scaleX(-1);
+    background-color: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));;
+}
