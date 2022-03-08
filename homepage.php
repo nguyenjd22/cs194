@@ -40,7 +40,6 @@
         <td class="menuItems">
           <a style="text-decoration: none;" href="#" class="menuItem active">Home</a>
           <a style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
-          <!-- GATING SYSTEM - AUTHORIZATION PAGE IF NOT AUTHORIZED; OTHERWISE - DATEPICKER -->
           <a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>
           <a style="text-decoration: none;" class="menuItem" href="instructions.html">Help</a>
         </td>
@@ -87,10 +86,7 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-                <!-- <?php
-            session_start();
-            echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';
-            ?> -->
+
     <div class="carousel-inner">
       <div class="carousel-item active">
         <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
@@ -99,6 +95,10 @@
         </div>
         <div class="container">
           <div class="carousel-caption text-start">
+            <?php
+              session_start();
+              echo '<h1>'Hello, ' + '.$_SESSION ['first_name'].'</h1>';
+            ?>
             <h1>Hello (NAME)</h1>
             <p>Welcome to Round-About, create a collage or interactive map that encapsulates your travel experiences.</p>
 
