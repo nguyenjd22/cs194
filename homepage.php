@@ -107,15 +107,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <div class="carousel-caption text-start">
             <?php
             session_start();
-            echo '<h1>'.$_SESSION ['first_name'].'</h1>';
+            echo '<h1>Hello, '.$_SESSION ['first_name'].'</h1>';
             if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               echo 'hi';
             } else {
-              echo 'bye';
+              echo '<p>Welcome to Round-About, create a collage or interactive map that encapsulates your travel experiences.</p>';
             }
             ?>
             <!-- <h1>Hello (NAME)</h1> -->
-            <!-- <p>Welcome to Round-About, create a collage or interactive map that encapsulates your travel experiences.</p> -->
+            <p>Welcome to Round-About, create a collage or interactive map that encapsulates your travel experiences.</p>
 
             <p><a class="btn btn-lg btn-primary" href="datepicker.php">Create</a></p>
           </div>
