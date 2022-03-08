@@ -391,7 +391,8 @@ arr = document.cookie.split(';')
     getUserData(token)
 
     async function getMediaData(data, access_token) {
-          var listOfMediaData = [];
+          var listOfPhotos = [];
+          var car_urls = []
           var promises = [];
           data.forEach(function(item) {
               const mediaID = item["id"];
@@ -423,14 +424,17 @@ arr = document.cookie.split(';')
                         // Will fetch the individual photos of this in getIndividualCarouselPhotos
                         // We didn't utilize recursion here as it is hard to implement correctly with Promises
                         var url = 'https://graph.instagram.com/'+ mediaID + '/children?fields=id&access_token='+access_token;
-                        listOfMediaData.push(url);
+                        car_urls.push(url);
                     } else {
                         console.log("Not support video for now.");
                     }
                 }));
           });
           return Promise.all(promises).then(() => {
-              return listOfMediaData;
+              return {
+                photos: listOfPhotos,
+                car_urls: car_urls
+              };
           });
     }
 
@@ -503,25 +507,16 @@ arr = document.cookie.split(';')
           .then( response => response.json() )
           .then( response => {
               data = response["data"];
-              getMediaData(data, access_token).then((listOfMediaData) => {
-                    var car_urls = [];
-                    var temp = [];
-
-                    // Separate our links to images and CAROUSEL_ALBUM fetch urls
-                    listOfMediaData.forEach( function(item) {
-                        if (item.startsWith("https://graph.instagram.com/")) {
-                          car_urls.push(item);
-                        } else {
-                          temp.push(item);
-                        }
-                    });
+              getMediaData(data, access_token).then((data) => {
+                    var car_urls = data["car_urls"];
+                    var photos = data["photos"];
 
                     // Utilize CAROUSEL_ALBUM fetch urls to get each CAROUSEL_ALBUM's data object.
                     getIndividualCarouselDatas(car_urls).then((individual_datas) => {
                         // With each CAROUSEL_ALBUM's data object, we can loop over each item in it to get each photo URL.
                         getIndividualCarouselPhotos(individual_datas, access_token).then((listOfPhotos) => {
-                            listOfPhotos = listOfPhotos.concat(temp);
-                            displayCollage(listOfPhotos);
+                            listOfPhotos = listOfPhotos.concat(photos);
+                            displayMap(listOfPhotos);
                         });
                     });
               });
@@ -537,6 +532,7 @@ arr = document.cookie.split(';')
 
 var imageDict = [];
 function displayMap(listOfPhotos) {
+  console.log(listOfPhotos);
   imageDict = listOfPhotos;
   var li = "";
   for (let i = 0; i < imageDict.length; i++) {
