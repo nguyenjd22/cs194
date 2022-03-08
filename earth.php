@@ -339,7 +339,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#">Map</a>
         <a class="nav-link" href="AboutPage.php">About</a>
-        <a class="nav-link" href="homepage.html">Home</a>
+        <a class="nav-link" href="homepage.php">Home</a>
       </nav>
     </div>
   </header>

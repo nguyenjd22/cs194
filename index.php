@@ -43,7 +43,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <table class="toolBar">
       <tr>
         <td class="menuItems">
-          <a style="text-decoration: none;" href="homepage.html" class="menuItem">Home</a>
+          <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
           <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
         </td>
         <td width="10%">
@@ -112,7 +112,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       .then( response => {
           access_token = "token=" + response["access_token"];
           document.cookie = access_token; // Set access token as cookie
-          location.href = 'homepage.html'; // Redirect to date picker where we do the rest of the API calls
+          location.href = 'homepage.php'; // Redirect to date picker where we do the rest of the API calls
       })
       .catch((error) => {
         console.error('Error:', error);
