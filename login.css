@@ -9,7 +9,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   /* background-color: #f5f5f5; */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('TR1020_WOM_Delta01.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('login_photo.jpeg');
   background-size: 100%;
   background-color: #cccccc;
 }
@@ -63,4 +63,16 @@ body {
 .themephoto {
   width: 50%;
 
+}
+
+.btn {
+  background-color: #F2A074;
+  border:0px;
+}
+
+.btn:hover {
+  background-color: #FBF6EE;
+  color: #5a5a5a;
+
+  border:0px;
 }
