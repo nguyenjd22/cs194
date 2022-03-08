@@ -403,7 +403,7 @@ arr = document.cookie.split(';')
                     if (response["media_type"] == "IMAGE") {
                       listOfPhotos.push({
                             image: response["media_url"],
-                            timestamp: response["timestamp"],
+                            timestamp: parseInt(response["timestamp"]),
                         });
                         // Put image into server
                         fetch("/imageProcessor.php", {
@@ -470,7 +470,7 @@ arr = document.cookie.split(';')
                       if (response["media_type"] == "IMAGE") {
                         listOfPhotos.push({
                             image: response["media_url"],
-                            timestamp: response["timestamp"],
+                            timestamp: parseInt(response["timestamp"]),
                         });
                           // Put image into server
                           fetch("/imageProcessor.php", {
