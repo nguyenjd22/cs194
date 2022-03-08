@@ -331,10 +331,93 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   font-weight: 700;
   color:white;
 }
+
+/*
+ * Header
+ */
+
+ .toolBar {
+  width:100%;
+  margin:0px;
+  /* background-color: #5e5e5e; */
+  background-color: white;
+  height: 45px;
+  padding-top: 15px;
+  padding-left: 15px;
+  font-size:17px;
+}
+.menuItems {
+ padding-left:40px;
+ text-align:left;
+}
+.menuItem, .logoutText {
+ padding: .25rem 0;
+ padding-left: 10px;
+ padding-right: 10px;
+ font-weight: 700;
+ color: rgba(255, 255, 255, .5);
+ /* color: #fff; */
+ color: #5e5e5e;
+ background-color: transparent;
+ border-bottom: .25rem solid transparent;
+ margin:7px;
+ text-align:left;
+}
+
+.menuItem:hover,
+.menuItem:focus {
+  /* color: white; */
+  color: #5e5e5e;
+  border-bottom-color: #5e5e5e;
+  /* border-bottom-color: rgba(255, 255, 255, .25); */
+}
+
+.active {
+ /* color: white; */
+ color: #5e5e5e;
+ border-bottom-color: #5e5e5e;;
+ /* border-bottom-color: white; */
+}
+.logoutText {
+  color: white;
+}
+
+.logoutText:hover {
+  color: #5a5a5a;
+}
+
+.logoutButton {
+ width:80%;
+ border-width:0px;
+ background-color: #F2A074;
+ border-radius: 5px;
+ color: #fff;
+}
 </style>
 </head>
 <body>
-    <header class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+  <table class="toolBar">
+    <tr>
+      <td class="menuItems">
+          <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
+          <!-- <a aria-current="page" href="#">About</a> -->
+      <!-- </td>
+      <td> -->
+        <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
+      <!-- </td>
+      <td> -->
+        <a  style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">Create</a>
+        <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
+      </td>
+      <td width="10%">
+        <button class="logoutButton">
+          <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+        </button>
+        <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
+      </td>
+    </tr>
+  </table>
+    <!-- <header class="cover-container d-flex h-100 p-3 mx-auto flex-column">
     <div>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#">Map</a>
@@ -342,7 +425,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <a class="nav-link" href="homepage.php">Home</a>
       </nav>
     </div>
-  </header>
+  </header> -->
   <div class="headerpart">
     <div class="header-text1">
       <h1>Interactive Map</h1>
@@ -504,8 +587,8 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
           .style("stroke-width", "0.8")
           .style("stroke", "white");
         });
-    
-    
+
+
     var n = data.length, i = -1;
     step();
     function step() {
@@ -523,7 +606,7 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
       var c2 = d3.geoCentroid(worldMap.get(data[idx2].country));
 
       country.transition()
-        .style("fill", function(d) { 
+        .style("fill", function(d) {
           if (d.properties.name == data[i].country) {
             return "#4863A0";
           } else {
@@ -532,7 +615,7 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
       });
 
       date.transition()
-        .style("fill", function(d, j) { 
+        .style("fill", function(d, j) {
           if (j == i) {
             return getColor(i);
           } else {
@@ -541,7 +624,7 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
       });
 
       timelinePoint.transition()
-        .attr("r", function(d, j) { 
+        .attr("r", function(d, j) {
           if (j == i) {
             return 12;
           } else {
@@ -562,14 +645,14 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
               svg.select(".title")
               .text(time + ", in " +data[i].country);
               tip.html(image)
-               .style("left", c2[0]+750 + "px")     
+               .style("left", c2[0]+750 + "px")
                .style("top", c2[1]+1200 + "px");
             };
         })
       .transition()
       .on("end", step);
     }
-});  
+});
 
 function getDomain(length){
   var domain = []
