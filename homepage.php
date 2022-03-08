@@ -48,7 +48,7 @@
           session_start();
           if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             echo '<button class="logoutButton">
-              <a style="text-decoration: none;" class="logoutText" href="login.php" margin-right="0px">Sign up / Login</a>
+              <a style="text-decoration: none;" class="logoutText" href="login.php" margin-right="0px">Login</a>
             </button>';
           } else {
             echo '<button class="logoutButton">
@@ -56,9 +56,6 @@
             </button>';
           }
           ?>
-          <!-- <button class="logoutButton">
-            <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
-          </button> -->
         </td>
       </tr>
     </table>
