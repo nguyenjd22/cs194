@@ -61,7 +61,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
       </header>
     <div class="mainBox">
-      <main class="px-3 w-80" id="authorizeBottom">
+      <main class="px-3 w-40" id="authorizeBottom">
         <h1>Welcome To Round-About</h1>
         <p class="lead">Encapsulate and share your adventures with the world. Authorize your Instagram to get started!</p>
         <form>
