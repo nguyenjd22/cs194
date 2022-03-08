@@ -44,6 +44,18 @@
           <a style="text-decoration: none;" class="menuItem" href="instructions.html">Help</a>
         </td>
         <td width="10%">
+          <?php
+          session_start();
+          if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+            echo '<button class="logoutButton">
+              <a style="text-decoration: none;" class="logoutText" href="login.php" margin-right="0px">Sign up / Login</a>
+            </button>';
+          } else {
+            echo '<button class="logoutButton">
+              <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+            </button>';
+          }
+          ?>
           <button class="logoutButton">
             <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
           </button>
