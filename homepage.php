@@ -108,6 +108,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <?php
             session_start();
             echo '<h1>'.$_SESSION ['first_name'].'</h1>';
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+              echo 'hi';
+            } else {
+              echo 'bye';
+            }
             ?>
             <!-- <h1>Hello (NAME)</h1> -->
             <p>Welcome to Round-About, create a collage or interactive map that encapsulates your travel experiences.</p>
