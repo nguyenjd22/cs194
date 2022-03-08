@@ -88,7 +88,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     font-weight: 700;
     color:white;
   }
-  .header-text1 p{
+  .header-text1 h2{
     margin-top: 30px;
     margin-right: 100px;
     margin-left: 100px;
@@ -350,8 +350,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
   </div>
   <section class="body-text">
-    <h1>How To Generate A Video</h1>
-     <h2> Mac User Only</h2>
+     <h2> How To Generate A Video</h2>
+      <p> Mac User Only<p>
     <p>To get a video, click the search icon on the top right corner on your screen, then type Quicktime Play. Open the Quicktime Play, and then select File -> New Screen Recording. Click the red icon on Screen Recording popover, and then select the map area that you like, then hit Start Recording. After you finish recording, click the icon on the upper right on your screen to end the recording. Then save the file to your destination.</p>
   </section>
   <section class="maps">
