@@ -330,9 +330,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   /* background-color: #5e5e5e; */
   background-color: white;
   height: 45px;
-  padding-top: 15px;
-  padding-left: 15px;
-  font-size:17px;
+  padding-top: 20px;
+  padding-left: 20px;
 }
 .menuItems {
  padding-left:40px;
