@@ -42,12 +42,12 @@
           <a style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
           <!-- GATING SYSTEM - AUTHORIZATION PAGE IF NOT AUTHORIZED; OTHERWISE - DATEPICKER -->
           <?php
-          session_start();
-          if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-            echo '<a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>';
-          } else {
-            echo '';
-          }
+            session_start();
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+              echo '';
+            } else {
+              echo '<a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>';
+            }
           ?>
           <a style="text-decoration: none;" class="menuItem active" href="#">Help</a>
         </td>
