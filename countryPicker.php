@@ -386,8 +386,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <script type="text/javascript">
 arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
-    startDate = arr[2].split('=')[1]
-    endDate = arr[3].split('=')[1]
+    startDate = JSON.parse(window.sessionStorage.getItem("start"));
+    endDate = JSON.parse(window.sessionStorage.getItem("end"));
     console.log(startDate);
     console.log(endDate);
     getUserData(token)
