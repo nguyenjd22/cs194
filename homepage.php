@@ -56,9 +56,9 @@
             </button>';
           }
           ?>
-          <button class="logoutButton">
+          <!-- <button class="logoutButton">
             <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
-          </button>
+          </button> -->
         </td>
       </tr>
     </table>
