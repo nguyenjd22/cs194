@@ -108,8 +108,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <?php
             session_start();
             echo '<h1>'.'Hello, '.$_SESSION ['first_name'].'</h1>';
+
+            // Check if the user is logged in, if not then redirect him to login page
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+              echo '<h1>'.'test, '.$_SESSION ['first_name'].'</h1>'
+            } else {
+              echo '<h1>'.'bye, '.$_SESSION ['first_name'].'</h1>'
+            }
             ?>
-            <!-- <h1>Hello (NAME)</h1> -->
             <p>Welcome to Round-About, create a collage or interactive map that encapsulates your travel experiences.</p>
 
             <p><a class="btn btn-lg btn-primary" href="datepicker.php">Create</a></p>
