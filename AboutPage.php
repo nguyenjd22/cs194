@@ -57,6 +57,7 @@
             <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
           </td>
           <td width="13%">
+            <h1> Hello</h1>
             <?php
             session_start();
             if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
@@ -82,6 +83,13 @@
           </td>
         </tr>
       </table>
+      <header class="mb-auto">
+        <div>
+          <?php
+            session_start();
+            ?>
+        </div>
+      </header>
       <main class="px-3 mx-10" id="authorizeBottom">
         <h1>About Us</h1>
         <p class="lead">We are a group of Stanford Undergraduates who are passionate about sharing stories with others. With this project we aim to create a tool that helps social media users enhance the quality of their media posts. We help them by creating a one-of-a-kind capsule of their shared photo experiences.</p>
