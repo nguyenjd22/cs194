@@ -110,10 +110,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             echo '<h1>'.'Hello, '.$_SESSION ['first_name'].'</h1>';
 
             // Check if the user is logged in, if not then redirect him to login page
-            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-              echo '<h1>'.'test, '.$_SESSION ['first_name'].'</h1>'
-            } else {
-              echo '<h1>'.'bye </h1>'
+            // if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+            //   echo '<h1>'.'test, '.$_SESSION ['first_name'].'</h1>'
+            // } else {
+            //   echo '<h1>'.'bye </h1>'
             }
             ?>
             <p>Welcome to Round-About, create a collage or interactive map that encapsulates your travel experiences.</p>
