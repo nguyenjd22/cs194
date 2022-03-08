@@ -590,7 +590,6 @@ require_once "config.php";
 
   </script>
 </html>
-bitnami@ip-172-26-6-170:~/stack/apache2/htdocs$ cat collage.php
 <?php
 // Initialize the session
 session_start();
