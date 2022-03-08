@@ -4,7 +4,7 @@
 
 body {
   /* padding-top: 3rem; */
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
   color: #5a5a5a;
 }
 
@@ -50,6 +50,10 @@ body {
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
+}
+
+main {
+  background-color: #FBF6EE;
 }
 /* rtl:end:ignore */
 
@@ -99,7 +103,8 @@ body {
  .toolBar {
   width:100%;
   margin:0px;
-  background-color: #5e5e5e;
+  /* background-color: #5e5e5e; */
+  background-color: white;
   height: 45px;
   padding-top: 20px;
   padding-left: 20px;
@@ -114,7 +119,8 @@ body {
  padding-right: 10px;
  font-weight: 700;
  color: rgba(255, 255, 255, .5);
- color: #fff;
+ /* color: #fff; */
+ color: #5e5e5e;
  background-color: transparent;
  border-bottom: .25rem solid transparent;
  margin:7px;
@@ -123,15 +129,20 @@ body {
 
 .menuItem:hover,
 .menuItem:focus {
-   color: white;
+  /* color: white; */
+  color: #5e5e5e;
   border-bottom-color: rgba(255, 255, 255, .25);
 }
 
 .active {
- color: white;
- border-bottom-color: white;
+ /* color: white; */
+ color: #5e5e5e;
+ border-bottom-color: #5e5e5e;;
+ /* border-bottom-color: white; */
 }
-
+.logoutText {
+  color: white;
+}
 .logoutButton {
  width:80%;
  border-width:0px;
