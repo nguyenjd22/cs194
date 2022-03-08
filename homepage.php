@@ -51,8 +51,10 @@
           <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
         <td width="10%">
+          <h1>Hello, ____</h1>
+        </td>
+        <td width="10%">
           <!-- echo '<h1>Hello, '.$_SESSION ['first_name'].'</h1>'; -->
-          <h1>Hello, </h1>
           <?php
           session_start();
           if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
