@@ -384,14 +384,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <h2>Stanford CS 194</h2>
   </section>
 <script type="text/javascript">
+arr = document.cookie.split(';')
+    token = arr[1].split('=')[1]
+    startDate = arr[2].split('=')[1]
+    endDate = arr[3].split('=')[1]
+    getUserData(token)
 
-  arr = document.cookie.split(';')
-  token = arr[1].split('=')[1]
-  startDate = arr[2].split('=')[1]
-  endDate = arr[3].split('=')[1]
-  getUserData(token);
-
-  async function getMediaData(data, access_token) {
+    async function getMediaData(data, access_token) {
           var listOfMediaData = [];
           var promises = [];
           data.forEach(function(item) {
@@ -401,9 +400,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     .then( response => response.json() )
                     .then( response => {
                     if (response["media_type"] == "IMAGE") {
-                      listOfMediaData.push(({
-                          image: response["media_url"],
-                          timestamp: response["timestamp"],
+                      listOfPhotos.push({
+                            image: response["media_url"],
+                            timestamp: response["timestamp"],
                         });
                         // Put image into server
                         fetch("/imageProcessor.php", {
@@ -466,8 +465,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     .then( response => {
                       if (response["media_type"] == "IMAGE") {
                         listOfPhotos.push({
-                          image: response["media_url"],
-                          timestamp: response["timestamp"],
+                            image: response["media_url"],
+                            timestamp: response["timestamp"],
                         });
                           // Put image into server
                           fetch("/imageProcessor.php", {
@@ -489,6 +488,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               );
         });
       });
+
       return Promise.all(promises).then(() => {
               return listOfPhotos;
       });
@@ -521,8 +521,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         // With each CAROUSEL_ALBUM's data object, we can loop over each item in it to get each photo URL.
                         getIndividualCarouselPhotos(individual_datas, access_token).then((listOfPhotos) => {
                             listOfPhotos = listOfPhotos.concat(temp);
-                            console.log(listOfPhotos);
-                            displayMap(listOfPhotos);
+                            displayCollage(listOfPhotos);
                         });
                     });
               });
@@ -536,7 +535,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       return Math.floor(date.getTime() / 1000);
     }
 
-function displayMap() {
+var imageDict = [];
+function displayMap(listOfPhotos) {
+  imageDict = listOfPhotos;
   var li = "";
   for (let i = 0; i < imageDict.length; i++) {
     var data = imageDict[i];
