@@ -670,7 +670,7 @@ function generateMap(){
     return false;
   }  
   window.sessionStorage.setItem("data", JSON.stringify(selectedImageList));
-  window.location.replace("earth.html");
+  window.location.replace("earth.php");
 }
 
 function timeConverter(UNIX_timestamp){
