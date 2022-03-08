@@ -401,9 +401,12 @@ arr = document.cookie.split(';')
                     .then( response => response.json() )
                     .then( response => {
                     if (response["media_type"] == "IMAGE") {
+                       var timestamp = new Date(response["timestamp"]).getTime();
+                        timestamp = timestamp/1000;
+                        console.log(timestamp);
                       listOfPhotos.push({
                             image: response["media_url"],
-                            timestamp: parseInt(response["timestamp"]),
+                            timestamp: timestamp
                         });
                         // Put image into server
                         fetch("/imageProcessor.php", {
@@ -468,10 +471,13 @@ arr = document.cookie.split(';')
                     .then( response => response.json() )
                     .then( response => {
                       if (response["media_type"] == "IMAGE") {
-                        listOfPhotos.push({
-                            image: response["media_url"],
-                            timestamp: parseInt(response["timestamp"]),
-                        });
+                        var timestamp = new Date(response["timestamp"]).getTime();
+                        timestamp = timestamp/1000;
+                        console.log(timestamp);
+                          listOfPhotos.push({
+                                image: response["media_url"],
+                                timestamp: timestamp
+                            });
                           // Put image into server
                           fetch("/imageProcessor.php", {
                               method: 'POST',
@@ -500,8 +506,6 @@ arr = document.cookie.split(';')
 
     function getUserData(access_token) {
           var data = [];
-          console.log(startDate);
-          console.log(endDate);
           var url = 'https://graph.instagram.com/me/media?access_token=' + access_token + '&since=' + startDate + '&until=' + endDate;
           fetch(url)
           .then( response => response.json() )
