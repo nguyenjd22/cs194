@@ -413,9 +413,11 @@ require_once "config.php";
 	    console.log(ctx);
 	    console.log("context");
 	    var img = new Image();
-	    img.src = bkdType
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0, width, height);
+      }
 	    img.crossOrigin = "anonymous";
-	    ctx.drawImage(img, 0, 0, width, height);
+      img.src = bkdType
 	    return ctx;
     }
 
