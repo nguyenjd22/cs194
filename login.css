@@ -9,7 +9,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   /* background-color: #f5f5f5; */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background-color2.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('login_photo.webp');
   background-size: 100%;
   background-color: #cccccc;
 }
