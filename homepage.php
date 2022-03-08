@@ -50,13 +50,13 @@
           ?>
           <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
-        <td width="20%">
+        <td width="15%">
           <?php
           session_start();
           if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             echo '';
           } else {
-            echo '<h4>'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h4>';
+            echo '<h5>'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h5>';
           }
           ?>
         </td>
