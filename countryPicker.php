@@ -320,17 +320,98 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   background-color: #85C1E9;
   color: white;
 }
+/*
+ * Header
+ */
+
+ .toolBar {
+  width:100%;
+  margin:0px;
+  /* background-color: #5e5e5e; */
+  background-color: white;
+  height: 45px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.menuItems {
+ padding-left:40px;
+ text-align:left;
+}
+.menuItem, .logoutText {
+ padding: .25rem 0;
+ padding-left: 10px;
+ padding-right: 10px;
+ font-weight: 700;
+ color: rgba(255, 255, 255, .5);
+ /* color: #fff; */
+ color: #5e5e5e;
+ background-color: transparent;
+ border-bottom: .25rem solid transparent;
+ margin:7px;
+ text-align:left;
+}
+
+.menuItem:hover,
+.menuItem:focus {
+  /* color: white; */
+  color: #5e5e5e;
+  border-bottom-color: #5e5e5e;
+  /* border-bottom-color: rgba(255, 255, 255, .25); */
+}
+
+.active {
+ /* color: white; */
+ color: #5e5e5e;
+ border-bottom-color: #5e5e5e;;
+ /* border-bottom-color: white; */
+}
+.logoutText {
+  color: white;
+}
+
+.logoutText:hover {
+  color: #5a5a5a;
+}
+
+.logoutButton {
+ width:80%;
+ border-width:0px;
+ background-color: #F2A074;
+ border-radius: 5px;
+ color: #fff;
+}
 </style>
 </head>
 <body>
   <header class="cover-container d-flex h-100 p-3 mx-auto gap-5 justify-content-center">
-    <div>
+    <!-- <div>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#">Map</a>
         <a class="nav-link" href="AboutPage.php">About</a>
         <a class="nav-link" href="homepage.html">Home</a>
       </nav>
-    </div>
+    </div> -->
+    <table class="toolBar">
+      <tr>
+        <td class="menuItems">
+            <a href="homepage.php" class="menuItem">Home</a>
+            <!-- <a aria-current="page" href="#">About</a> -->
+        <!-- </td>
+        <td> -->
+          <a  class="menuItem" href="AboutPage.php">About</a>
+        <!-- </td>
+        <td> -->
+          <a  class="menuItem active" aria-current="page" href="#">Create</a>
+          <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
+        </td>
+        <td width="10%">
+          <button class="logoutButton">
+            <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+          </button>
+          <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
+        </td>
+      </tr>
+    </table>
   </header>
 
   <div class="headerpart">
@@ -382,7 +463,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <button type="button" class="blue-bt btn " onclick="generateMap()">Generate Map</button>
   </form>
   </section>
-  
+
 
   <section class="footer">
     <h2>Stanford CS 194</h2>
@@ -547,7 +628,7 @@ function displayMap(listOfPhotos) {
   var li = "";
   for (let i = 0; i < imageDict.length; i++) {
     var data = imageDict[i];
-    li += 
+    li +=
     "<li><a class='dropdown-item' onclick='setImage("+i+")'><img src="+data.image+" width='200px'/> Image "+(i+1)+"</a></li>";
   }
   document.getElementById("imageDropdown").innerHTML = li;
@@ -575,7 +656,7 @@ var currentTime = 0;
 
 function setImage(index){
   currentImage = imageDict[index].image;
-  currentTime = imageDict[index].timestamp; 
+  currentTime = imageDict[index].timestamp;
   var imageNum = index+1;
   document.getElementById("selectImageBt").innerHTML = "Image " + imageNum;
 }
@@ -656,7 +737,7 @@ function updateList(){
 }
 
 function removeImage(index){
-  selectedImageList.splice(index, 1); 
+  selectedImageList.splice(index, 1);
   updateList();
 }
 
@@ -670,7 +751,7 @@ function insertRow(date, image, country, index) {
   cell1.innerHTML = timeConverter(date);
   cell2.innerHTML = "<img src=" +  image + " width='200px'/>";
   cell3.innerHTML = country;
-  cell4.innerHTML = 
+  cell4.innerHTML =
   "<button type='button' class='btn btn-outline-dark' onclick='removeImage("+index+")'>Delete</button>";
 }
 
@@ -678,7 +759,7 @@ function generateMap(){
   if (selectedImageList.length < 2) {
     document.getElementById("warining").innerHTML = "<div class='alert alert-danger' role='alert'>Please choose minimum 2 photos!</div>";
     return false;
-  }  
+  }
   window.sessionStorage.setItem("data", JSON.stringify(selectedImageList));
   window.location.replace("earth.php");
 }
@@ -701,18 +782,3 @@ function timeConverter(UNIX_timestamp){
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
