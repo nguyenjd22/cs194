@@ -120,7 +120,7 @@ require_once "config.php";
         <table class="toolBar">
           <tr>
             <td class="menuItems">
-                <a href="index.php" class="menuItem">Home</a>
+                <a href="homepage.php" class="menuItem">Home</a>
                 <!-- <a aria-current="page" href="#">About</a> -->
             <!-- </td>
             <td> -->
@@ -360,7 +360,7 @@ require_once "config.php";
       //        .attr("src", listOfPhotos[x]);
 
       //      }
-      
+
 
       var cascade = document.createElement('input');
       cascade.type = 'button';
@@ -402,7 +402,7 @@ require_once "config.php";
         img.remove();
       };
     };
-    
+
     // Returns a fresh collage context with the background drawn on top of it
     function initCollage(listOfPhotos, bkdType) {
 	    shuffleArray(listOfPhotos);
@@ -623,7 +623,7 @@ require_once "config.php";
     function setBeach() {
       bkd_type = "bkdtype=beach";
       document.cookie = bkd_type;
-      cnosole.log(bkd_type); 
+      cnosole.log(bkd_type);
     }
 
     function setMtn() {
