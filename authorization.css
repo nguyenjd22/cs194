@@ -19,10 +19,13 @@ body {
 }
 
 .mainBox {
+  /* display: flex;
+  justify-content: center; */
+  margin-left: auto;
+  margin-right: auto;
   background-color: white;
   border-radius: 10px;
-  max-width: 500px;
-  max-height: 300px;
+  padding: 15px;
 }
 
 .logo {
