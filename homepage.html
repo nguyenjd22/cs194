@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Carousel Template · Bootstrap v5.1</title>
+    <title>Homepage|Round-About</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
 
@@ -35,9 +35,23 @@
     <link href="homepage.css" rel="stylesheet">
   </head>
   <body>
-
+    <table class="toolBar">
+      <tr>
+        <td class="menuItems">
+          <a style="text-decoration: none;" href="#" class="menuItem active">Home</a>
+          <a style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
+          <!-- GATING SYSTEM - AUTHORIZATION PAGE IF NOT AUTHORIZED; OTHERWISE - DATEPICKER -->
+          <a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>
+        </td>
+        <td width="10%">
+          <button class="logoutButton">
+            <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+          </button>
+        </td>
+      </tr>
+    </table>
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Carousel</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +75,7 @@
         </form>
       </div>
     </div>
-  </nav>
+  </nav> -->
 </header>
 
 <main>
@@ -78,6 +92,10 @@
 
         <div class="container">
           <div class="carousel-caption text-start">
+            <!-- <?php
+            session_start();
+            echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';
+            ?> -->
             <h1>Example headline.</h1>
             <p>Some representative placeholder content for the first slide of the carousel.</p>
             <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
@@ -156,12 +174,12 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+        <h2 class="featurette-heading">Link Your Instagram Account <span class="text-muted">It’ll blow your mind.</span></h2>
         <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
+        <img src="instagram-logo.png" width="450" height="450" class="instaLogo"/>
       </div>
     </div>
 
@@ -169,12 +187,12 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+        <h2 class="featurette-heading">Enjoy automatically generated collages of your travel photos! <span class="text-muted">See for yourself.</span></h2>
         <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
+        <img src="collage-ad.png" width="500" height="500"/>
       </div>
     </div>
 
@@ -182,12 +200,12 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+        <h2 class="featurette-heading"> Relive your golbal travel with our interactive map feature! <span class="text-muted">Checkmate.</span></h2>
         <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
+        <img src="globemap.png" width="550" height="500"/>
       </div>
     </div>
 
@@ -201,7 +219,7 @@
   <!-- FOOTER -->
   <footer class="container">
     <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <p>&copy; 2021-2022 Round-About &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
 </main>
 
