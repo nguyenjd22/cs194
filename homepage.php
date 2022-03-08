@@ -5,7 +5,7 @@
 // Check if the user is logged in, if not then redirect him to login page
 //if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 //    header("location: login.php");
-//    exit;
+    // exit;
 }
 ?>
 <!doctype html>
@@ -109,9 +109,9 @@
             session_start();
             echo '<h1>'.$_SESSION ['first_name'].'</h1>';
             if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-              echo '<p>Welcome to Round-About1, create a collage or interactive map that encapsulates your travel experiences.</p>';
+              echo 'hi';
             } else {
-              echo '<p>Welcome to Round-About, create a collage or interactive map that encapsulates your travel experiences.</p>';
+              echo 'bye';
             }
             ?>
             <!-- <h1>Hello (NAME)</h1> -->
