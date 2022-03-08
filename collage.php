@@ -463,7 +463,7 @@ require_once "config.php";
 
     function drawLayer(listOfPhotos, bkdType) {
 	    shuffleArray(listOfPhotos);
-	    var ctx = document.getElementById("cnv").getContext("2d");
+	    var ctx = initCollage(listOfPhotos, bkdType);
 	    var len = isLarge ? 10:8;
 	    var loaded = 0;
 	    pic = new Array(len);
