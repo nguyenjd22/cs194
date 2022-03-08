@@ -142,7 +142,7 @@ require_once "config.php";
       </main>
       <div id="cnvdiv"></div>
       <a id="download" download="collage.png">
-        <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Download Collage</button>
+        <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-primary">Download Collage</button>
       </a>
       <!-- <a id="saveToProfile" download="test.png">
         <button id ="svbtn" hidden="hidden" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to profile</button>
