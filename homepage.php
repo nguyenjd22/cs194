@@ -96,10 +96,10 @@
         <div class="container">
           <div class="carousel-caption text-start">
             <?php
-              session_start();
-              echo '<h1>'Hello, ' + '.$_SESSION ['first_name'].'</h1>';
+            session_start();
+            echo '<h1>'.$_SESSION ['first_name'].'</h1>';
             ?>
-            <h1>Hello (NAME)</h1>
+            <!-- <h1>Hello (NAME)</h1> -->
             <p>Welcome to Round-About, create a collage or interactive map that encapsulates your travel experiences.</p>
 
             <p><a class="btn btn-lg btn-primary" href="datepicker.php">Create</a></p>
