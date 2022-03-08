@@ -8,6 +8,17 @@ body {
   color: #5a5a5a;
 }
 
+.btn {
+  background-color: #F2A074;
+  border:0px;
+}
+
+.btn:hover {
+  background-color: #FBF6EE;
+  color: #5a5a5a;
+
+  border:0px;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -131,7 +142,8 @@ main {
 .menuItem:focus {
   /* color: white; */
   color: #5e5e5e;
-  border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color: #5e5e5e;
+  /* border-bottom-color: rgba(255, 255, 255, .25); */
 }
 
 .active {
@@ -143,10 +155,15 @@ main {
 .logoutText {
   color: white;
 }
+
+.logoutText:hover {
+  color: #5a5a5a;
+}
+
 .logoutButton {
  width:80%;
  border-width:0px;
- background-color: #0d6efd;
+ background-color: #F2A074;
  border-radius: 5px;
  color: #fff;
 }
