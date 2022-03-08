@@ -154,7 +154,7 @@
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="register.php" color="#5a5a5a">Sign up now</a>.</p>
         </form>
       <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
     </form>
