@@ -158,8 +158,8 @@ require_once "config.php";
   <script>
     arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
-    startDate = arr[2].split('=')[1]
-    endDate = arr[3].split('=')[1]
+    startDate = JSON.parse(window.sessionStorage.getItem("start"));
+    endDate = JSON.parse(window.sessionStorage.getItem("end"));
     getUserData(token)
 
     async function getMediaData(data, access_token) {
@@ -793,8 +793,8 @@ require_once "config.php";
   <script>
     arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
-    startDate = arr[2].split('=')[1]
-    endDate = arr[3].split('=')[1]
+    startDate = JSON.parse(window.sessionStorage.getItem("start"));
+    endDate = JSON.parse(window.sessionStorage.getItem("end"));
     getUserData(token)
 
     async function getMediaData(data, access_token) {
