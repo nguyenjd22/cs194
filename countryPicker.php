@@ -291,7 +291,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   color: rgba(0, 0, 0, 0.6);
   border-bottom-color: rgba(0, 0, 0, 0.6);
 }
-.image-selector {
+.dropdown {
   margin-right: 30px;
 }
 .country-selector{
@@ -315,6 +315,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   padding-top: 10px;
   padding-bottom: 50px;
   background-color: #f0edea;
+}
+.blue-bt{
+  background-color: #85C1E9;
+  color: white;
 }
 </style>
 </head>
@@ -353,7 +357,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </ul>
       </div>
       <div class="dropdown">
-        <button type="button" class="btn btn-success" onclick="addToList()">Add To List</button>
+        <button type="button" class="blue-bt btn " onclick="addToList()">Add To List</button>
       </div>
       <div class="dropdown">
          <div id="warining"></div>
@@ -376,7 +380,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       </table>
     </div>
     <form class="selector d-flex gap-5 justify-content-center">
-    <button type="button" class="btn btn-success" onclick="generateMap()">Generate Map</button>
+    <button type="button" class="blue-bt btn " onclick="generateMap()">Generate Map</button>
   </form>
   </section>
   
