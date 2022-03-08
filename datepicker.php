@@ -47,6 +47,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <!-- </td>
         <td> -->
           <a  class="menuItem active" aria-current="page" href="#">Create</a>
+          <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
         <td width="10%">
           <button class="logoutButton">

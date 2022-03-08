@@ -40,8 +40,15 @@
         <td class="menuItems">
           <a style="text-decoration: none;" href="#" class="menuItem active">Home</a>
           <a style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
-          <a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>
-          <a style="text-decoration: none;" class="menuItem" href="instructions.html">Help</a>
+          <?php
+            session_start();
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+              echo '<a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>';
+            } else {
+              echo '';
+            }
+          ?>
+          <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
         <td width="10%">
           <?php
@@ -144,7 +151,7 @@
           <div class="carousel-caption">
             <h1>Quick how-to</h1>
             <p>Learn how to encapsulate your travel experiences at the click of a button.</p>
-            <p><a class="btn btn-lg btn-primary" href="instructions.html">Instructions</a></p>
+            <p><a class="btn btn-lg btn-primary" href="instructions.php">Instructions</a></p>
           </div>
         </div>
       </div>

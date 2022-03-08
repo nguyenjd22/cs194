@@ -46,7 +46,15 @@
             <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
             <a style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">About</a>
             <!-- GATING SYSTEM - AUTHORIZATION PAGE IF NOT AUTHORIZED; OTHERWISE - DATEPICKER -->
-            <a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>
+            <?php
+            session_start();
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+              echo '<a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>';
+            } else {
+              echo '';
+            }
+            ?>
+            <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
           </td>
           <td width="10%">
             <?php
