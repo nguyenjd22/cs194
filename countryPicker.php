@@ -388,6 +388,8 @@ arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
     startDate = arr[2].split('=')[1]
     endDate = arr[3].split('=')[1]
+    console.log(startDate);
+    console.log(endDate);
     getUserData(token)
 
     async function getMediaData(data, access_token) {
