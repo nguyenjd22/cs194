@@ -49,6 +49,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <a  class="menuItem active" aria-current="page" href="#">Create</a>
           <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
+        <td width="13%">
+          <?php
+          session_start();
+          if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+            echo '';
+          } else {
+            echo '<h5>'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h5>';
+          }
+          ?>
+        </td>
         <td width="10%">
           <button class="logoutButton">
             <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
@@ -104,18 +114,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     function setDatesInCookie() {
       start = document.getElementById('start').valueAsDate;
       end = document.getElementById('end').valueAsDate;
-        
-     
+
+
          window.sessionStorage.setItem("start", getUnixTime(start));
          window.sessionStorage.setItem("end", getUnixTime(end));
-   
+
       location.href = "collage.php";
     }
 
     function getUnixTime(date) {
       return Math.floor(date.getTime() / 1000);
     }
-      
+
     function goToMap() {
       start = document.getElementById('start').valueAsDate;
       end = document.getElementById('end').valueAsDate;

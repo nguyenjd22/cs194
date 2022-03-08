@@ -397,6 +397,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <a  style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">Create</a>
         <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
       </td>
+      <td width="13%">
+        <?php
+        session_start();
+        if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+          echo '';
+        } else {
+          echo '<h5>'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h5>';
+        }
+        ?>
+      </td>
       <td width="10%">
         <button class="logoutButton">
           <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
