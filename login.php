@@ -9,7 +9,7 @@
       header("location: homepage.php");
       exit;
   }
-  
+
   // Include config file
   require_once "config.php";
 
@@ -68,7 +68,7 @@
                             $_SESSION["last_name"] = $last_name;
 
                             // Redirect user to welcome page
-                            header("location: index.php");
+                            header("location: homepage.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
