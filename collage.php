@@ -465,11 +465,24 @@ require_once "config.php";
 	    shuffleArray(listOfPhotos);
 	    var ctx = document.getElementById("cnv").getContext("2d");
 	    var len = isLarge ? 10:8;
+	    var loaded = 0;
 	    pic = new Array(len);
 	    for (let x = 0; x < len; x++) {
 		    pic[x] = new Image();
-		    pic[x].src = listOfPhotos[x];
+		    pic[x].onload = function () {
+			    loaded++;
+			    if (loaded === len) {
+				    layerDraw(pic, ctx);
+			    }
+		    };
 		    pic[x].crossOrigin = "anonymous";
+		    pic[x].src = listOfPhotos[x];
+	    }
+    };
+
+    function layerDraw(pic, ctx) {
+	    var len = isLarge ? 10:8;
+	    for (let x = 0; x < len; x++) {
 		    ctx.drawImage(pic[x], (50*x), (100*x), (width-2*50*x), (height-100*x));
 	    }
     };
@@ -481,27 +494,42 @@ require_once "config.php";
 
     function drawBrick(listOfPhotos, bkdType) {
 	    var ctx = initCollage(listOfPhotos, bkdType);
+	    var loaded = 0;
 	    var loopLen = getBrickSize(isLarge);
 	    pic = new Array(listOfPhotos.length + 1);
 	    for (let i = 0; i < loopLen; i++) {
 		    for (let j = 0; j < loopLen; j++) {
-			    pic[i*3+j] = new Image();
-			    pic[i*3+j].src = listOfPhotos[i*3+j];
-			    pic[i*3+j].crossOrigin = "anonymous";
+			    pic[i*loopLen+j] = new Image();
+			    pic[i*loopLen+j].onload = function () {
+				    loaded++;
+				    if (loaded === listOfPhotos.length) {
+					    brickDraw(pic, ctx);
+				    }
+			    };
+			    pic[i*loopLen+j].crossOrigin = "anonymous";
+			    pic[i*loopLen+j].src = listOfPhotos[i*loopLen+j];
+		    }
+	    }
+    };
+
+    function brickDraw(pic, ctx) {
+	    loopLen = getBrickSize(isLarge);
+	    for (let i = 0; i < loopLen; i++) {
+		    for (let j = 0; j < loopLen; j++) {
 			    if ((j%2) === 0) {
 				    if (isLarge) {
-					    ctx.drawImage(pic[i*3+j], (35*(j+1) + 150*j), (50 + 35*(i+1) + 150*i), 150, 150);
+					    ctx.drawImage(pic[i*loopLen+j], (35*(j+1)+150*j), (50+35*(i+1)+150*i), 150, 150);
 				    }
 				    else {
-					    ctx.drawImage(pic[i*3+j], (85*(j+1)+150*j), (100*(i+1)+150*i), 150, 150);
+					    ctx.drawImage(pic[i*loopLen+j], (85*(j+1)+150*j), (100*(i+1)+150*i), 150, 150);
 				    }
 			    }
 			    else {
 				    if (isLarge) {
-					    ctx.drawImage(pic[i*3+j], (35*(j+1) + 150*j), (35*(i+1)+150*i), 150, 150);
+					    ctx.drawImage(pic[i*loopLen+j], (35*(j+1)+150*j), (35*(i+1)+150*i), 150, 150);
 				    }
-			    	    else {
-					    ctx.drawImage(pic[i*3+j], (85*(j+1)+150*j), (50*(i+1)+150*i), 150, 150);
+				    else {
+					    ctx.drawImage(pic[i*loopLen+j], (85*(j+1)+150*j), (50*(i+1)+150*i), 150, 150);
 				    }
 			    }
 		    }
@@ -511,14 +539,28 @@ require_once "config.php";
     function drawCascade(listOfPhotos, bkdType) {
 	    var ctx = initCollage(listOfPhotos, bkdType);
 	    var loopLen = isLarge ? 10:7;
+	    var loaded = 0;
 	    pic = new Array(loopLen+1);
 	    for (let x = 0; x < loopLen; x++) {
 		    pic[x] = new Image();
-		    pic[x].src = listOfPhotos[x];
+		    pic[x].onload = function () {
+			    loaded++;
+			    if (loaded === loopLen) {
+				    cascadeDraw(pic, ctx);
+			    }
+		    };
 		    pic[x].crossOrigin = "anonymous";
+		    pic[x].src = listOfPhotos[x];
+	    }
+    };
+
+    function cascadeDraw(pic, ctx) {
+	    loopLen = isLarge ? 10:7;
+	    for (let x = 0; x < loopLen; x++) {
 		    ctx.drawImage(pic[x], (75*(x+1)), (75*(x+1)), 175, 175);
 	    }
     };
+
 
     function shuffleArray(arr) {
 	    for (var i = arr.length - 1; i > 0; i--) {
