@@ -50,7 +50,7 @@
           ?>
           <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
-        <td width="10%">
+        <td width="20%">
           <h3>Hello, ____</h3>
         </td>
         <td width="10%">
