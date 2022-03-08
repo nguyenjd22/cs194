@@ -36,26 +36,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <title>Generate Collage</title>
   </head>
   <body>
-    <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
-      <a class="nav-link" href="index.php">Home</a>
-      <a class="nav-link active" aria-current="page" href="#">About</a>
-      <a href="logout.php" class="nav-link navbar-right" margin-right="0px">Logout</a>
-    </nav> -->
-
-    <!-- <table class="nav nav-masthead justify-content-center float-md-end">
-      <tr>
-        <td width="80%">
-          <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link" href="index.php">Home</a>
-            <a class="nav-link active" aria-current="page" href="#">About</a>
-          </nav>
-        </td>
-        <td width="20%">
-          <a href="logout.php" class="nav-link" margin-right="0px">Logout</a>
-        </td>
-      </tr>
-    </table> -->
-
     <table class="toolBar">
       <tr>
         <td class="menuItems">
@@ -112,47 +92,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           </button>
         </td>
         <td class="tableCol">
-          <button onclick="setDatesInCookie()" class="buttonStyle">
+          <button onclick="goToMap()" class="buttonStyle">
             Generate GIF
           </button>
         </td>
 
       </tr>
     </table>
-
-
-
-    <!-- <div class="content datepickercontent">
-      <div class="container containerbox">
-        <div class="row justify-content-center datepicking">
-          <div class="col-lg-3">
-            <h3 class="mb-5 text-center">Start Date</h2>
-            <form action="#">
-              <div class="form-group">
-                <input type="date" id="start">
-              </div>
-            </form>
-          </div>
-          <div class="col-lg-3">
-            <h3 class="mb-5 text-center">End Date</h2>
-            <form action="#">
-              <div class="form-group">
-                <input type="date" id="end">
-              </div>
-            </form>
-          </div>
-          <div class="buttonPair">
-            <button onclick="setDatesInCookie()" class="buttonStyle">
-              Generate Collage
-            </button>
-            <button onclick="goToMap()" class="buttonStyle">
-              Generate GIF
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div> -->
   <script>
     function setDatesInCookie() {
       start = document.getElementById('start').valueAsDate;
