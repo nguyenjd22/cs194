@@ -92,9 +92,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     margin-top: 30px;
     margin-right: 100px;
     margin-left: 100px;
-    font-size: 16px !important;
+    font-size: 20px !important;
     /*font-weight: normal;*/
-    font-weight: 500;
+    font-weight: 600;
     color:white;
     line-height: 150%;
   }
@@ -350,8 +350,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
   </div>
   <section class="body-text">
-     <h2> How To Generate A Video</h2>
-      <p> Mac User Only<p>
+     <h2> How To Generate A Video | Mac User Only</h2>
     <p>To get a video, click the search icon on the top right corner on your screen, then type Quicktime Play. Open the Quicktime Play, and then select File -> New Screen Recording. Click the red icon on Screen Recording popover, and then select the map area that you like, then hit Start Recording. After you finish recording, click the icon on the upper right on your screen to end the recording. Then save the file to your destination.</p>
   </section>
   <section class="maps">
@@ -359,7 +358,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
   </section>
   <section class="footer">
-    <h2>Stanford CS 194, Team 22, Round About.</h2>
+    <h2>Stanford CS 194 | Team 22 | Round About</h2>
   </section>
 <script type="text/javascript">
 var width = 1200,
