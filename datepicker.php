@@ -103,10 +103,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     function setDatesInCookie() {
       start = document.getElementById('start').valueAsDate;
       end = document.getElementById('end').valueAsDate;
-
-      document.cookie = "start=" + getUnixTime(start);
-      document.cookie = "end=" + getUnixTime(end);
-
+        
+     
+         window.sessionStorage.setItem("start", getUnixTime(start));
+         window.sessionStorage.setItem("end", getUnixTime(end));
+   
       location.href = "collage.php";
     }
 
@@ -118,8 +119,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       start = document.getElementById('start').valueAsDate;
       end = document.getElementById('end').valueAsDate;
 
-      document.cookie = "start=" + getUnixTime(start);
-      document.cookie = "end=" + getUnixTime(end);
+       window.sessionStorage.setItem("start", getUnixTime(start));
+         window.sessionStorage.setItem("end", getUnixTime(end));
 
       location.href = "countryPicker.php";
     }
