@@ -50,7 +50,7 @@
           ?>
           <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
-        <td width="10%">
+        <td width="13%">
           <?php
           session_start();
           if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
