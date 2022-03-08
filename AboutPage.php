@@ -62,7 +62,7 @@
             if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               echo '';
             } else {
-              echo '<h5 color="#5e5e5e">'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h5>';
+              echo '<h5 class="nameToolbar">'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h5>';
             }
             ?>
           </td>

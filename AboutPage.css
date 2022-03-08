@@ -23,7 +23,7 @@ body {
   background-size: 100%;
   background-color: #cccccc;
 }
-/* 
+/*
 .cover-container {
   max-width: 42em;
 } */
@@ -58,7 +58,7 @@ body {
  border-bottom: .25rem solid transparent;
  margin:7px;
  text-align:left;
- text-shadow: none; 
+ text-shadow: none;
 }
 
 .menuItem:hover,
@@ -72,7 +72,7 @@ body {
 .active {
  /* color: white; */
  color: #5e5e5e;
- border-bottom-color: #5e5e5e;;
+ border-bottom-color: #5e5e5e;
  /* border-bottom-color: white; */
 }
 .logoutText {
@@ -89,4 +89,7 @@ body {
  background-color: #F2A074;
  border-radius: 5px;
  color: #fff;
+}
+.nameToolbar{
+  color: #5e5e5e;
 }
