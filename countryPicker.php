@@ -332,6 +332,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   height: 45px;
   padding-top: 20px;
   padding-left: 20px;
+  font-size:20px;
 }
 .menuItems {
  padding-left:40px;
