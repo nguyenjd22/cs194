@@ -408,7 +408,7 @@ var profilePhoto = defs.append("pattern")
   .attr("y", 0)
   .attr("height", 100)
   .attr("width", 100)
-  .attr("xlink:href", "https://www.thesprucepets.com/thmb/hThcFCxT20ql0opGe4B8WGICbc4=/1851x1851/smart/filters:no_upscale()/cat-talk-eyes-553942-hero-df606397b6ff47b19f3ab98589c3e2ce.jpg");
+  .attr("xlink:href", data[0].image);
 
 svg.append("circle")
     .attr("r", 50)
