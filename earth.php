@@ -469,7 +469,7 @@ var svg = d3.select(".map")
   .attr("width",width)
   .attr("height", height)
 
-var tip = d3.select("body").append("div").attr("class", "tooltips");
+var tip = svg.append("div").attr("class", "tooltips");
 
 var data = JSON.parse(window.sessionStorage.getItem("data"));
 var timeDuration = []
@@ -655,8 +655,8 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
               svg.select(".title")
               .text(time + ", in " +data[i].country);
               tip.html(image)
-               .style("left", c2[0]+750 + "px")
-               .style("top", c2[1]+1200 + "px");
+               .style("left", c2[0]+250 + "px")
+               .style("top", c2[1]+300 + "px");
             };
         })
       .transition()
