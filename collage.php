@@ -155,13 +155,13 @@ require_once "config.php";
       <main class="px-3" id="authorizeBottom">
       </main>
       <div class="collageImage">
-        <table>
+        <table class="tableWithin">
           <tr>
             <td width="50%">
               <div class="collageImage" id="cnvdiv"></div>
             </td>
             <td width="50%">
-              <!-- <table> -->
+              <table>
                 <tr class="buttonRow">
                   <td>
                   <a id="backgrounds">
@@ -175,14 +175,35 @@ require_once "config.php";
                   </td>
                 </tr>
                 <tr class="buttonRow">
+                  <td>
+                    <a id="draws">
+                      <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
+                    </a>
+                  </td>
+                  <td>
+                    <a id="draws">
+                      <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
+                    </a>
+                  </td>
+                  <td>
+                    <a id="draws">
+                    <button id ="layer" class="btn btn-lg btn-primary">Draw Layer</button>
+                    </a>
+                  </td>
+                  <td>
+                    <a id="draws">
+                      <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
+                    </a>
+                  </td>
+<!-- 
                   <a id="draws">
                     <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
                     <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
                     <button id ="layer" class="btn btn-lg btn-primary">Draw Layer</button>
                     <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
-                  </a>
+                  </a> -->
                 </tr>
-              <!-- </table> -->
+              </table>
             </td>
             
           </tr>

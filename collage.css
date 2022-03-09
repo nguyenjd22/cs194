@@ -21,6 +21,9 @@
 #beach_button, #mountain_button {
   width:99%;
 }
+.tableWithin {
+  margin-right:0px;
+}
 
 .btn:hover {
   background-color: #FBF6EE;
