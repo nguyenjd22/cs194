@@ -131,6 +131,7 @@ body {
  border-bottom: .25rem solid transparent;
  margin:7px;
  text-align:left;
+ text-shadow: none;
 }
 
 .menuItem:hover,

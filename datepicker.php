@@ -40,14 +40,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <tr>
         <td class="menuItems">
             <a href="homepage.php" class="menuItem">Home</a>
-            <!-- <a aria-current="page" href="#">About</a> -->
-        <!-- </td>
-        <td> -->
-          <a  class="menuItem" href="AboutPage.php">About</a>
-        <!-- </td>
-        <td> -->
-          <a  class="menuItem active" aria-current="page" href="#">Create</a>
-          <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
+            <a  class="menuItem" href="AboutPage.php">About</a>
+            <a  class="menuItem active" aria-current="page" href="#">Create</a>
+            <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
         </td>
         <td width="13%">
           <?php
@@ -63,7 +58,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <button class="logoutButton">
             <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
           </button>
-          <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
         </td>
       </tr>
     </table>
