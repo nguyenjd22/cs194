@@ -656,7 +656,7 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
               .text(time + ", in " +data[i].country);
               svg.select(".tooltips")
               .attr('x', 600+c2[0]+150)
-              .attr('y', c2[1] - 100)
+              .attr('y', c2[1] - 30)
               .attr("xlink:href", data[i].image);
             };
         })
