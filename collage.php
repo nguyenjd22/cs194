@@ -161,7 +161,7 @@ require_once "config.php";
               <div class="collageImage" id="cnvdiv"></div>
             </td>
             <td width="50%">
-              <table>
+              <!-- <table> -->
                 <tr class="buttonRow">
                   <td>
                   <a id="backgrounds">
@@ -182,7 +182,7 @@ require_once "config.php";
                     <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
                   </a>
                 </tr>
-              </table>
+              <!-- </table> -->
             </td>
             
           </tr>
