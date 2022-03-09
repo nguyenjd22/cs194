@@ -140,11 +140,11 @@ require_once "config.php";
       </header>
       <main class="px-3" id="authorizeBottom">
       </main>
+      <div id="cnvdiv"></div>
       <a id="backgrounds">
         <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
         <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
       </a>
-      <div id="cnvdiv"></div>
       <a id="draws">
         <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
         <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
@@ -320,6 +320,8 @@ require_once "config.php";
     var width = 800;
     var height = 800;
     var isLarge = false;
+    var bkdType = "";
+    //var currentBkd = isLarge ? bigBkd["beach"] : smallBkd["beach"];
     function displayCollage(listOfPhotos) {
       console.log(listOfPhotos);
       document.getElementById("svbtn").removeAttribute("hidden");
@@ -327,8 +329,8 @@ require_once "config.php";
       //      height = 800;
       isLarge = listOfPhotos.length > 9;
       if(isLarge) {
-	width = 1000;
-	height = 1000;
+        width = 1000;
+        height = 1000;
       }
       var gridding = d3.gridding()
         .size([width, height])
@@ -345,7 +347,7 @@ require_once "config.php";
       bigBkd["mountain"] = "https://wallpaperset.com/2/full/d/b/5/232927.jpg";
       smallBkd["mountain"] = mtn_bknd;
       var currentBkd = isLarge ? bigBkd["beach"] : smallBkd["beach"];
-      var bkdType = currentBkd;
+      bkdType = currentBkd;
 
       var griddingData = gridding(data);
 
@@ -382,6 +384,12 @@ require_once "config.php";
 
       var brick = document.getElementById("brick");
       brick.onclick = function() { drawBrick(listOfPhotos, bkdType); };
+
+      var mtn = document.getElementById("mountain_button");
+      mtn.onclick = function () { setMtn(); };
+
+      var beach = document.getElementById("beach_button");
+      beach.onclick = function () { setBeach(); };
 
       var c = document.getElementById("cnv");
       var ctx = c.getContext("2d");
@@ -610,15 +618,23 @@ require_once "config.php";
     //   }
 
     function setBeach() {
-      bkd_type = "bkdtype=beach";
-      document.cookie = bkd_type;
-      cnosole.log(bkd_type);
+      bkdType = isLarge ? bigBkd["beach"] : smallBkd["beach"];
+      var img = new Image();
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0, width, height);
+      }
+	    img.crossOrigin = "anonymous";
+      img.src = bkdType
     }
 
     function setMtn() {
-      bkd_type = "bkdtype=mountain";
-      document.cookie = bkd_type;
-      console.log(bkd_type);
+      bkdType = isLarge ? bigBkd["mountain"] : smallBkd["mountain"];
+      var img = new Image();
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0, width, height);
+      }
+	    img.crossOrigin = "anonymous";
+      img.src = bkdType
     }
 
   </script>
