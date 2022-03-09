@@ -18,6 +18,10 @@
   font-size:12px;
 }
 
+#beach_button, #mountain_button {
+  width:49%;
+}
+
 .btn:hover {
   background-color: #FBF6EE;
   color: #5a5a5a;
