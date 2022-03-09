@@ -26,9 +26,13 @@ body {
 }
 main {
   color: #5a5a5a;
-  width:60%;
+  width:50%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.textHeader {
+  margin-bottom: 10px;
 }
 /*
 .cover-container {
