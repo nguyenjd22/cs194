@@ -24,6 +24,10 @@ body {
   background-color: #cccccc; */
   background-color: #FBF6EE;
 }
+main {
+  color: #5a5a5a;
+  width:40%;
+}
 /*
 .cover-container {
   max-width: 42em;
