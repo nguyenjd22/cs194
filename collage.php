@@ -157,10 +157,10 @@ require_once "config.php";
       <div class="collageImage">
         <table>
           <tr>
-            <td width="70%">
+            <td width="50%">
               <div class="collageImage" id="cnvdiv"></div>
             </td>
-            <td width="30%">
+            <td width="50%">
               <table>
                 <tr class="buttonRow">
                   <a id="backgrounds">
