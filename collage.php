@@ -149,20 +149,12 @@ require_once "config.php";
         <div>
           <?php
             session_start();
-            /*echo '<h3 id="username" class="float-md-start mb-0">'.$_SESSION ['username'].'</h3>';
-            */?>
-          <!-- <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link" href="index.php">Home</a>
-            <a class="nav-link" href="AboutPage.php">About</a>
-            <a class="nav-link" href="datepicker.html">Create</a>
-            <a href="logout.php" class="nav-link">Logout</a>
-          </nav> -->
-
+          ?>
         </div>
       </header>
       <main class="px-3" id="authorizeBottom">
       </main>
-      <div id="cnvdiv"></div>
+      <div class="colalgeImage" id="cnvdiv"></div>
       <a id="backgrounds">
         <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
         <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>

@@ -49,8 +49,10 @@ body {
   /* background-color: #5e5e5e; */
   background-color: white;
   height: 45px;
-  padding-top: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   padding-left: 20px;
+
 }
 .menuItems {
  padding-left:40px;
@@ -104,4 +106,9 @@ body {
 .nameToolbar{
   color: #5e5e5e;
   text-shadow: none;
+}
+
+.collageImage {
+  width: 50%;
+  margin:30px;
 }
