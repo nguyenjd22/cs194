@@ -344,7 +344,7 @@ require_once "config.php";
       var smallBkd = {};
       bigBkd["beach"] = "https://live.staticflickr.com/3872/15095543979_7f3a2814b5_b.jpg";
       smallBkd["beach"] = beach_bknd;
-      bigBkd["mountain"] = "https://wallpaperset.com/2/full/d/b/5/232927.jpg";
+      bigBkd["mountain"] = "https://ae01.alicdn.com/kf/HTB1jOMjXnZRMeJjSsppq6xrEpXaE/Snow-mountain-reflection-on-the-lake-livingroom-background-3D-Wallpaper-Mural-Photowall-3d-papel-de-pared.jpg";
       smallBkd["mountain"] = mtn_bknd;
       var currentBkd = isLarge ? bigBkd["beach"] : smallBkd["beach"];
       bkdType = currentBkd;
