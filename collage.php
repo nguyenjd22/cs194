@@ -97,7 +97,7 @@ require_once "config.php";
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <link href="collage.css" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
     <script src="https://unpkg.com/d3@5"></script>
