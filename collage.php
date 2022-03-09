@@ -155,13 +155,23 @@ require_once "config.php";
       <main class="px-3" id="authorizeBottom">
       </main>
       <div class="collageImage">
-       <div class="collageImage" id="cnvdiv"></div>
+        <table>
+          <tr>
+            <td width="70%">
+              <div class="collageImage" id="cnvdiv"></div>
+            </td>
+            <td width="30%">
+            <a id="backgrounds">
+              <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
+              <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
+            </a>
+            </td>
+            
+          </tr>
+        </table>
       </div>
       
-      <a id="backgrounds">
-        <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
-        <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
-      </a>
+     
       <a id="draws">
         <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
         <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
