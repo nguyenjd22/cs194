@@ -4,7 +4,7 @@
 
 body {
   /* padding-top: 3rem; */
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
   color: #5a5a5a;
 }
 
@@ -58,7 +58,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 1.5rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -135,7 +135,7 @@ main {
  border-bottom: .25rem solid transparent;
  margin:7px;
  text-align:left;
- text-shadow: none; 
+ text-shadow: none;
 }
 
 .menuItem:hover,
@@ -170,6 +170,15 @@ main {
 
 .instaLogo {
   margin-left:50px;
+  margin-top:75px;
+}
+
+.create {
+  margin-top:100px;
+}
+
+.datepick {
+  margin-top:50px;
 }
 
 .firstCarousel {

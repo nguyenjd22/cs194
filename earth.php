@@ -406,7 +406,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
       <!-- </td>
       <td> -->
-        <a  style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">Create</a>
+        <a  style="text-decoration: none;" class="menuItem active" href="datepicker.php">Create</a>
         <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
       </td>
       <td width="13%">

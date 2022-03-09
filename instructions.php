@@ -97,82 +97,89 @@
         <h2 class="featurette-heading-main">How to use our website </h2>
       </div>
     </div>
-
     <hr class="featurette-divider">
+
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Step 1: Sign up or Login</h2>
-        <p class="lead">Click the button in the top right to sign up or login.</p>
-      </div>
-      <!-- <div class="col-md-5">
-        <img src="instagram-logo.png" width="250" height="250" class="instaLogo"/>
-      </div> -->
-    </div>
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Step 2: Link your Instagram account </h2>
-        <p class="lead">Authorize your Instagram account to let us access your social media account photos.</p>
+        <h2 class="featurette-heading">Step 1: Sign up / Login </h2>
+        <p class="lead">Click the Login button in the top navigation bar or on the home page to get started. </p>
       </div>
       <div class="col-md-5">
-        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-        <img src="instagram-logo.png" width="250" height="250" class="instaLogo"/>
+        <img src="signin.png"  height="100" class="create"/>
       </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Step 3: Click Create </h2>
-        <p class="lead">Click the Create button in the top navigation bar or on the home page to get started. </p>
-      </div>
-      <div class="col-md-5">
-        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-        <img src="instagram-logo.png" width="250" height="250" class="instaLogo"/>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Step 4: Choose Collage or Interactive Map </h2>
-        <p class="lead">Click the Create button in the top navigation bar or on the home page to get started. </p>
-      </div>
-      <div class="col-md-5">
-        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-        <!-- <img src="instagram-logo.png" width="250" height="250" class="instaLogo"/> -->
-      </div>
-    </div>
-
-
 
     <hr class="featurette-divider">
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Step 3: Select a date range for your trip </h2>
-        <p class="lead">Click through our different collage options, decide which one you like best and share with your friends!</p>
+        <h2 class="featurette-heading">Step 2: Link your Instagram account </h2>
+        <p class="lead">Authorize your Instagram account to let us access your social media account photos.</p>
       </div>
+      <div class="col-md-5">
+        <img src="instagram-logo.png" width="150" height="150" class="instaLogo"/>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Step 3: Create</h2>
+        <p class="lead">Click the Create button in the top navigation bar or on the home page to start creating content. </p>
+      </div>
+      <div class="col-md-5">
+        <img src="create.png"  height="100" class="create"/>
+      </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Step 4: Select a date range, create Collage / Interactive Map</h2>
+        <p class="lead">Choose a date range to pick which pictures will be used from your Instagram. Then, choose to create either a collage or an interactive map. </p>
+      </div>
+      <div class="col-md-5">
+        <img src="datepick.png" height="200" class="datepick"/>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Create a Collage</h2>
+        <p class="lead"> Play around with the different buttons to customize your collage! Here are a couple features that we have: </p>
+        <ul>
+          <li>Choose a background that fits your aesthetic </li>
+          <li>Choose between 4 different drawing patterns </li>
+          <li>Click each draw button multiple times to randomly generate image location</li>
+          <li>Download the collage to your local machine</li>
+        </ul>
+      </div>
+
       <div class="col-md-5 order-md-1">
-        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
         <img src="collage-ad.png" width="500" height="500"/>
       </div>
+
     </div>
 
     <hr class="featurette-divider">
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading"> Step 4:  </h2>
-        <p class="lead">Enjoy more interactivity with our map feature which will visualize your travel trajectory!</p>
+        <h2 class="featurette-heading">Create an Interactive Map </h2>
+        <p class="lead">You have full control over what pictures you want in the visualization.</p>
+        <ul>
+          <li>Use the Select Image button to choose the image you want to location tag</li>
+          <li>Tag the country corresponding to the selected image</li>
+          <li>You can always delete images from the visualization </li>
+          <li>When you are satisfied, click Generate Map</li>
+        </ul>
       </div>
       <div class="col-md-5">
         <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-        <img src="globemap.png" width="550" height="500"/>
+        <img src="locationselection.png" height="500"/>
       </div>
     </div>
 
@@ -180,12 +187,12 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading"> Step 5: </h2>
-        <p class="lead">Enjoy more interactivity with our map feature which will visualize your travel trajectory!</p>
+        <h2 class="featurette-heading"> Enjoy the map visualization </h2>
+        <p class="lead">You can screen record the visualization if you want to save it to your local machine</p>
       </div>
       <div class="col-md-5">
         <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-        <img src="globemap.png" width="550" height="500"/>
+        <img src="earth.png"  height="500"/>
       </div>
     </div>
 
