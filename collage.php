@@ -141,13 +141,16 @@ require_once "config.php";
       <main class="px-3" id="authorizeBottom">
       </main>
       <div id="cnvdiv"></div>
+
+      <a id="draws">
+        <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
+        <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
+        <button id ="layer" class="btn btn-lg btn-primary">Draw Layer</button>
+        <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
+      </a>
       <a id="download" download="collage.png">
         <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-primary">Download Collage</button>
       </a>
-      <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
-      <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
-      <button id ="layer" class="btn btn-lg btn-primary">Draw Layer</button>
-      <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
       
       <!-- <a id="saveToProfile" download="test.png">
         <button id ="svbtn" hidden="hidden" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to profile</button>
