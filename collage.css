@@ -118,6 +118,7 @@ body {
 .nameToolbar{
   color: #5e5e5e;
   text-shadow: none;
+  font-weight: 700;
 }
 
 .collageImage {
