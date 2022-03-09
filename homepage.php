@@ -28,9 +28,6 @@
           font-size: 3.5rem;
         }
       }
-      .intro-text{
-        margin-left: 30px;
-      }
     </style>
 
 
@@ -205,12 +202,12 @@
     <hr class="featurette-divider">
 
     <div class="row featurette">
-      <div class="col-md-7 order-md-2 intro-text">
+      <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">Automatically Generate Travel Collages</h2>
         <p class="lead">Click through our different collage options, decide which one you like best and share with your friends.</p>
       </div>
-      <div class="col-md-5 intro-image">
-        <img src="collage-ad.png" width="500" height="500"/>
+      <div class="col-md-5">
+        <img src="collage-ad.png" width="450" height="450"/>
       </div>
     </div>
 
