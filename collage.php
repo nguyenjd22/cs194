@@ -140,8 +140,11 @@ require_once "config.php";
       </header>
       <main class="px-3" id="authorizeBottom">
       </main>
+      <a id="backgrounds">
+        <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
+        <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
+      </a>
       <div id="cnvdiv"></div>
-
       <a id="draws">
         <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
         <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
