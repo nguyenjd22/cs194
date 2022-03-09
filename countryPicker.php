@@ -388,14 +388,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <tr>
       <td class="menuItems">
           <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
-          <!-- <a aria-current="page" href="#">About</a> -->
-      <!-- </td>
-      <td> -->
+      
         <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
-      <!-- </td>
-      <td> -->
-        <a  style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">Create</a>
+      
+        <a  style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">Map</a>
         <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
+                <a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>
       </td>
       <td width="13%">
         <?php
