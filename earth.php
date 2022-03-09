@@ -656,7 +656,7 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
               svg.select(".title")
               .text(time + ", in " +data[i].country);
               svg.select(".tooltips")
-              .attr('x', c2[0]+100)
+              .attr('x', c2[0])
               .attr('y', c2[0]-30)
               .attr("xlink:href", data[i].image);
               // tip.html(image)
