@@ -469,8 +469,6 @@ var svg = d3.select(".map")
   .attr("width",width)
   .attr("height", height)
 
-var tip = d3.select("body").append("div").attr("class", "tooltips");
-
 var data = JSON.parse(window.sessionStorage.getItem("data"));
 var timeDuration = []
 for (var i = 0; i < data.length; i++) {
@@ -536,8 +534,8 @@ svg.select(".legend")
 
 var timeline = svg.select(".legend");
 
-d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", function(error, world) {
 
+d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", function(error, world) {
   var timelinePoint = timeline.selectAll("point")
     .data(timeDuration)
     .enter()
@@ -599,13 +597,15 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
         });
 
 
+    var travelPhoto = svg.append("svg:image")
+    .attr("class", "tooltips")
+    .attr('width', 200);
     var n = data.length, i = -1;
     step();
     function step() {
       if (++i >= n) i = 0;
       var currentCountryName = data[i].country;
       var currentCountryGeo = worldMap.get(currentCountryName);
-      var image = "<img class='trip-photo' src="+data[i].image+" width='300'>";
 
       var time = timeConverter(parseInt(data[i].date));
 
@@ -654,9 +654,10 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
               country.attr("d", path);
               svg.select(".title")
               .text(time + ", in " +data[i].country);
-              tip.html(image)
-               .style("left", c2[0]+750 + "px")
-               .style("top", c2[1]+1200 + "px");
+              svg.select(".tooltips")
+              .attr('x', 600+c2[0]+150)
+              .attr('y', 300+c2[0])
+              .attr("xlink:href", data[i].image);
             };
         })
       .transition()
