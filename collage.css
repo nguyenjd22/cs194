@@ -16,8 +16,11 @@
   border:0px;
   width:100%;
   font-size:12px;
+  margin-bottom:5px;
 }
-
+#svbtn {
+  width:30%;
+}
 #beach_button, #mountain_button {
   width:99%;
 }
