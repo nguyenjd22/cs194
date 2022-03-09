@@ -72,6 +72,6 @@ body {
 
 .btn:hover {
   color: #5a5a5a;
-
   border:0px;
+  background-color: #FBF6EE;
 }
