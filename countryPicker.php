@@ -741,6 +741,7 @@ function updateList(){
   if (selectedImageList.length != 0){
     selectedImageList.sort((d1, d2) => {return d1.timestamp > d2.timestamp;});
   }
+  console.log(selectedImageList);
   document.getElementById("selectedImageTable").innerHTML = "";
   for (let i = 0; i < selectedImageList.length; i++) {
     var d = selectedImageList[i];
