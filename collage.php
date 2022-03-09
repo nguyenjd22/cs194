@@ -144,6 +144,11 @@ require_once "config.php";
       <a id="download" download="collage.png">
         <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-primary">Download Collage</button>
       </a>
+      <button id ="cascade" onclick="drawCascade(listOfPhotos, bkdType)" class="btn btn-lg btn-primary">Draw Cascade</button>
+      <button id ="grid" onclick="drawGrid(listOfPhotos, bkdType)" class="btn btn-lg btn-primary">Draw Grid</button>
+      <button id ="layer" onclick="drawLayer(listOfPhotos, bkdType)" class="btn btn-lg btn-primary">Draw Layer</button>
+      <button id ="brick" onclick="drawBrick(listOfPhotos, bkdType)" class="btn btn-lg btn-primary">Draw Brick</button>
+      
       <!-- <a id="saveToProfile" download="test.png">
         <button id ="svbtn" hidden="hidden" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to profile</button>
       </a> -->
@@ -360,40 +365,6 @@ require_once "config.php";
       //        .attr("src", listOfPhotos[x]);
 
       //      }
-
-
-      var cascade = document.createElement('button');
-      cascade.class = 'btn btn-lg btn-primary';
-      cascade.value = "Draw Cascade";
-      cascade.addEventListener('click', function () {
-	      drawCascade(listOfPhotos, bkdType);
-      });
-      document.body.appendChild(cascade);
-
-      var grid = document.createElement('button');
-      grid.class = 'btn btn-lg btn-primary';
-      grid.value = "Draw Grid";
-      grid.addEventListener('click', function () {
-	      drawGrid(listOfPhotos, bkdType);
-      });
-      document.body.appendChild(grid);
-
-      var layer = document.createElement('button');
-      layer.class = 'btn btn-lg btn-primary';
-      layer.value = "Draw Layered";
-      layer.addEventListener('click', function () {
-	      drawLayer(listOfPhotos, bkdType);
-      });
-      document.body.appendChild(layer);
-
-      var brick = document.createElement('input');
-      brick.type = 'button';
-      brick.class = 'btn btn-lg btn-primary';
-      brick.value = "Draw Brick";
-      brick.addEventListener('click', function () {
-	      drawBrick(listOfPhotos, bkdType);
-      });
-      document.body.appendChild(brick);
 
       var c = document.getElementById("cnv");
       var ctx = c.getContext("2d");
