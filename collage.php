@@ -161,23 +161,27 @@ require_once "config.php";
               <div class="collageImage" id="cnvdiv"></div>
             </td>
             <td width="30%">
-            <a id="backgrounds">
-              <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
-              <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
-            </a>
+              <table>
+                <tr>
+                <a id="backgrounds">
+                  <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
+                  <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
+                </a>
+                </tr>
+                <a id="draws">
+                  <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
+                  <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
+                  <button id ="layer" class="btn btn-lg btn-primary">Draw Layer</button>
+                  <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
+                </a>
+                <tr>
+                </tr>
+              </table>
             </td>
             
           </tr>
         </table>
       </div>
-      
-     
-      <a id="draws">
-        <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
-        <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
-        <button id ="layer" class="btn btn-lg btn-primary">Draw Layer</button>
-        <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
-      </a>
       <a id="download" download="collage.png">
         <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-primary">Download Collage</button>
       </a>
