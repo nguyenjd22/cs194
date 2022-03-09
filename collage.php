@@ -155,13 +155,13 @@ require_once "config.php";
       <main class="px-3" id="authorizeBottom">
       </main>
       <div class="collageImage">
-        <table class="tableWithin">
+        <table>
           <tr>
             <td width="50%">
               <div class="collageImage" id="cnvdiv"></div>
             </td>
             <td width="50%">
-              <table>
+              <table class="tableWithin">
                 <tr class="buttonRow">
                   <td colspan="2">
                     <a id="backgrounds">
