@@ -386,10 +386,10 @@ require_once "config.php";
       brick.onclick = function() { drawBrick(listOfPhotos, bkdType); };
 
       var mtn = document.getElementById("mountain_button");
-      mtn.onclick = function () { setMtn(); };
+      mtn.onclick = function () { setMtn(bigBkd, smallBkd); };
 
       var beach = document.getElementById("beach_button");
-      beach.onclick = function () { setBeach(); };
+      beach.onclick = function () { setBeach(bigBkd, smallBkd); };
 
       var c = document.getElementById("cnv");
       var ctx = c.getContext("2d");
@@ -617,7 +617,7 @@ require_once "config.php";
     //   };
     //   }
 
-    function setBeach() {
+    function setBeach(bigBkd, smallBkd) {
       bkdType = isLarge ? bigBkd["beach"] : smallBkd["beach"];
       var img = new Image();
       img.onload = function () {
@@ -627,7 +627,7 @@ require_once "config.php";
       img.src = bkdType
     }
 
-    function setMtn() {
+    function setMtn(bigBkd, smallBkd) {
       bkdType = isLarge ? bigBkd["mountain"] : smallBkd["mountain"];
       var img = new Image();
       img.onload = function () {
