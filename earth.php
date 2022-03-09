@@ -606,7 +606,6 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
       if (++i >= n) i = 0;
       var currentCountryName = data[i].country;
       var currentCountryGeo = worldMap.get(currentCountryName);
-      // var image = "<img class='trip-photo' src="+data[i].image+" width='300'>";
 
       var time = timeConverter(parseInt(data[i].date));
 
@@ -657,11 +656,8 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json", functi
               .text(time + ", in " +data[i].country);
               svg.select(".tooltips")
               .attr('x', 600+c2[0]+100)
-              .attr('y', 500+c2[0]-30)
+              .attr('y', 400+c2[0])
               .attr("xlink:href", data[i].image);
-              // tip.html(image)
-              //  .style("left", c2[0]+750 + "px")
-              //  .style("top", c2[1]+800 + "px");
             };
         })
       .transition()
