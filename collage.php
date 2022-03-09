@@ -154,7 +154,7 @@ require_once "config.php";
       </header>
       <main class="px-3" id="authorizeBottom">
       </main>
-      <div class="colalgeImage" id="cnvdiv"></div>
+      <div class="collageImage" id="cnvdiv"></div>
       <a id="backgrounds">
         <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
         <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
