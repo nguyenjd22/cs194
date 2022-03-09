@@ -619,22 +619,26 @@ require_once "config.php";
 
     function setBeach(bigBkd, smallBkd) {
       bkdType = isLarge ? bigBkd["beach"] : smallBkd["beach"];
+      var c = document.getElementById("cnv");
+      var ctx = c.getContext("2d");
       var img = new Image();
       img.onload = function () {
         ctx.drawImage(img, 0, 0, width, height);
       }
 	    img.crossOrigin = "anonymous";
-      img.src = bkdType
+      img.src = bkdType;
     }
 
     function setMtn(bigBkd, smallBkd) {
       bkdType = isLarge ? bigBkd["mountain"] : smallBkd["mountain"];
+      var c = document.getElementById("cnv");
+      var ctx = c.getContext("2d");
       var img = new Image();
       img.onload = function () {
         ctx.drawImage(img, 0, 0, width, height);
       }
 	    img.crossOrigin = "anonymous";
-      img.src = bkdType
+      img.src = bkdType;
     }
 
   </script>
