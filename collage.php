@@ -97,7 +97,7 @@ require_once "config.php";
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="authorization.css" rel="stylesheet">
+    <link href="cover.css" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
   <table class="toolBar">
