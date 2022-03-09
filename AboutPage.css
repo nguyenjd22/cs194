@@ -26,7 +26,9 @@ body {
 }
 main {
   color: #5a5a5a;
-  width:40%;
+  width:60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*
 .cover-container {
