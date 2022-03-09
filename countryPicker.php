@@ -739,7 +739,7 @@ function exceedImageLimitValidator(){
 
 function updateList(){
   if (selectedImageList.length != 0){
-    selectedImageList.sort((d1, d2) => {return d1.timestamp > d2.timestamp;});
+    selectedImageList.sort((d1, d2) => {return d1.date > d2.date;});
   }
   console.log(selectedImageList);
   document.getElementById("selectedImageTable").innerHTML = "";
