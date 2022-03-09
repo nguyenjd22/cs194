@@ -107,7 +107,7 @@ require_once "config.php";
         <tr>
           <td class="menuItems">
             <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
-            <a style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">About</a>
+            <a style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
             <!-- GATING SYSTEM - AUTHORIZATION PAGE IF NOT AUTHORIZED; OTHERWISE - DATEPICKER -->
             <?php
               session_start();
