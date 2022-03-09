@@ -334,8 +334,8 @@ require_once "config.php";
       return Math.floor(date.getTime() / 1000);
     }
 
-    var width = 500;
-    var height = 500;
+    var width = 800;
+    var height = 800;
     var isLarge = false;
     var bkdType = "";
     //var currentBkd = isLarge ? bigBkd["beach"] : smallBkd["beach"];
