@@ -163,10 +163,16 @@ require_once "config.php";
             <td width="50%">
               <table>
                 <tr class="buttonRow">
+                  <td>
                   <a id="backgrounds">
                     <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
-                    <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
                   </a>
+                  </td>
+                  <td>
+                    <a id="backgrounds">
+                      <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
+                    </a>
+                  </td>
                 </tr>
                 <tr class="buttonRow">
                   <a id="draws">
