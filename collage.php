@@ -100,34 +100,51 @@ require_once "config.php";
     <link href="cover.css" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
-  <table class="toolBar">
-      <tr>
-        <td class="menuItems">
-            <a href="homepage.php" class="menuItem">Home</a>
-            <a  class="menuItem" href="AboutPage.php">About</a>
-            <a  class="menuItem active" aria-current="page" href="#">Create</a>
-            <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
-        </td>
-        <td width="13%">
-          <?php
-          session_start();
-          if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-            echo '';
-          } else {
-            echo '<h5>'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h5>';
-          }
-          ?>
-        </td>
-        <td width="10%">
-          <button class="logoutButton">
-            <a class="logoutText" href="logout.php" margin-right="0px">Logout</a>
-          </button>
-        </td>
-      </tr>
-    </table>
     <script src="https://unpkg.com/d3@5"></script>
     <script src="https://unpkg.com/d3-gridding@0.1"></script>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 flex-column">
+    <table class="toolBar">
+        <tr>
+          <td class="menuItems">
+            <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
+            <a style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">About</a>
+            <!-- GATING SYSTEM - AUTHORIZATION PAGE IF NOT AUTHORIZED; OTHERWISE - DATEPICKER -->
+            <?php
+              session_start();
+              if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+                echo '';
+              } else {
+                echo '<a style="text-decoration: none;" class="menuItem" href="datepicker.php">Create</a>';
+              }
+            ?>
+            <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
+          </td>
+          <td width="13%">
+            <?php
+            session_start();
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+              echo '';
+            } else {
+              echo '<h5 class="nameToolbar">'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h5>';
+            }
+            ?>
+          </td>
+          <td width="10%">
+            <?php
+            session_start();
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+              echo '<button class="logoutButton">
+                <a style="text-decoration: none;" class="logoutText" href="login.php" margin-right="0px">Login</a>
+              </button>';
+            } else {
+              echo '<button class="logoutButton">
+                <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
+              </button>';
+            }
+            ?>
+          </td>
+        </tr>
+      </table>
       <header class="mb-auto">
         <div>
           <?php
