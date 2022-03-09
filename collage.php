@@ -162,19 +162,19 @@ require_once "config.php";
             </td>
             <td width="30%">
               <table>
-                <tr>
-                <a id="backgrounds">
-                  <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
-                  <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
-                </a>
+                <tr class="buttonRow">
+                  <a id="backgrounds">
+                    <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
+                    <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
+                  </a>
                 </tr>
-                <a id="draws">
-                  <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
-                  <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
-                  <button id ="layer" class="btn btn-lg btn-primary">Draw Layer</button>
-                  <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
-                </a>
-                <tr>
+                <tr class="buttonRow">
+                  <a id="draws">
+                    <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
+                    <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
+                    <button id ="layer" class="btn btn-lg btn-primary">Draw Layer</button>
+                    <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
+                  </a>
                 </tr>
               </table>
             </td>

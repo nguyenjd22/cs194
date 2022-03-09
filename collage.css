@@ -113,3 +113,8 @@ body {
   margin-bottom:20px;
   margin-left: 20px;
 }
+
+.buttonRow {
+  display:flex;
+  justify-content: flex-start;
+}
