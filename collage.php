@@ -99,7 +99,7 @@ require_once "config.php";
     <!-- Custom styles for this template -->
     <link href="collage.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
+  <body class="d-flex h-100 text-center text-white">
     <script src="https://unpkg.com/d3@5"></script>
     <script src="https://unpkg.com/d3-gridding@0.1"></script>
     <div class="cover-container d-flex w-100 h-100 flex-column">
