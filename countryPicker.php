@@ -740,8 +740,8 @@ function exceedImageLimitValidator(){
 function updateList(){
   if (selectedImageList.length != 0){
     selectedImageList.sort((d1, d2) => {
-      if (d1.date > d1.date) return 1;
-      if (d1.date < d1.date) return -1;
+      if (d1.date > d2.date) return 1;
+      if (d1.date < d2.date) return -1;
       return 0;
     });
   }
