@@ -381,6 +381,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
  border-radius: 5px;
  color: #fff;
 }
+    
+ .username {
+     color: #5a5a5a;
+     font-weight: 700;
+    }
 </style>
 </head>
 <body>
@@ -400,7 +405,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           echo '';
         } else {
-          echo '<h5>'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h5>';
+          echo '<h5 class="username">'.$_SESSION['first_name'].' '.$_SESSION['last_name'].'</h5>';
         }
         ?>
       </td>
