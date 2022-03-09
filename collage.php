@@ -154,7 +154,10 @@ require_once "config.php";
       </header>
       <main class="px-3" id="authorizeBottom">
       </main>
-      <div class="collageImage" id="cnvdiv"></div>
+      <div class="collageImage">
+       <div class="collageImage" id="cnvdiv"></div>
+      </div>
+      
       <a id="backgrounds">
         <button id ="mountain_button" class="btn btn-lg btn-primary">Choose Mountain Background</button>
         <button id ="beach_button" class="btn btn-lg btn-primary">Choose Beach Background</button>
@@ -331,8 +334,8 @@ require_once "config.php";
       return Math.floor(date.getTime() / 1000);
     }
 
-    var width = 800;
-    var height = 800;
+    var width = 500;
+    var height = 500;
     var isLarge = false;
     var bkdType = "";
     //var currentBkd = isLarge ? bigBkd["beach"] : smallBkd["beach"];
@@ -369,6 +372,7 @@ require_once "config.php";
           .attr("id", "cnv")
           .attr("width", width)
           .attr("height", height);
+
 
       d3.select("body").append('img')
             .attr("x", 0)
