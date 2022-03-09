@@ -93,9 +93,7 @@
 
 
     <div class="row featurette">
-      <div class="col-md-5">
-        <h2 class="featurette-heading-main">How to use our website </h2>
-      </div>
+      <h2 class="featurette-heading-main">How to use our website </h2>
     </div>
     <hr class="featurette-divider">
 
@@ -140,7 +138,7 @@
         <p class="lead">Choose a date range to pick which pictures will be used from your Instagram. Then, choose to create either a collage or an interactive map. </p>
       </div>
       <div class="col-md-5">
-        <img src="datepick.png" height="200" class="datepick"/>
+        <img src="datepick.png" height="150" class="datepick"/>
       </div>
     </div>
 
