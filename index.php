@@ -47,8 +47,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <table class="toolBar">
       <tr>
         <td class="menuItems">
-          <!-- <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a> -->
-          <!-- <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a> -->
         </td>
         <td width="13%">
           <?php
