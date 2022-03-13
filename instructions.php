@@ -132,7 +132,7 @@
         <p class="lead">Click the Create button in the top navigation bar or on the home page to start creating content. </p>
       </div>
       <div class="col-md-5">
-        <img src="\images\create.png"  height="100" class="create"/>
+        <img src="/images/create.png"  height="100" class="create"/>
       </div>
 
     <hr class="featurette-divider">
