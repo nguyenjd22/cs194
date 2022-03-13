@@ -24,8 +24,6 @@ body {
 }
 
 .mainBox {
-  /* display: flex;
-  justify-content: center; */
   margin-left: auto;
   margin-right: auto;
   background-color: white;
@@ -62,11 +60,6 @@ body {
   border-top-right-radius: 0;
 }
 
-/*
- * Globals
- */
-
-
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -89,17 +82,6 @@ body {
 /*
  * Base structure
  */
-
-/* body {
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5); */
-  /* box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); */
-  /* background-size: 100%;
-  background-color: #fff;
-} */
-
-/* .cover-container {
-  max-width: 42em;
-} */
 
 
 /*
@@ -136,17 +118,13 @@ body {
 
 .menuItem:hover,
 .menuItem:focus {
-  /* color: white; */
   color: #5e5e5e;
   border-bottom-color: #5e5e5e;
-  /* border-bottom-color: rgba(255, 255, 255, .25); */
 }
 
 .active {
- /* color: white; */
  color: #5e5e5e;
  border-bottom-color: #5e5e5e;;
- /* border-bottom-color: white; */
 }
 .logoutText {
   color: white;
