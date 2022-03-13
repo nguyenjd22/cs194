@@ -135,13 +135,6 @@ require_once "config.php";
                       <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
                     </a>
                   </td>
-<!-- 
-                  <a id="draws">
-                    <button id ="cascade" class="btn btn-lg btn-primary">Draw Cascade</button>
-                    <button id ="grid" class="btn btn-lg btn-primary">Draw Grid</button>
-                    <button id ="layer" class="btn btn-lg btn-primary">Draw Layer</button>
-                    <button id ="brick" class="btn btn-lg btn-primary">Draw Brick</button>
-                  </a> -->
                 </tr>
               </table>
             </td>
@@ -152,13 +145,6 @@ require_once "config.php";
       <a id="download" download="collage.png">
         <button id ="svbtn" hidden="hidden" onclick="saveImg()" class="btn btn-lg btn-primary">Download Collage</button>
       </a>
-      
-      <!-- <a id="saveToProfile" download="test.png">
-        <button id ="svbtn" hidden="hidden" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to profile</button>
-      </a> -->
-      <!-- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <button id="saveButton" name="saveToProfile" onclick="saveToProfile()" class="btn btn-lg btn-secondary fw-bold border-white big-white">Save to Profile</button>
-      </form> -->
       <footer class="mt-auto text-white-50">
         <p>Stanford CS194 Project Round-About</p>
       </footer>
