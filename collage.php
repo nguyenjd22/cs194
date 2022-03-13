@@ -2,17 +2,6 @@
 // Initialize the session
 session_start();
 
-
-// function generateRandomString($length = 10) {
-//   $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-//   $charactersLength = strlen($characters);
-//   $randomString = '';
-//   for ($i = 0; $i < $length; $i++) {
-//       $randomString .= $characters[rand(0, $charactersLength - 1)];
-//   }
-//   return $randomString;
-// }
-
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
@@ -20,56 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 require_once "config.php";
 
-// $profile_collage_image = "";
-// $user_id_err = $file_name_err = $photo_type_err = $image_err;
-// Processing form data when form is submitted
-// if($_SERVER["REQUEST_METHOD"] == "POST"){
-  // // Validate first name
-  // if(empty(trim($_POST["first_name"]))){
-  //   $first_name_err = "Please enter your first name.";
-  // } else{
-  //     $first_name = trim($_POST["first_name"]);
-  // }
 
-  // // Validate last name
-  // if(empty(trim($_POST["last_name"]))){
-  //   $first_name_err = "Please enter your last name.";
-  // } else{
-  //     $last_name = trim($_POST["last_name"]);
-  // }
-
-  // Check input errors before inserting in database
-  // if(empty($user_id_err) && empty($file_name_err) && empty($photo_type_err) && empty($image_err)){
-
-      // Prepare an insert statement
-      // $sql = "INSERT INTO users (user_id, file_name, photo_type, image) VALUES (?, ?, ?, ?)";
-      //
-      // if($stmt = mysqli_prepare($link, $sql)){
-      //     // Bind variables to the prepared statement as parameters
-      //     mysqli_stmt_bind_param($stmt, "issb", $param_user_id, $param_file_name, $param_photo_type, $param_image);
-      //
-      //     // Set parameters
-      //     $param_user_id = $_SESSION ['username'];
-      //     $param_file_name = generateRandomString();
-      //     $param_photo_type = "collage";
-      //     $param_image = "<script>saveToProfile();</script>";
-      //
-      //     // Attempt to execute the prepared statement
-      //     if(mysqli_stmt_execute($stmt)){
-      //         // Redirect to login page
-      //         header("location: index.php");
-      //     } else{
-      //         echo "Oops! Something went wrong. Please try again later. SQL query.";
-      //     }
-      //
-      //     // Close statement
-      //     mysqli_stmt_close($stmt);
-      // // }
-      // }
-
-  // Close connection
-  // mysqli_close($link);
-// }
 ?>
 <html lang="en" class="h-100">
   <head>
@@ -331,11 +271,6 @@ require_once "config.php";
 
     function getUserData(access_token) {
           var data = [];
-          // var startTime = new Date();
-          // startTime.setMonth(startTime.getMonth() - 3);
-          // startTime = getUnixTime(startTime);
-          // var endTime = new Date();
-          // endTime = getUnixTime(endTime);
           console.log(startDate);
           console.log(endDate);
           var url = 'https://graph.instagram.com/me/media?access_token=' + access_token + '&since=' + startDate + '&until=' + endDate;
@@ -379,12 +314,10 @@ require_once "config.php";
     var height = 800;
     var isLarge = false;
     var bkdType = "";
-    //var currentBkd = isLarge ? bigBkd["beach"] : smallBkd["beach"];
     function displayCollage(listOfPhotos) {
       console.log(listOfPhotos);
       document.getElementById("svbtn").removeAttribute("hidden");
-      //var width = 800,
-      //      height = 800;
+   
       isLarge = listOfPhotos.length > 9;
       if(isLarge) {
         width = 1000;
@@ -421,17 +354,10 @@ require_once "config.php";
             .attr("width", 1)
             .attr("height", 1)
             .attr("id", "bkd")
-            //.attr("hidden", "hidden")
             .attr("crossorigin", "anonymous")
             .attr("src", currentBkd);
 
-      //for (let x = 0; x < listOfPhotos.length; x++) {
-      //  d3.select("body").append('img')
-      //        .attr("id", x)
-      //        .attr("crossorigin", "anonymous")
-      //        .attr("src", listOfPhotos[x]);
 
-      //      }
       var cascade = document.getElementById("cascade");
       cascade.onclick = function() { drawCascade(listOfPhotos, bkdType); };
 
@@ -629,7 +555,6 @@ require_once "config.php";
 	    }
     };
 
-    // const fs = require("fs");
     function saveImg() {
       var download = document.getElementById("download");
       var canvas = document.getElementById("cnv");
@@ -637,44 +562,7 @@ require_once "config.php";
       download.setAttribute("href", img);
     };
 
-
-    // function saveToProfile() {
-    //   // var download = document.getElementById("saveButton");
-    //   var canvas = document.getElementById("cnv");
-    //   var img = canvas.toDataURL("image/png");
-    //   // download.setAttribute("href", img);
-    //   console.log(img);
-    //   return image;
-    // };
-
-    // function saveToProfile() {
-    //   var download = document.getElementById("saveToProfile");
-    //   var canvas = document.getElementById("cnv");
-    //   var img = canvas.toDataURL("image/png");
-    //   download.setAttribute("href", img);
-    //   console.log(img);
-    //
-    //   console.log("test");
-    //   saveAs(canvas.toDataURL(), 'file-name.png')
-    //
-    //   function saveAs(uri, filename){
-    //       var link = document.createElement('a');
-    //
-    //       if (typeof link.download === 'string'){
-    //           link.href = uri;
-    //           link.download = filename;
-    //
-    //           document.body.appendChild(link);
-    //
-    //           link.click();
-    //
-    //           document.body.removeChild(link);
-    //       } else {
-    //         window.open(uri);
-    //       }
-    //
-    //   };
-    //   }
+   
 
     function setBeach(bigBkd, smallBkd) {
       bkdType = isLarge ? bigBkd["beach"] : smallBkd["beach"];
