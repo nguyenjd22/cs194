@@ -130,7 +130,7 @@
   </head>
   <body class="text-center">
   <main class="form-signin">
-    <img src="4.png" class="logo"/>
+    <img src="/images/4.png" class="logo"/>
     <form>
       <form>
       </form>

@@ -397,7 +397,7 @@ require_once "config.php";
 
       var data = d3.range(8);
       var beach_bknd = "https://media.istockphoto.com/photos/tropical-beach-copy-space-scene-picture-id1144456717?k=20&m=1144456717&s=612x612&w=0&h=z6AXl5vv_YMupxWfJ-RMR9KjpSAcVIoV9TlUaVzqRKM=";
-      var mtn_bknd = "https://www.roundabout-cs194.com/pictures/copyrightInfringe.jpg";
+      var mtn_bknd = "https://www.roundabout-cs194.com/images/copyrightInfringe.jpg";
       var bigBkd = {};
       var smallBkd = {};
       bigBkd["beach"] = "https://live.staticflickr.com/3872/15095543979_7f3a2814b5_b.jpg";

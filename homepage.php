@@ -146,7 +146,7 @@
       <div class="carousel-item">
         <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
         <div class="img-gradient">
-          <img src="carousel-image2.jpeg" width="100%" height="100%"/>
+          <img src="/images/carousel-image2.jpeg" width="100%" height="100%"/>
         </div>
         <div class="container">
           <div class="carousel-caption">
@@ -159,7 +159,7 @@
       <div class="carousel-item">
         <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
         <div class="img-gradient">
-          <img src="carousel-image3.jpeg" width="100%" height="100%"/>
+          <img src="/images/carousel-image3.jpeg" width="100%" height="100%"/>
         </div>
         <div class="container">
           <div class="carousel-caption">
@@ -199,7 +199,7 @@
       </div>
       <div class="col-md-5">
         <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-        <img src="instagram-logo.png" width="450" height="450" class="instaLogo"/>
+        <img src="/images/instagram-logo.png" width="450" height="450" class="instaLogo"/>
       </div>
     </div>
 
@@ -211,7 +211,7 @@
         <p class="lead">Click through our different collage options, decide which one you like best and share with your friends.</p>
       </div>
       <div class="col-md-5">
-        <img src="collage-ad.png" width="450" height="450"/>
+        <img src="/images/collage-ad.png" width="450" height="450"/>
       </div>
     </div>
 
@@ -224,7 +224,7 @@
       </div>
       <div class="col-md-5">
         <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-        <img src="globemap.png" width="550" height="500"/>
+        <img src="/images/globemap.png" width="550" height="500"/>
       </div>
     </div>
 

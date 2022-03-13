@@ -109,7 +109,7 @@
         <p class="lead">Click the Login button in the top navigation bar or on the home page to get started. </p>
       </div>
       <div class="col-md-5">
-        <img src="signin.png"  height="100" class="create"/>
+        <img src="/images/signin.png"  height="100" class="create"/>
       </div>
 
     <hr class="featurette-divider">
@@ -120,7 +120,7 @@
         <p class="lead">Authorize your Instagram account to let us access your social media account photos.</p>
       </div>
       <div class="col-md-5">
-        <img src="instagram-logo.png" width="150" height="150" class="instaLogo"/>
+        <img src="/images/instagram-logo.png" width="150" height="150" class="instaLogo"/>
       </div>
     </div>
 
@@ -132,7 +132,7 @@
         <p class="lead">Click the Create button in the top navigation bar or on the home page to start creating content. </p>
       </div>
       <div class="col-md-5">
-        <img src="create.png"  height="100" class="create"/>
+        <img src="\images\create.png"  height="100" class="create"/>
       </div>
 
     <hr class="featurette-divider">
@@ -143,7 +143,7 @@
         <p class="lead">Choose a date range to pick which pictures will be used from your Instagram. Then, choose to create either a collage or an interactive map. </p>
       </div>
       <div class="col-md-5">
-        <img src="datepick.png" height="150" class="datepick"/>
+        <img src="/images/datepick.png" height="150" class="datepick"/>
       </div>
     </div>
 
@@ -162,7 +162,7 @@
       </div>
 
       <div class="col-md-5 order-md-1">
-        <img src="collage-ad.png" width="500" height="500"/>
+        <img src="/images/collage-ad.png" width="500" height="500"/>
       </div>
 
     </div>
@@ -182,7 +182,7 @@
       </div>
       <div class="col-md-5">
         <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-        <img src="locationselection.png" height="500"/>
+        <img src="/images/locationselection.png" height="500"/>
       </div>
     </div>
 
@@ -195,7 +195,7 @@
       </div>
       <div class="col-md-5">
         <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-        <img src="earth.png"  height="500"/>
+        <img src="/images/earth.png"  height="500"/>
       </div>
     </div>
 
