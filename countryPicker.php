@@ -413,20 +413,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <button class="logoutButton">
           <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
         </button>
-        <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
       </td>
     </tr>
   </table>
-  <!-- <header class="cover-container d-flex h-100 p-3 gap-5 justify-content-center">
-    <div>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Map</a>
-        <a class="nav-link" href="AboutPage.php">About</a>
-        <a class="nav-link" href="homepage.html">Home</a>
-      </nav>
-    </div>
-
-  </header> -->
 
   <div class="headerpart">
     <div class="header-text1">
