@@ -8,7 +8,7 @@ body {
   align-items: center;
   /* padding-top: 40px; */
   padding-bottom: 40px;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('background-color2.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/background-color2.png');
   background-size: 100%;
   
 }

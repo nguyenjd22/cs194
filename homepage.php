@@ -121,7 +121,7 @@
       <div class="carousel-item active">
         <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
         <div class="img-gradient">
-          <img class="firstCarousel" src="background-color2.png" width="100%" height="100%"/>
+          <img class="firstCarousel" src="/images/background-color2.png" width="100%" height="100%"/>
         </div>
         <div class="container">
           <div class="carousel-caption text-start">
