@@ -3,8 +3,6 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  /* padding-top: 3rem; */
-  /* padding-bottom: 3rem; */
   color: #5a5a5a;
 }
 
@@ -46,12 +44,10 @@ body {
 .marketing h2 {
   font-weight: 400;
 }
-/* rtl:begin:ignore */
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
 }
-/* rtl:end:ignore */
 
 
 /* Featurettes
@@ -73,7 +69,6 @@ body {
 .featurette-heading-main {
   font-weight: 300;
   line-height: 2.5;
-  /* rtl:remove */
   letter-spacing: -.05rem;
 }
 
@@ -129,7 +124,6 @@ main {
  padding-right: 10px;
  font-weight: 700;
  color: rgba(255, 255, 255, .5);
- /* color: #fff; */
  color: #5e5e5e;
  background-color: transparent;
  border-bottom: .25rem solid transparent;
@@ -140,17 +134,13 @@ main {
 
 .menuItem:hover,
 .menuItem:focus {
-  /* color: white; */
   color: #5e5e5e;
   border-bottom-color: #5e5e5e;
-  /* border-bottom-color: rgba(255, 255, 255, .25); */
 }
 
 .active {
- /* color: white; */
  color: #5e5e5e;
  border-bottom-color: #5e5e5e;;
- /* border-bottom-color: white; */
 }
 .logoutText {
   color: white;
@@ -182,7 +172,6 @@ main {
 }
 
 .firstCarousel {
-    /* flip horizontally */
     transform: scaleX(-1);
     background-color: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));;
 }
