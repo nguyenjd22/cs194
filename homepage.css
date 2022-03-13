@@ -3,8 +3,6 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  /* padding-top: 3rem; */
-  /* padding-bottom: 3rem; */
   color: #5a5a5a;
 }
 
@@ -80,7 +78,6 @@ main {
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
-  /* rtl:remove */
   letter-spacing: -.05rem;
 }
 
@@ -114,7 +111,6 @@ main {
  .toolBar {
   width:100%;
   margin:0px;
-  /* background-color: #5e5e5e; */
   background-color: white;
   height: 45px;
   padding-top: 20px;
@@ -129,8 +125,6 @@ main {
  padding-left: 10px;
  padding-right: 10px;
  font-weight: 700;
- /* color: rgba(255, 255, 255, .5); */
- /* color: #fff; */
  color: #5e5e5e;
  background-color: transparent;
  border-bottom: .25rem solid transparent;
@@ -140,17 +134,13 @@ main {
 
 .menuItem:hover,
 .menuItem:focus {
-  /* color: white; */
   color: #5e5e5e;
   border-bottom-color: #5e5e5e;
-  /* border-bottom-color: rgba(255, 255, 255, .25); */
 }
 
 .active {
- /* color: white; */
  color: #5e5e5e;
  border-bottom-color: #5e5e5e;;
- /* border-bottom-color: white; */
 }
 .logoutText {
   color: white;
@@ -173,13 +163,8 @@ main {
 }
 
 .firstCarousel {
-    /* flip horizontally */
     transform: scaleX(-1);
 }
-
-/* .img-gradient {
-  position:relative;
-} */
 
 
 .img-gradient::after {
