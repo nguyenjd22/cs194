@@ -314,8 +314,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   line-height: 1;
 }
 .trip-photo{
-  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  filter: grayscale(20%);*/
   border-radius: 6px;
 }
 .country-name{
@@ -331,10 +329,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   font-weight: 700;
   color:white;
 }
-
-/*
- * Header
- */
 
  .toolBar {
   width:100%;
@@ -356,7 +350,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
  padding-right: 10px;
  font-weight: 700;
  color: rgba(255, 255, 255, .5);
- /* color: #fff; */
  color: #5e5e5e;
  background-color: transparent;
  border-bottom: .25rem solid transparent;
@@ -366,14 +359,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 .menuItem:hover,
 .menuItem:focus {
-  /* color: white; */
   color: #5e5e5e;
   border-bottom-color: #5e5e5e;
-  /* border-bottom-color: rgba(255, 255, 255, .25); */
 }
 
 .active {
- /* color: white; */
  color: #5e5e5e;
  border-bottom-color: #5e5e5e;;
  /* border-bottom-color: white; */
@@ -405,12 +395,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <tr>
       <td class="menuItems">
           <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
-          <!-- <a aria-current="page" href="#">About</a> -->
-      <!-- </td>
-      <td> -->
         <a  style="text-decoration: none;" class="menuItem" href="AboutPage.php">About</a>
-      <!-- </td>
-      <td> -->
         <a  style="text-decoration: none;" class="menuItem active" href="datepicker.php">Create</a>
         <a style="text-decoration: none;" class="menuItem" href="instructions.php">Help</a>
       </td>
@@ -428,19 +413,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <button class="logoutButton">
           <a style="text-decoration: none;" class="logoutText" href="logout.php" margin-right="0px">Logout</a>
         </button>
-        <!-- <a class="menuItem" href="logout.php" margin-right="0px">Logout</a> -->
       </td>
     </tr>
   </table>
-    <!-- <header class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-    <div>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Map</a>
-        <a class="nav-link" href="AboutPage.php">About</a>
-        <a class="nav-link" href="homepage.php">Home</a>
-      </nav>
-    </div>
-  </header> -->
   <div class="headerpart">
     <div class="header-text1">
       <h1>Interactive Map</h1>
