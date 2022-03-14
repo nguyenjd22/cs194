@@ -461,11 +461,12 @@ require_once "config.php";
    * @param bkdType : the type of background (beach or mountain)
    */
   function initCollage(listOfPhotos, bkdType) {
+    // Shuffles photos randomly to be displayed and creates new contexts for canvas
     shuffleArray(listOfPhotos);
-
     var c = document.getElementById("cnv");
     var ctx = c.getContext("2d");
 
+    // Draws new background
     var img = new Image();
     img.onload = function() {
       ctx.drawImage(img, 0, 0, width, height);
@@ -475,11 +476,20 @@ require_once "config.php";
     return ctx;
   }
 
+  /**
+   * Drawing new background and grid functionality. Draws a 3x3 if photo size < 9. Else, draws a 5x5.
+   *
+   * @param listOfPhotos : a list containing all of the photos URLs for the trip
+   * @param bkdType : the type of background (beach or mountain)
+   */
   function drawGrid(listOfPhotos, bkdType) {
+    // Redraws background to refresh collage
     var loopLen = getGridSize(isLarge);
     var ctx = initCollage(listOfPhotos, bkdType);
     pic = new Array(loopLen * loopLen);
-    var x = isLarge ? 1.25 : 1.15;
+
+    // x and y are used to scale depending on the collage size (3x3 or 5x5)
+    var x = isLarge ? 1.25 : 1.15; 
     var y = isLarge ? 1.25 : 1.5;
     var loaded = 0;
     for (let i = 0; i < loopLen; i++) {
@@ -499,6 +509,14 @@ require_once "config.php";
     }
   };
 
+  /**
+   * Drawing grid functionality.
+   *
+   * @param pic : the photo to draw
+   * @param ctx : the context to draw in
+   * @param x : a scaling factor
+   * @param y : a scaling factor
+   */
   function gridDraw(pic, ctx, x, y) {
     var loopLen = getGridSize(isLarge);
     for (let i = 0; i < loopLen; i++) {
