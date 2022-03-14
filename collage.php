@@ -361,10 +361,16 @@ require_once "config.php";
   var isLarge = false;
   var bkdType = "";
 
+  /**
+   * Initializes the collage elements in order to be ready 
+   * to display when a user clicks on a display button.
+   *
+   * @param listOfPhotos : a list containing all of the photos URLs for the trip
+   */
   function displayCollage(listOfPhotos) {
-    console.log(listOfPhotos);
     document.getElementById("svbtn").removeAttribute("hidden");
 
+    // Set up the background according to the number of photos
     isLarge = listOfPhotos.length > 9;
     if (isLarge) {
       width = 1000;
@@ -375,6 +381,7 @@ require_once "config.php";
       .padding(50)
       .mode("grid");
 
+    // Background options for both lots of photos and less photos
     var data = d3.range(8);
     var beach_bknd = "https://media.istockphoto.com/photos/tropical-beach-copy-space-scene-picture-id1144456717?k=20&m=1144456717&s=612x612&w=0&h=z6AXl5vv_YMupxWfJ-RMR9KjpSAcVIoV9TlUaVzqRKM=";
     var mtn_bknd = "https://www.roundabout-cs194.com/images/copyrightInfringe.jpg";
@@ -387,13 +394,12 @@ require_once "config.php";
     var currentBkd = isLarge ? bigBkd["beach"] : smallBkd["beach"];
     bkdType = currentBkd;
 
+    // Intialize canvas elements and buttons to draw collages
     var griddingData = gridding(data);
-
     var cnv = d3.select("#cnvdiv").append("canvas")
       .attr("id", "cnv")
       .attr("width", width)
       .attr("height", height);
-
 
     d3.select("body").append('img')
       .attr("x", 0)
@@ -404,37 +410,43 @@ require_once "config.php";
       .attr("crossorigin", "anonymous")
       .attr("src", currentBkd);
 
-
+    // Creates the cascade button and functionality
     var cascade = document.getElementById("cascade");
     cascade.onclick = function() {
       drawCascade(listOfPhotos, bkdType);
     };
 
+    // Creates the grid button and functionality
     var grid = document.getElementById("grid");
     grid.onclick = function() {
       drawGrid(listOfPhotos, bkdType);
     };
 
+    // Creates the layer button and functionality
     var layer = document.getElementById("layer");
     layer.onclick = function() {
       drawLayer(listOfPhotos, bkdType);
     };
 
+    // Creates the brick button and functionality
     var brick = document.getElementById("brick");
     brick.onclick = function() {
       drawBrick(listOfPhotos, bkdType);
     };
 
+    // Creates the mountain background button and functionality
     var mtn = document.getElementById("mountain_button");
     mtn.onclick = function() {
       setMtn(bigBkd, smallBkd);
     };
 
+    // Creates the beach background button and functionality
     var beach = document.getElementById("beach_button");
     beach.onclick = function() {
       setBeach(bigBkd, smallBkd);
     };
 
+    // Loads up an intial background for users to see
     var c = document.getElementById("cnv");
     var ctx = c.getContext("2d");
     var img = document.getElementById("bkd");
