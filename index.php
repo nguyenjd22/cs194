@@ -101,6 +101,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     window.location.href = 'https://www.instagram.com/oauth/authorize?client_id=978419269749571&redirect_uri=https://www.roundabout-cs194.com/&scope=user_profile,user_media&response_type=code';
   }
 
+  // Setup and get necessary parameters for Instagram authorization
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   var container = document.getElementById('imageContainer');
@@ -112,6 +113,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     const client_secret = getClientSecret();
     getClientSecret().then(
       function(client_secret) {
+        // Utilize Instagram client secret to get Instagram access token (necessary to make media requests)
         getAccessToken(client_secret);
       }
     );
