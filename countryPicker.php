@@ -812,7 +812,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       document.getElementById("selectCountryBt").innerHTML = currentCountry;
     }
 
-    
+    /**
+     * Ensure that image and country are both selected for an image
+     *
+     * @return boolean
+     */
     function checkImageAndCountry() {
       if (currentImage != "Select Image" && currentCountry != "Select Country") {
         document.getElementById("warining").innerHTML = "";
@@ -824,6 +828,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       return true;
     }
 
+    /**
+     * Ensure that the image isn't duplicated in the selected image list
+     *
+     * @param image : Check if this image isn't duplicated
+     * @return boolean
+     */
     function checkDuplication(image) {
       for (let i = 0; i < selectedImageList.length; i++) {
         var d = selectedImageList[i];
@@ -836,6 +846,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       return true;
     }
 
+    /**
+     * Ensure that the image selection limit is bounded by 10
+     *
+     * @return boolean
+     */
     function exceedImageLimitValidator() {
       if (selectedImageList.length >= 10) {
         document.getElementById("warining").innerHTML = "<div class='alert alert-danger' role='alert'>Exceed 10 photos limit!</div>";
@@ -846,6 +861,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       }
     }
 
+    /**
+     * Make sure that the sorting of the images according to dates are correct based on choosing or removing a photo
+     *
+     * @return boolean
+     */
     function updateList() {
       if (selectedImageList.length != 0) {
         selectedImageList.sort((d1, d2) => {
@@ -862,11 +882,24 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       }
     }
 
+    /**
+     * Remove the image from the map selection
+     *
+     * @param  index : index of image in selectedImageList
+     */
     function removeImage(index) {
       selectedImageList.splice(index, 1);
       updateList();
     }
 
+    /**
+     * Insert row for each image, date, country, and index in selectedImageList to build the selectedImageTable
+     *
+     * @param  date : date of selected image
+     * @param  image : a selected image
+     * @param  country : selected country of a image
+     * @param  index : index of a image in selectedImageList
+     */
     function insertRow(date, image, country, index) {
       var table = document.getElementById("selectedImageTable");
       var row = table.insertRow(-1);
