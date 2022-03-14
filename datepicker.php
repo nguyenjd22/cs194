@@ -107,6 +107,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </tr>
   </table>
   <script>
+    /**
+     * Set dates in php session storage to be utilized by other files.
+     */
     function setDatesInCookie() {
       start = document.getElementById('start').valueAsDate;
       end = document.getElementById('end').valueAsDate;
@@ -118,6 +121,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       location.href = "collage.php";
     }
 
+    /**
+     * Get UNIX time based off of date object
+     *
+     * @param  date : Date object
+     * @return number
+     */
     function getUnixTime(date) {
       return Math.floor(date.getTime() / 1000);
     }
