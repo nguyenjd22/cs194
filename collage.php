@@ -549,7 +549,7 @@ require_once "config.php";
     // Redraws background to refresh collage
     shuffleArray(listOfPhotos);
     var ctx = initCollage(listOfPhotos, bkdType);
-    
+
     var len = isLarge ? 10 : 8;
     var loaded = 0;
     pic = new Array(len);
@@ -579,15 +579,29 @@ require_once "config.php";
     }
   };
 
+  /**
+   * Get brick size. Returns 3 if isLarge is false, else returns 5.
+   *
+   * @param  isLarge : boolean (true if listOfPhotos > 9)
+   * @return number
+   */
   function getBrickSize(isLarge) {
     var converted = isLarge ? 2 : 0;
     return converted + 3;
   };
 
+  /**
+   * Drawing new background and brick functionality. Draws a 3x3 if photo size <= 9. Else, draws a 5x5.
+   *
+   * @param listOfPhotos : a list containing all of the photos URLs for the trip
+   * @param bkdType : the type of background (beach or mountain)
+   */
   function drawBrick(listOfPhotos, bkdType) {
+    // Redraws background to refresh collage
     var ctx = initCollage(listOfPhotos, bkdType);
     var loaded = 0;
     var loopLen = getBrickSize(isLarge);
+
     pic = new Array(listOfPhotos.length + 1);
     for (let i = 0; i < loopLen; i++) {
       for (let j = 0; j < loopLen; j++) {
@@ -604,6 +618,12 @@ require_once "config.php";
     }
   };
 
+  /**
+   * Drawing brick functionality.
+   *
+   * @param pic : the photo to draw
+   * @param ctx : the context to draw in
+   */
   function brickDraw(pic, ctx) {
     loopLen = getBrickSize(isLarge);
     for (let i = 0; i < loopLen; i++) {
@@ -625,10 +645,18 @@ require_once "config.php";
     }
   };
 
+  /**
+   * Drawing new background and brick functionality. Draws 7 photos cascading if photo size <= 9. Else, draws 10 cascading photos.
+   *
+   * @param listOfPhotos : a list containing all of the photos URLs for the trip
+   * @param bkdType : the type of background (beach or mountain)
+   */
   function drawCascade(listOfPhotos, bkdType) {
+    // Refreshes collage and background
     var ctx = initCollage(listOfPhotos, bkdType);
     var loopLen = isLarge ? 10 : 7;
     var loaded = 0;
+
     pic = new Array(loopLen + 1);
     for (let x = 0; x < loopLen; x++) {
       pic[x] = new Image();
@@ -643,6 +671,12 @@ require_once "config.php";
     }
   };
 
+  /**
+   * Drawing cascade functionality.
+   *
+   * @param pic : the photo to draw
+   * @param ctx : the context to draw in
+   */
   function cascadeDraw(pic, ctx) {
     loopLen = isLarge ? 10 : 7;
     for (let x = 0; x < loopLen; x++) {
@@ -666,8 +700,6 @@ require_once "config.php";
     var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
     download.setAttribute("href", img);
   };
-
-
 
   function setBeach(bigBkd, smallBkd) {
     bkdType = isLarge ? bigBkd["beach"] : smallBkd["beach"];
