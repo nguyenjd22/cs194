@@ -684,7 +684,11 @@ require_once "config.php";
     }
   };
 
-
+  /**
+   * Shuffle arr in place such that photo order is randomized on each draw button click.
+   * 
+   * @param arr : a list containing all of the photos URLs for the trip
+   */
   function shuffleArray(arr) {
     for (var i = arr.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
