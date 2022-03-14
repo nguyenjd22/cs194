@@ -510,6 +510,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <h2>Stanford CS 194</h2>
   </section>
   <script type="text/javascript">
+
     // Setup variables necessary to load in Instagram photos
     arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
@@ -587,11 +588,21 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       });
     }
 
-    // Utilize CAROUSEL_ALBUM fetch urls to get each CAROUSEL_ALBUM's data object.
+    /**
+     * Returns list of data objects for each CAROUSEL_ALBUM fetch URL when
+     * the list of Promises return is fulfilled.
+     *
+     * @param car_urls : a list of fetch URLs. Each fetch URL is associated with one CAROUSEL_ALBUM.
+     * @return individual_datas : a list of each CAROUSEL_ALBUM's data object. 
+     *                           Each data object will contain ids for each photo in that CAROUSEL_ALBUM.
+     */
     function getIndividualCarouselDatas(car_urls) {
       var individual_datas = [];
       var promises = [];
+
+      // Loop over each fetch URL/CAROUSEL_ALBUM
       car_urls.forEach(function(url) {
+        // Fetch url to get each CAROUSEL_ALBUM's data object based
         promises.push(fetch(url)
           .then(response => response.json())
           .then(response => {
