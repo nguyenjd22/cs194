@@ -628,17 +628,24 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       var promises = [];
       var listOfPhotos = [];
 
+      // Loop over each CAROUSEL_ALBUM's data object
       individual_datas.forEach(function(data) {
+
+        // Loop over each of the items in the data object
         data.forEach(function(item) {
           const mediaID = item["id"];
+
+          // Sends a request on current Media id in order to get Media object (could be of type IMAGE or VIDEO)
           var url = 'https://graph.instagram.com/' + mediaID + '?fields=media_type,media_url,timestamp&access_token=' + access_token;
           promises.push(fetch(url)
             .then(response => response.json())
             .then(response => {
               if (response["media_type"] == "IMAGE") {
+                // If Media object is an IMAGE, store the photo's URL to listOfPhotos
                 var timestamp = new Date(response["timestamp"]).getTime();
                 timestamp = timestamp / 1000;
                 console.log(timestamp);
+                
                 listOfPhotos.push({
                   image: response["media_url"],
                   timestamp: timestamp
