@@ -721,6 +721,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     var imageDict = [];
 
+    /**
+     * Displays Map of all the images
+     *
+     * @param  listOfPhotos : all of the user's Instagram photos between two dates
+     */
     function displayMap(listOfPhotos) {
       console.log(listOfPhotos);
       imageDict = listOfPhotos;
@@ -753,6 +758,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     var currentCountry = "Select Country";
     var currentTime = 0;
 
+    /**
+     * Sets image on map for specific index during trip.
+     *
+     * @param  index : index of what image from trip should be displayed
+     */
     function setImage(index) {
       currentImage = imageDict[index].image;
       currentTime = imageDict[index].timestamp;
@@ -760,11 +770,19 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       document.getElementById("selectImageBt").innerHTML = "Image " + imageNum;
     }
 
+    /**
+     * Sets country on map for specific index during trip.
+     *
+     * @param  index : index of what country from trip should be displayed
+     */
     function setCountry(country) {
       currentCountry = country;
       document.getElementById("selectCountryBt").innerHTML = country;
     }
 
+    /**
+     * Adds image from country picker onto list to be displayed
+     */
     function addToList() {
       if (!checkImageAndCountry()) {
         return;
@@ -784,6 +802,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       resetPlaceholder();
     }
 
+    /**
+     * Called everytime we add to list to ensure that users can keep adding photos
+     */
     function resetPlaceholder() {
       currentImage = "Select Image";
       currentCountry = "Select Country";
@@ -791,6 +812,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       document.getElementById("selectCountryBt").innerHTML = currentCountry;
     }
 
+    
     function checkImageAndCountry() {
       if (currentImage != "Select Image" && currentCountry != "Select Country") {
         document.getElementById("warining").innerHTML = "";
