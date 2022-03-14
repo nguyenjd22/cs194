@@ -119,7 +119,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     );
   }
 
-  // Get access token necessary to make Instagram Media object requests
+  /**
+   * Get access token necessary to make Instagram Media object requests. 
+   * Set access token as a cookie to be utilized by other pages.
+   *
+   * @param client_secret : string;
+   */
   function getAccessToken(client_secret) {
     // Setup parameters for access token request
     const paramsToken = {
@@ -145,8 +150,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       });
   }
 
-  // Get the client secret from secrets.php (similar to username and password)
-  // Purpose: keep our Instagram client secret securely stored
+  /**
+   * Return the client secret from secrets.php (similar to username and password)
+   *
+   * @return string
+   */
   async function getClientSecret() {
     var client_secret;
     // Fetch client secret from secrets.php 
@@ -168,14 +176,23 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   }
 
 
-  // Removes authorization button from screen
+  /**
+   * Removes authorization button
+   */
   function hideAuthorizeBottom() {
     document.getElementById("authorizeBottom").remove();
   }
 
-  // Get possible access token options
+  /**
+   * Return access token options
+   *
+   * @param params : { client_id, client_secret, code, grant_type, redirect_uri };
+   * @return { method, headers, body }
+   */
   function getOption(params) {
     var formBody = [];
+
+    // Set up the form body via params's values
     for (var property in params) {
       var encodedKey = encodeURIComponent(property);
       var encodedValue = encodeURIComponent(params[property]);
