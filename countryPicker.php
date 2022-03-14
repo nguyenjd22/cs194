@@ -645,7 +645,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 var timestamp = new Date(response["timestamp"]).getTime();
                 timestamp = timestamp / 1000;
                 console.log(timestamp);
-                
+
                 listOfPhotos.push({
                   image: response["media_url"],
                   timestamp: timestamp
@@ -678,6 +678,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       });
     }
 
+    /**
+     * Utilizing the access token, this function gets all of photo URLs and displays the map.
+     *
+     * @param access_token : Instagram access token necessary to make request on specific photo IDs
+     */
     function getUserData(access_token) {
       var data = [];
       var url = 'https://graph.instagram.com/me/media?access_token=' + access_token + '&since=' + startDate + '&until=' + endDate;
@@ -704,6 +709,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         });
     }
 
+    /**
+     * Get UNIX time based off of date object
+     *
+     * @param  date : Date object
+     * @return number
+     */
     function getUnixTime(date) {
       return Math.floor(date.getTime() / 1000);
     }

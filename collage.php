@@ -275,7 +275,7 @@ require_once "config.php";
             if (response["media_type"] == "IMAGE") {
               // If Media object is an IMAGE, store the photo's URL to listOfPhotos
               listOfPhotos.push(response["media_url"]);
-              
+
               // Put image into server
               fetch("/imageProcessor.php", {
                   method: 'POST',
@@ -304,6 +304,11 @@ require_once "config.php";
     });
   }
 
+  /**
+   * Utilizing the access token, this function gets all of photo URLs and displays the map.
+   *
+   * @param access_token : Instagram access token necessary to make request on specific photo IDs
+   */
   function getUserData(access_token) {
     var data = [];
     console.log(startDate);
@@ -341,6 +346,12 @@ require_once "config.php";
       });
   }
 
+  /**
+   * Get UNIX time based off of date object
+   *
+   * @param  date : Date object
+   * @return number
+   */
   function getUnixTime(date) {
     return Math.floor(date.getTime() / 1000);
   }
