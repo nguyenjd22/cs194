@@ -112,6 +112,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       );
     }
 
+    // Get access token necessary to make Instagram Media object requests
     function getAccessToken(client_secret){
       const paramsToken = {
         client_id: '978419269749571',
@@ -134,7 +135,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       });
     }
 
-
+    // Get the client secret from secrets.php (similar to username and password)
+    // Purpose: keep our Instagram client secret securely stored
     async function getClientSecret() {
       var client_secret;
       await fetch('/secrets.php', {
@@ -154,10 +156,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     }
 
 
+    // Removes authorization button from screen
     function hideAuthorizeBottom() {
       document.getElementById("authorizeBottom").remove();
     }
 
+    // Get possible access token options
     function getOption(params) {
       var formBody = [];
       for (var property in params) {

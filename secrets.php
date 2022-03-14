@@ -1,3 +1,6 @@
+<!-- secrets.php is to keep our client_secret secure 
+and unknown by those using the website -->
+
 <?php
 header("Content-Type: application/json"); 
 $data = json_encode(
