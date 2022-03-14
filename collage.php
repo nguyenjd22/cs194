@@ -698,6 +698,9 @@ require_once "config.php";
     }
   };
 
+  /**
+   * Save image button functionality s.t. people can download their collages
+   */
   function saveImg() {
     var download = document.getElementById("download");
     var canvas = document.getElementById("cnv");
@@ -705,6 +708,12 @@ require_once "config.php";
     download.setAttribute("href", img);
   };
 
+  /**
+   * Set beach background button functionality.
+   * 
+   * @param bigBkd : a dictionary containing all big backgrounds for different types like "beach", "mountain"
+   * @param smallBkd : a dictionary containing all small backgrounds for different types like "beach", "mountain"
+   */
   function setBeach(bigBkd, smallBkd) {
     bkdType = isLarge ? bigBkd["beach"] : smallBkd["beach"];
     var c = document.getElementById("cnv");
@@ -717,6 +726,12 @@ require_once "config.php";
     img.src = bkdType;
   }
 
+  /**
+   * Set mountain background button functionality.
+   * 
+   * @param bigBkd : a dictionary containing all big backgrounds for different types like "beach", "mountain"
+   * @param smallBkd : a dictionary containing all small backgrounds for different types like "beach", "mountain"
+   */
   function setMtn(bigBkd, smallBkd) {
     bkdType = isLarge ? bigBkd["mountain"] : smallBkd["mountain"];
     var c = document.getElementById("cnv");
