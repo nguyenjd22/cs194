@@ -914,6 +914,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         "<button type='button' class='btn btn-outline-dark' onclick='removeImage(" + index + ")'>Delete</button>";
     }
 
+    /**
+     * Generate map of photos based on populated selectedImageList.
+     * 
+     * @return boolean
+     */
     function generateMap() {
       if (selectedImageList.length < 2) {
         document.getElementById("warining").innerHTML = "<div class='alert alert-danger' role='alert'>Please choose minimum 2 photos!</div>";
@@ -923,6 +928,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       window.location.replace("earth.php");
     }
 
+    /**
+     * Return converted time from UNIX timestamp
+     *
+     * @param  UNIX_timestamp : string representing UNIX timestamp of post
+     * @return time : converted timestamp string in the form: month date year
+     */
     function timeConverter(UNIX_timestamp) {
       var a = new Date(UNIX_timestamp * 1000);
       var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
