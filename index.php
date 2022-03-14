@@ -121,6 +121,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   // Get access token necessary to make Instagram Media object requests
   function getAccessToken(client_secret) {
+    // Setup parameters for access token request
     const paramsToken = {
       client_id: '978419269749571',
       client_secret: client_secret,
@@ -128,11 +129,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       grant_type: 'authorization_code',
       redirect_uri: 'https://www.roundabout-cs194.com/',
     };
+
     var access_token;
     const optionForToken = getOption(paramsToken);
     fetch('https://api.instagram.com/oauth/access_token', optionForToken)
       .then(response => response.json())
       .then(response => {
+        // Utilize access token as cookie s.t. collage.php and earth.php can use it
         access_token = "token=" + response["access_token"];
         document.cookie = access_token; // Set access token as cookie
         location.href = 'homepage.php'; // Redirect to date picker where we do the rest of the API calls
