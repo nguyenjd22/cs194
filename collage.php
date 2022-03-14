@@ -477,7 +477,7 @@ require_once "config.php";
   }
 
   /**
-   * Drawing new background and grid functionality. Draws a 3x3 if photo size < 9. Else, draws a 5x5.
+   * Drawing new background and grid functionality. Draws a 3x3 if photo size <= 9. Else, draws a 4x4.
    *
    * @param listOfPhotos : a list containing all of the photos URLs for the trip
    * @param bkdType : the type of background (beach or mountain)
@@ -488,7 +488,7 @@ require_once "config.php";
     var ctx = initCollage(listOfPhotos, bkdType);
     pic = new Array(loopLen * loopLen);
 
-    // x and y are used to scale depending on the collage size (3x3 or 5x5)
+    // x and y are used to scale depending on the collage size (4x4 or 5x5)
     var x = isLarge ? 1.25 : 1.15; 
     var y = isLarge ? 1.25 : 1.5;
     var loaded = 0;
@@ -528,15 +528,28 @@ require_once "config.php";
     }
   };
 
-
+  /**
+   * Get grid size. Returns 3 if isLarge is false, else returns 4.
+   *
+   * @param  isLarge : boolean (true if listOfPhotos > 9)
+   * @return number
+   */
   function getGridSize(isLarge) {
     var converted = isLarge ? 1 : 0;
     return converted + 3;
   };
 
+  /**
+   * Drawing new background and layer functionality.
+   * 
+   * @param listOfPhotos : a list containing all of the photos URLs for the trip
+   * @param bkdType : the type of background (beach or mountain)
+   */
   function drawLayer(listOfPhotos, bkdType) {
+    // Redraws background to refresh collage
     shuffleArray(listOfPhotos);
     var ctx = initCollage(listOfPhotos, bkdType);
+    
     var len = isLarge ? 10 : 8;
     var loaded = 0;
     pic = new Array(len);
@@ -553,6 +566,12 @@ require_once "config.php";
     }
   };
 
+  /**
+   * Drawing layer functionality.
+   *
+   * @param pic : the photo to draw
+   * @param ctx : the context to draw in
+   */
   function layerDraw(pic, ctx) {
     var len = isLarge ? 10 : 8;
     for (let x = 0; x < len; x++) {
