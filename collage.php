@@ -311,8 +311,6 @@ require_once "config.php";
    */
   function getUserData(access_token) {
     var data = [];
-    console.log(startDate);
-    console.log(endDate);
     var url = 'https://graph.instagram.com/me/media?access_token=' + access_token + '&since=' + startDate + '&until=' + endDate;
     fetch(url)
       .then(response => response.json())
@@ -456,15 +454,18 @@ require_once "config.php";
     };
   };
 
-  // Returns a fresh collage context with the background drawn on top of it
+  /**
+   * Creates a fresh collage context with the background drawn on top of it
+   *
+   * @param listOfPhotos : a list containing all of the photos URLs for the trip
+   * @param bkdType : the type of background (beach or mountain)
+   */
   function initCollage(listOfPhotos, bkdType) {
     shuffleArray(listOfPhotos);
-    console.log("Photos Shuffled");
-    console.log(listOfPhotos);
+
     var c = document.getElementById("cnv");
     var ctx = c.getContext("2d");
-    console.log(ctx);
-    console.log("context");
+
     var img = new Image();
     img.onload = function() {
       ctx.drawImage(img, 0, 0, width, height);
@@ -487,7 +488,6 @@ require_once "config.php";
           pic[i * loopLen + j] = new Image();
           pic[i * loopLen + j].onload = function() {
             loaded++;
-            console.log(loaded);
             if (loaded === listOfPhotos.length) {
               gridDraw(pic, ctx, x, y);
             }
