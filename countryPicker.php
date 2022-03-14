@@ -510,14 +510,23 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <h2>Stanford CS 194</h2>
   </section>
   <script type="text/javascript">
+    // Setup variables necessary to load in Instagram photos
     arr = document.cookie.split(';')
     token = arr[1].split('=')[1]
     startDate = JSON.parse(window.sessionStorage.getItem("start"));
     endDate = JSON.parse(window.sessionStorage.getItem("end"));
     console.log(startDate);
     console.log(endDate);
-    getUserData(token)
+    getUserData(token); // Get the user's data from the access token
 
+    /**
+     * Returns list of photo URLs (listOfPhotos) and carousel GET request URLs (car_urls) when
+     * the list of Promises return is fulfilled.
+     *
+     * @param data : an array of Media objects. Each Media object could be an IMAGE, VIDEO, or CAROUSEL_ALBUM.
+     * @param access_token : Instagram access token that we retrieved from index.php 
+     * @return { listOfPhotos, car_urls }
+     */
     async function getMediaData(data, access_token) {
       var listOfPhotos = [];
       var car_urls = []
