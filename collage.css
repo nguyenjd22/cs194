@@ -4,42 +4,49 @@
 
 
 /* Custom default button */
+
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
+    color: #333;
+    text-shadow: none;
+    /* Prevent inheritance from `body` */
 }
 
 .btn {
-  background-color: #F2A074;
-  border:0px;
-  width:100%;
-  font-size:12px;
-  margin-bottom:10px;
+    background-color: #F2A074;
+    border: 0px;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 10px;
 }
+
 #svbtn {
-  width:30%;
+    width: 30%;
 }
-#beach_button, #mountain_button {
-  width:99%;
+
+#beach_button,
+#mountain_button {
+    width: 99%;
 }
+
 .tableWithin {
-  width:100%;
+    width: 100%;
 }
 
 .btn:hover {
-  background-color: #FBF6EE;
-  color: #5a5a5a;
-  border:0px;
+    background-color: #FBF6EE;
+    color: #5a5a5a;
+    border: 0px;
 }
+
 
 /*
  * Base structure
  */
 
 body {
-  background-color: #FBF6EE;
+    background-color: #FBF6EE;
 }
 
 
@@ -47,70 +54,72 @@ body {
  * Header
  */
 
- .toolBar {
-  width:100%;
-  margin:0px;
-  background-color: white;
-  height: 45px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 20px;
+.toolBar {
+    width: 100%;
+    margin: 0px;
+    background-color: white;
+    height: 45px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+}
 
-}
 .menuItems {
- padding-left:40px;
- text-align:left;
+    padding-left: 40px;
+    text-align: left;
 }
-.menuItem, .logoutText {
- padding: .25rem 0;
- padding-left: 10px;
- padding-right: 10px;
- font-weight: 700;
- color: rgba(255, 255, 255, .5);
- color: #5e5e5e;
- background-color: transparent;
- border-bottom: .25rem solid transparent;
- margin:7px;
- text-align:left;
- text-shadow: none;
+
+.menuItem,
+.logoutText {
+    padding: .25rem 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+    color: #5e5e5e;
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+    margin: 7px;
+    text-align: left;
+    text-shadow: none;
 }
 
 .menuItem:hover,
 .menuItem:focus {
-  color: #5e5e5e;
-  border-bottom-color: #5e5e5e;
+    color: #5e5e5e;
+    border-bottom-color: #5e5e5e;
 }
 
 .active {
- color: #5e5e5e;
- border-bottom-color: #5e5e5e;
+    color: #5e5e5e;
+    border-bottom-color: #5e5e5e;
 }
+
 .logoutText {
-  color: white;
+    color: white;
 }
 
 .logoutText:hover {
-  color: #5a5a5a;
+    color: #5a5a5a;
 }
 
 .logoutButton {
- width:80%;
- border-width:0px;
- background-color: #F2A074;
- border-radius: 5px;
- color: #fff;
+    width: 80%;
+    border-width: 0px;
+    background-color: #F2A074;
+    border-radius: 5px;
+    color: #fff;
 }
 
-.nameToolbar{
-  color: #5e5e5e;
-  text-shadow: none;
-  font-weight: 700;
+.nameToolbar {
+    color: #5e5e5e;
+    text-shadow: none;
+    font-weight: 700;
 }
 
 .collageImage {
-  margin-top:20px;
-  margin-bottom:20px;
-  margin-left: 20px;
-  margin-right: 20px;
-
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
