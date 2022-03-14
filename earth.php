@@ -715,6 +715,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       return label;
     }
 
+    /**
+     * Return converted time from UNIX timestamp
+     *
+     * @param  UNIX_timestamp : string representing UNIX timestamp of post
+     * @return time : converted timestamp string in the form: month date year
+     */
     function timeConverter(UNIX_timestamp) {
       var a = new Date(UNIX_timestamp * 1000);
       var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -731,11 +737,22 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       return time;
     }
 
+    /**
+     * Return color code for timestamp point i in trip
+     *
+     * @param  i : timestamp point index
+     * @return hex color code
+     */
     function getColor(i) {
       var range = getColorRange();
       return range[i];
     }
 
+    /**
+     * Get an array of all the color codes for each timestamp point in trip
+     *
+     * @return array of all the color codes : [color code for timestamp 0, color code for timestamp 1, ...]
+     */
     function getColorRange() {
       var colorR = [];
       var mid = Math.floor(timeDuration.length / 2);
@@ -746,6 +763,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       return colorR;
     }
 
+    /**
+     * Get color code for each timestamp point (associated with a photo) in trip
+     *
+     * @param  idx : timestamp point index
+     * @return hex color code
+     */
     function getColorCode(idx) {
       idx++;
       switch (idx) {
