@@ -149,6 +149,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   // Purpose: keep our Instagram client secret securely stored
   async function getClientSecret() {
     var client_secret;
+    // Fetch client secret from secrets.php 
     await fetch('/secrets.php', {
         method: "GET",
         headers: {
@@ -157,6 +158,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       })
       .then(response => response.json())
       .then(response => {
+        // Successfully got the client secret!
         client_secret = response["client_secret"];
       })
       .catch((error) => {
