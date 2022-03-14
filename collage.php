@@ -174,14 +174,20 @@ require_once "config.php";
   async function getMediaData(data, access_token) {
     var listOfMediaData = [];
     var promises = [];
+
+    // Loops over each Media id
     data.forEach(function(item) {
       const mediaID = item["id"];
+
+      // Sends a request on current Media id in order to get Media object (could be of type IMAGE, VIDEO, or CAROUSEL_ALBUM)
       var url = 'https://graph.instagram.com/' + mediaID + '?fields=media_type,media_url,timestamp&access_token=' + access_token;
       promises.push(fetch(url)
         .then(response => response.json())
         .then(response => {
           if (response["media_type"] == "IMAGE") {
+            // If Media object is an IMAGE, store the photo's URL to listOfPhotos
             listOfMediaData.push(response["media_url"]);
+
             // Put image into server
             fetch("/imageProcessor.php", {
                 method: 'POST',
@@ -200,7 +206,7 @@ require_once "config.php";
                 console.error('Error:', error);
               });
           } else if (response["media_type"] == "CAROUSEL_ALBUM") {
-            // Will fetch the individual photos of this in getIndividualCarouselPhotos
+            // Will fetch the individual photos of this in getIndividualCarouselPhotos. Store GET url in car_urls.
             // We didn't utilize recursion here as it is hard to implement correctly with Promises
             var url = 'https://graph.instagram.com/' + mediaID + '/children?fields=id&access_token=' + access_token;
             listOfMediaData.push(url);
@@ -214,11 +220,21 @@ require_once "config.php";
     });
   }
 
-  // Utilize CAROUSEL_ALBUM fetch urls to get each CAROUSEL_ALBUM's data object.
+  /**
+   * Returns list of data objects for each CAROUSEL_ALBUM fetch URL when
+   * the list of Promises return is fulfilled.
+   *
+   * @param car_urls : a list of fetch URLs. Each fetch URL is associated with one CAROUSEL_ALBUM.
+   * @return individual_datas : a list of each CAROUSEL_ALBUM's data object. 
+   *                           Each data object will contain ids for each photo in that CAROUSEL_ALBUM.
+   */
   function getIndividualCarouselDatas(car_urls) {
     var individual_datas = [];
     var promises = [];
+
+    // Loop over each fetch URL/CAROUSEL_ALBUM
     car_urls.forEach(function(url) {
+      // Fetch url to get each CAROUSEL_ALBUM's data object based
       promises.push(fetch(url)
         .then(response => response.json())
         .then(response => {
