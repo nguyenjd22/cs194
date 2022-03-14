@@ -108,7 +108,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </table>
   <script>
     /**
-     * Set dates in php session storage to be utilized by other files.
+     * Set dates in php session storage to be utilized by collage.php.
      */
     function setDatesInCookie() {
       start = document.getElementById('start').valueAsDate;
@@ -131,6 +131,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       return Math.floor(date.getTime() / 1000);
     }
 
+    /**
+     * Set dates in php session storage to be utilized by countryPicker.php.
+     */
     function goToMap() {
       start = document.getElementById('start').valueAsDate;
       end = document.getElementById('end').valueAsDate;
