@@ -51,6 +51,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <td width="13%">
           <?php
           session_start();
+          // Display user name if logged in
           if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             echo '';
           } else {
@@ -91,6 +92,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
   </body>
   <script>
+
+    // Redirect to authorization page to provide authorization info
     function authorizeInstagram() {
       window.location.href='https://www.instagram.com/oauth/authorize?client_id=978419269749571&redirect_uri=https://www.roundabout-cs194.com/&scope=user_profile,user_media&response_type=code';
     }
