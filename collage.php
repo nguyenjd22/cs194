@@ -247,7 +247,15 @@ require_once "config.php";
     });
   }
 
-  // With each CAROUSEL_ALBUM's data object, we can loop over each item in it to get each photo URL.
+  /**
+   * Returns list of photo URLs containing all of the photos from each CAROUSEL_ALBUM's data object
+   * when the list of Promises return is fulfilled.
+   *
+   * @param individual_datas : a list of each CAROUSEL_ALBUM's data object. 
+   *                           Each data object will contain ids for each photo in that CAROUSEL_ALBUM.
+   * @param access_token : Instagram access token necessary to make request on specific photo IDs
+   * @return listOfPhotos : a list containing all of the photos URLs from each CAROUSEL_ALBUM's data object
+   */
   function getIndividualCarouselPhotos(individual_datas, access_token) {
     var promises = [];
     var listOfPhotos = [];
