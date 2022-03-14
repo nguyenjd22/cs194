@@ -523,7 +523,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
      * Returns list of photo URLs (listOfPhotos) and carousel GET request URLs (car_urls) when
      * the list of Promises return is fulfilled.
      *
-     * @param data : an array of Media objects. Each Media object could be an IMAGE, VIDEO, or CAROUSEL_ALBUM.
+     * @param data : an array of Media ids. You must send a request on that id to get a Media object.
+     *               Each Media object could be an IMAGE, VIDEO, or CAROUSEL_ALBUM.
      * @param access_token : Instagram access token that we retrieved from index.php 
      * @return { listOfPhotos, car_urls }
      */
@@ -531,16 +532,22 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       var listOfPhotos = [];
       var car_urls = []
       var promises = [];
+
+      // Loops over each Media id
       data.forEach(function(item) {
         const mediaID = item["id"];
+
+        // Sends a request on current Media id in order to get Media object (could be of type IMAGE, VIDEO, or CAROUSEL_ALBUM)
         var url = 'https://graph.instagram.com/' + mediaID + '?fields=media_type,media_url,timestamp&access_token=' + access_token;
         promises.push(fetch(url)
           .then(response => response.json())
           .then(response => {
             if (response["media_type"] == "IMAGE") {
+              // If Media object is an IMAGE, store the photo's URL to listOfPhotos
               var timestamp = new Date(response["timestamp"]).getTime();
               timestamp = timestamp / 1000;
               console.log(timestamp);
+
               listOfPhotos.push({
                 image: response["media_url"],
                 timestamp: timestamp
@@ -563,7 +570,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                   console.error('Error:', error);
                 });
             } else if (response["media_type"] == "CAROUSEL_ALBUM") {
-              // Will fetch the individual photos of this in getIndividualCarouselPhotos
+              // Will fetch the individual photos of this in getIndividualCarouselPhotos. Store GET url in car_urls.
               // We didn't utilize recursion here as it is hard to implement correctly with Promises
               var url = 'https://graph.instagram.com/' + mediaID + '/children?fields=id&access_token=' + access_token;
               car_urls.push(url);
