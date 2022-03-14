@@ -621,6 +621,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         i = -1;
       step();
 
+      /**
+       * Step forward in country animation and showcase that country and photo
+       */
       function step() {
         if (++i >= n) i = 0;
         var currentCountryName = data[i].country;
@@ -684,6 +687,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       }
     });
 
+    /**
+     * Return domain of trip's time duration. Utilized for linear display of dates.
+     *
+     * @param length : number represented the length of timeDuration (number of days in trip)
+     * @return domain : number
+     */
     function getDomain(length) {
       var domain = []
       for (var i = 0; i < length; i++) {
