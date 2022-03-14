@@ -2,7 +2,6 @@
  * Globals
  */
 
-
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -11,7 +10,6 @@
   text-shadow: none; /* Prevent inheritance from `body` */
 }
 
-
 /*
  * Base structure
  */
@@ -19,6 +17,7 @@
 body {
   background-color: #FBF6EE;
 }
+
 main {
   color: #5a5a5a;
   width:50%;
@@ -85,6 +84,7 @@ main {
  border-radius: 5px;
  color: #fff;
 }
+
 .nameToolbar{
   color: #5e5e5e;
   font-weight: 700;
