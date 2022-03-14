@@ -691,7 +691,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
      * Return domain of trip's time duration. Utilized for linear display of dates.
      *
      * @param length : number represented the length of timeDuration (number of days in trip)
-     * @return domain : number
+     * @return domain : [ 0, 1, ..., length ]
      */
     function getDomain(length) {
       var domain = []
@@ -701,6 +701,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       return domain;
     }
 
+    /**
+     * Return label in order to initialize labeling for legend
+     *
+     * @param length : number represented the length of timeDuration (number of days in trip) + 1
+     * @return label : ["", "", ..., ""]
+     */
     function getLabel(length) {
       var label = []
       for (var i = 0; i < length; i++) {
