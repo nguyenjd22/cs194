@@ -154,12 +154,23 @@ require_once "config.php";
   </div>
 </body>
 <script>
+
+  // Setup variables necessary to load in Instagram photos
   arr = document.cookie.split(';');
   token = arr[1].split('=')[1];
   startDate = JSON.parse(window.sessionStorage.getItem("start"));
   endDate = JSON.parse(window.sessionStorage.getItem("end"));
-  getUserData(token)
+  getUserData(token); // Get the user's data from the access token
 
+  /**
+   * Returns list of photo URLs (listOfPhotos) and carousel GET request URLs (car_urls) when
+   * the list of Promises return is fulfilled.
+   *
+   * @param data : an array of Media ids. You must send a request on that id to get a Media object.
+   *               Each Media object could be an IMAGE, VIDEO, or CAROUSEL_ALBUM.
+   * @param access_token : Instagram access token that we retrieved from index.php 
+   * @return { listOfPhotos, car_urls }
+   */
   async function getMediaData(data, access_token) {
     var listOfMediaData = [];
     var promises = [];
