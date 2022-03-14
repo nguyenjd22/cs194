@@ -1,6 +1,6 @@
 <?php
 session_start();
-header("Content-Type: application/json"); 
+header("Content-Type: application/json");
 
 try {
 	$json_str = file_get_contents('php://input');
@@ -8,11 +8,11 @@ try {
 	$url = $json_obj['image_url'];
 
 	// Storing session data
-	if (isset($_SESSION ['image_urls'])) {
+	if (isset($_SESSION['image_urls'])) {
 		$urls = $_SESSION["image_urls"];
 		array_push($urls, $url);
 	} else {
-		$_SESSION ['image_urls'] = [$url];
+		$_SESSION['image_urls'] = [$url];
 	}
 	echo json_encode(array(
 		"success" => true
@@ -22,4 +22,3 @@ try {
 		"Caught exception" => $e->getMessage()
 	));
 }
-
