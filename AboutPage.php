@@ -7,15 +7,9 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <title>About</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
-
-
-
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -31,8 +25,6 @@
         }
       }
     </style>
-
-
     <!-- Custom styles for this template -->
     <link href="AboutPage.css" rel="stylesheet">
   </head>
@@ -45,7 +37,6 @@
           <td class="menuItems">
             <a style="text-decoration: none;" href="homepage.php" class="menuItem">Home</a>
             <a style="text-decoration: none;" class="menuItem active" aria-current="page" href="#">About</a>
-            <!-- GATING SYSTEM - AUTHORIZATION PAGE IF NOT AUTHORIZED; OTHERWISE - DATEPICKER -->
             <?php
               session_start();
               if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
