@@ -1,52 +1,66 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
+
+
 /* Padding below the footer and lighter body text */
 
 body {
-  color: #5a5a5a;
+    color: #5a5a5a;
 }
 
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
+
 /* Carousel base class */
+
 .carousel {
-  margin-bottom: 4rem;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
+    margin-bottom: 4rem;
 }
 
-/* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 32rem;
+
+/* Since positioning the image, we need to help out the caption */
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
 }
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
+
+
+/* Declare heights because of positioning of img element */
+
+.carousel-item {
+    height: 32rem;
+}
+
+.carousel-item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
 }
 
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
+
 /* Center align the text within the three columns below the carousel */
+
 .marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
+
 .marketing h2 {
-  font-weight: 400;
+    font-weight: 400;
 }
+
 .marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+    margin-right: .75rem;
+    margin-left: .75rem;
 }
 
 
@@ -54,123 +68,135 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 1.5rem 0; /* Space out the Bootstrap <hr> more */
+    margin: 1.5rem 0;
+    /* Space out the Bootstrap <hr> more */
 }
 
+
 /* Thin out the marketing headings */
+
 .featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  /* rtl:remove */
-  letter-spacing: -.05rem;
+    font-weight: 300;
+    line-height: 1;
+    /* rtl:remove */
+    letter-spacing: -.05rem;
 }
 
+
 /* Thin out the marketing headings */
+
 .featurette-heading-main {
-  font-weight: 300;
-  line-height: 2.5;
-  letter-spacing: -.05rem;
+    font-weight: 300;
+    line-height: 2.5;
+    letter-spacing: -.05rem;
 }
 
 main {
-  background-color: #FBF6EE;
+    background-color: #FBF6EE;
 }
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
 @media (min-width: 40em) {
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 30px;
-  }
-  .featurette-heading-main {
-    font-size: 50px;
-  }
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+    .featurette-heading {
+        font-size: 30px;
+    }
+    .featurette-heading-main {
+        font-size: 50px;
+    }
 }
 
 @media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
+    .featurette-heading {
+        margin-top: 7rem;
+    }
 }
+
 
 /*
  * Header
  */
 
- .toolBar {
-  width:100%;
-  margin:0px;
-  background-color: white;
-  height: 45px;
-  padding-top: 20px;
-  padding-left: 20px;
+.toolBar {
+    width: 100%;
+    margin: 0px;
+    background-color: white;
+    height: 45px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
+
 .menuItems {
- padding-left:40px;
- text-align:left;
+    padding-left: 40px;
+    text-align: left;
 }
-.menuItem, .logoutText {
- padding: .25rem 0;
- padding-left: 10px;
- padding-right: 10px;
- font-weight: 700;
- color: rgba(255, 255, 255, .5);
- color: #5e5e5e;
- background-color: transparent;
- border-bottom: .25rem solid transparent;
- margin:7px;
- text-align:left;
- text-shadow: none;
+
+.menuItem,
+.logoutText {
+    padding: .25rem 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+    color: #5e5e5e;
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+    margin: 7px;
+    text-align: left;
+    text-shadow: none;
 }
 
 .menuItem:hover,
 .menuItem:focus {
-  color: #5e5e5e;
-  border-bottom-color: #5e5e5e;
+    color: #5e5e5e;
+    border-bottom-color: #5e5e5e;
 }
 
 .active {
- color: #5e5e5e;
- border-bottom-color: #5e5e5e;;
+    color: #5e5e5e;
+    border-bottom-color: #5e5e5e;
+    ;
 }
+
 .logoutText {
-  color: white;
+    color: white;
 }
 
 .logoutText:hover {
-  color: #5a5a5a;
+    color: #5a5a5a;
 }
 
 .logoutButton {
- width:80%;
- border-width:0px;
- background-color: #F2A074;
- border-radius: 5px;
- color: #fff;
+    width: 80%;
+    border-width: 0px;
+    background-color: #F2A074;
+    border-radius: 5px;
+    color: #fff;
 }
 
 .instaLogo {
-  margin-left:50px;
-  margin-top:75px;
+    margin-left: 50px;
+    margin-top: 75px;
 }
 
 .create {
-  margin-top:100px;
+    margin-top: 100px;
 }
 
 .datepick {
-  margin-top:50px;
+    margin-top: 50px;
 }
 
 .firstCarousel {
     transform: scaleX(-1);
-    background-color: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));;
+    background-color: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    ;
 }
